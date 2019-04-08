@@ -5,39 +5,35 @@
 		<link rel="stylesheet" type="text/css" href="css/normalize.css">
 		<style>
 
+			body {
+
+			}
+
+			header {
+				margin: 30px;
+			}
+
+			footer {
+				margin: 50px;
+			}
+
+			.col,
+			   [class*="col-"] {
+			    margin-top: 10px;
+			    margin-bottom: 10px;
+			    background-color: #EEE;
+			    border: 1px solid grey;	
+			  }
 			
+
 			.container {
-				background-color: #EEE;
-				border-style: solid;
-				border-color: #AAA;
 				width: 850px;				
 				-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 			    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
 			    box-sizing: border-box;			/* Opera/IE 8+ */
 			}
 
-			
-
-			#row1_col1 {				
-				border: 1px solid black;					
-			}
-			#row1_col2 {
-				border: 1px solid black;									
-			}
-
-			#row2_col1 {				
-				border: 1px solid black;					
-			}
-			#row2_col2 {
-				border: 1px solid black;									
-			}
-
-			#row3_col1 {				
-				border: 1px solid black;					
-			}
-			#row3_col2 {
-				border: 1px solid black;									
-			}
+						
 
 		</style>
 	</head>
@@ -47,6 +43,9 @@
 			<ul class="nav justify-content-end" id="nav_navigatie">
 			  <li class="nav-item" id="nav_favoriet">
 			    <a class="nav-link active" href="#" ><i class="far fa-star"></i> Favoriet</a>
+			  </li>
+			  <li class="nav-item" id="nav_profiel">
+			    <a class="nav-link" href="#">Profiel</a>
 			  </li>
 			  <li class="nav-item" id="nav_zoeken">
 			    <a class="nav-link" href="#">Zoeken</a>
@@ -59,23 +58,24 @@
 			  </li>
 			</ul>
 
+			<header></header>
 			<!-- Container/grid -->
 			<div class="container">
 
-			  <div class="row" id="row1">
+			  <div class="row justify-content-between" id="row1">
 			    <div class="col-4" id="row1_col1">
 			    	<!-- div profiel(foto)-->
 			      <img src="img/no_image.png" width="220" height="220">			      	
 			    </div>
-			    <div class="col-8" id="row1_col2">  
+			    <div class="col-7" id="row1_col2">  
 			    	<!-- div naam -->		      	
 			      	<p id="p_naam">(Naam + Familienaam)</p>
 					<p id="p_nickname">(Nickname)</p>
 			    </div>  		   
 			  </div>
 
-			  <div class="row" id="row2">
-			  	<div class="col-8" id="row2_col1">
+			  <div class="row justify-content-between" id="row2">
+			  	<div class="col-7" id="row2_col1">
 			  		<!-- div bio -->	
 			  		<p><b>BIO</b></p>
 			  	</div>
@@ -96,8 +96,8 @@
 			    </div>
 			  </div>
 
-			  <div class="row" id="row3">
-			  	<div class="col-7" id="row3_col1">
+			  <div class="row justify-content-between" id="row3">
+			  	<div class="col-6" id="row3_col1">
 			  		<!-- div interesses -->	
 			  		<p><b>INTERESSES</b></p>
 			  	</div>
@@ -111,7 +111,7 @@
 			</div>
 
 			<!-- Profielgegevens-->
-			
+			<footer></footer>
 		</body>
 
 	<!-- script -->
