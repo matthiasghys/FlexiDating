@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexi Dating API demo</title>
+    <link href="css/api.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1>Flexi Dating API Demo</h1>
+        <nav class="menu">
+            <ul>
+                <li><a href="opdracht.html">Opdracht</a></li>
+                <li><a href="api.html">API</a></li>
+                <li><a href="demo.html">API demo</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+
+        <section id="demo">
+            <h2>Demo's</h2>
+
+            <p>Bekijk de inline javascript van deze pagina.<br> Alle output van de methods wordt in de <em>javascript
+                console</em> getoond.</p>
+
+            <div id="test"></div>
+            <div id="zoek">
+
+                <p>
+                    <button type=button id="deKnop3">toon</button>
+                    <label>alle profielen</label>
+                </p>
+
+                <p><label>zoek op index (getal) </label><input type="text" name="zoek_index" id="zoek_index">
+                    <button type=button id="deKnop4">zoek</button>
+                </p>
+
+                <p><label>zoek op id </label><input type="text" name="zoek_id" id="zoek_id">
+                    <button type=button id="deKnop1">zoek</button>
+                </p>
+                <p><label>zoek op voornaam </label><input type="text" name="zoek_voornaam" id="zoek_voornaam">
+                    <label>Fuzzy search <input type="checkbox" name="voornaam_fuzzy"  id="voornaam_fuzzy"></label>
+                    <button type=button id="deKnop2">zoek</button>
+                </p>
+                <p><label>kies sexe </label><select name="zoek_sexe" id="zoek_sexe">
+                    <option value="" selected>beide sexes</option>
+                    <option>v</option>
+                    <option>m</option>
+                </select>
+                    <button type=button id="deKnop5">zoek</button>
+                </p>
+                <p><label>kies seksuele voorkeur </label><select name="zoek_seksvoorkeur" id="zoek_seksvoorkeur">
+                    <option value="" selected>maak een keuze</option>
+                    <option>hetero</option>
+                    <option>homo</option>
+                    <option>bi</option>
+                </select>
+                    <button type=button id="deKnop6">zoek</button>
+                </p>
+                <p><label>zoek haarkleur </label><input type="text" name="zoek_haarkleur" id="zoek_haarkleur">
+                    <button type=button id="deKnop7">zoek</button>
+                </p>
+                <p><label>kleiner dan </label><input type="text" name="zoek_grootte" id="zoek_grootte" placeholder="grootte">
+
+                </p>
+
+                <p><label>zoek op sexe + seksuele voorkeur + haarkleur + grootte</label>
+                    <button type=button id="deKnop8">zoek</button>
+                </p>
+                <p><label>wijzig familienaam profiel 56cae42a683485281caf5651 naar :</label><input type="text"
+                                                                                                   name="new_name"
+                                                                                                   id="new_name">
+                    <button type=button id="deKnop9">wijzig profiel</button>
+                </p>
+                <p><label>maak nieuw profiel 'Zorro' :</label>
+                    <button type=button id="deKnop10">maak profiel</button>
+                </p>
+                <p><label>_id:</label><input type="text" name="wis_id" id="wis_id" placeholder="_id">
+                    <button type=button id="deKnop11">verwijder profiel volgens _id</button>
+                </p>
+                <p><label>Save alle huidige profielen naar LS</label>
+                    <button type=button id="deKnop12">Save</button>
+                </p>
+                <p><label>Reset naar startpofielen</label>
+                <button type=button id="deKnop13">Reset</button>
+            </p>
+                <p><label>Login</label><input type="text" name="login_email" id="login_email" placeholder="email"><input type="text" name="login_pw" id="login_pw" placeholder="wachtwoord">
+                    <button type=button id="deKnop14">Login</button>
+                </p>
+            </div>
+        </section>
+
+    </div>
+    <footer>&copy; vdab</footer>
+</div>
+<!--<script src="bower_components/jquery/dist/jquery.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="js/flexi_dating.min.js"></script>
+<!--<script async src="js/flexi_dating.js"></script>-->
+<script defer>
+
+    var deKnop1, deKnop2, deKnop3, deKnop4, deKnop5, deKnop6, deKnop7, deKnop8,deKnop9,deKnop10,deKnop11,deKnop12,deKnop13,deKnop14,deKnop15;
+    var zoek_id, zoek_naam, zoek_haarkleur, zoek_sexe, zoek_sexvoorkeur, login_email,login_pw;
+
+    window.onload = function () {
+
+
+        //scrumlib.init('test');
+        //scrumlib.init();
+
+        //knoppen
+        deKnop1 = document.getElementById('deKnop1');
+        deKnop2 = document.getElementById('deKnop2');
+        deKnop3 = document.getElementById('deKnop3');
+        deKnop4 = document.getElementById('deKnop4');
+        deKnop5 = document.getElementById('deKnop5');
+        deKnop6 = document.getElementById('deKnop6');
+        deKnop7 = document.getElementById('deKnop7');
+        deKnop8 = document.getElementById('deKnop8');
+        deKnop9 = document.getElementById('deKnop9');
+        deKnop10 = document.getElementById('deKnop10');
+        deKnop11 = document.getElementById('deKnop11');
+        deKnop12 = document.getElementById('deKnop12');
+        deKnop13 = document.getElementById('deKnop13');
+        deKnop14 = document.getElementById('deKnop14');
+
+        //form velden
+        zoek_id = document.getElementById('zoek_id');
+        zoek_naam = document.getElementById('zoek_naam');
+        zoek_sexe = document.getElementById('zoek_sexe');
+        zoek_seksvoorkeur = document.getElementById('zoek_seksvoorkeur');
+        zoek_haarkleur = document.getElementById('zoek_haarkleur');
+        new_name = document.getElementById('new_name');
+        wis_id = document.getElementById('wis_id');
+        login_email = document.getElementById('login_email');
+        login_pw = document.getElementById('login_pw');
+
+        //event handlers
+        deKnop1.addEventListener('click', function (e) {
+            console.log(scrumlib.getProfileById(zoek_id.value));
+        })
+        deKnop2.addEventListener('click', function (e) {
+            var fuzzy = document.getElementById('voornaam_fuzzy').checked;
+            //console.log(fuzzy);
+
+            console.log(scrumlib.getProfilesByVoornaam(zoek_voornaam.value, fuzzy));
+        })
+        deKnop3.addEventListener('click', function (e) {
+            console.log(scrumlib.getAllProfiles());
+        })
+        deKnop4.addEventListener('click', function (e) {
+            console.log(scrumlib.getProfileByIndex(zoek_index.value));
+        })
+        deKnop5.addEventListener('click', function (e) {
+            console.log(scrumlib.getProfilesBySexe(zoek_sexe.value));
+        })
+        deKnop6.addEventListener('click', function (e) {
+            console.log(scrumlib.getProfilesBySeksvoorkeur(zoek_seksvoorkeur.value));
+        })
+        deKnop7.addEventListener('click', function (e) {
+            console.log(scrumlib.getProfilesByHaarkleur(zoek_haarkleur.value));
+        })
+
+
+        deKnop8.addEventListener('click', function (e) {
+            //meerdere voorwaarden
+
+            var searchMap = {}; //map van voorwaarden
+            var conditions =
+                    [
+                        ['sexe', "="],
+                        ['seksvoorkeur', "="],
+                        ['haarkleur', "~"],
+                        ['grootte', "<"],
+
+                    ]; //kenmerken en searchOptions
+
+            //stel zoekMap object samen, indien niet leeg
+            for (var i = 0; i < conditions.length; i++) {
+
+                var el = document.getElementById('zoek_' + conditions[i][0]); //voeg ""zoek_" toe om aan id van formvelden te voldoen
+
+                if (el.value != "") {
+                    searchMap[conditions[i][0]] = {"waarde": el.value, "match": conditions[i][1]};
+                }
+            }
+
+            var list = scrumlib.getProfilesByConditions(searchMap);
+            console.log(searchMap);
+            console.log(list);
+        })
+
+
+
+
+
+        deKnop9.addEventListener('click', function (e) {
+            //wijzig profiel familienaam 56cae42a683485281caf5651
+            console.log('knop9')
+            var updateMap = {};
+            if (new_name.value != "") {
+                updateMap.familienaam = new_name.value;
+                console.log(scrumlib.updateProfile("56cae42a683485281caf5651", updateMap));
+
+            }
+        })
+
+        deKnop10.addEventListener('click', function (e) {
+            //maak nieuw profiel Zorro
+
+            var new_profiel = {
+
+                beroep: "avonturier",
+                email: "zorro@hacienda.mex",
+                familienaam: "De La Vega",
+                foto: "zorro.jpg",
+                geboortedatum: "1944-2-2",
+                gewicht: 74,
+                grootte: 180,
+                haarkleur: "zwart",
+                nickname: "Zorro",
+                oogkleur: "bruin",
+                seksvoorkeur: "homo",
+                sexe: "m",
+                voornaam: "Diego"
+            };
+
+            console.log(scrumlib.createProfile(new_profiel));
+
+
+        })
+
+        deKnop11.addEventListener('click', function (e) {
+            //wist een profiel op basis van _id
+            //console.log('knop11');
+            if (wis_id.value != "") {
+                scrumlib.deleteProfile(wis_id.value);
+            }
+        })
+
+        deKnop12.addEventListener('click', function (e) {
+            //save alle wijzigingen naar LS
+            scrumlib.save();
+        })
+
+        deKnop13.addEventListener('click', function (e) {
+            //reset naar startbestanden
+            scrumlib.reset();
+        })
+        deKnop14.addEventListener('click', function (e) {
+            //login return id of false
+            console.log(scrumlib.login(login_email.value,login_pw.value));
+        })
+    }
+
+</script>
+</body>
+</html>
