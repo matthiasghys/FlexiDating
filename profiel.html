@@ -2,9 +2,36 @@
 	<head>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<style>
+
+			
+			.container {
+				background-color: #EEE;
+				border-style: solid;
+				border-color: #AAA;
+				position: relative;
+				width: 100%;
+				
+				-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+			    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+			    box-sizing: border-box;			/* Opera/IE 8+ */
+			}
+
+
+			#row1_col1 {				
+				border: 1px solid black;		
+				margin: auto;	
+			}
+			#row1_col2 {				
+				margin: auto;
+			}
+		</style>
 	</head>
 	<title></title>
 		<body>
+
+			
 			<!-- Nav -->
 			<ul class="nav justify-content-end" id="nav_navigatie">
 			  <li class="nav-item" id="nav_favoriet">
@@ -16,27 +43,51 @@
 			  <li class="nav-item" id="nav_instellingen">
 			    <a class="nav-link" href="#">Instellingen</a>
 			  </li>
-			  <li class="nav-item" id="uitloggen">
+			  <li class="nav-item" id="nav_uitloggen">
 			    <a class="nav-link" href="#" style="color: rgb(198,35,23);">Uitloggen</a>
 			  </li>
 			</ul>
 
+			<!-- Container/grid -->
+			<div class="container">
+
+			  <div class="row" id="row1">
+			    <div class="col-sm" id="row1_col1">
+			    	<!-- div profiel(foto)-->
+			      <img src="img/no_image.png" width="300" height="300">			      	
+			      	<p id="p_naam">(Naam + Familienaam)</p>
+					<p id="p_nickname">(Nickname)</p>
+			    </div>
+
+			    <div class="col-sm" id="row1_col2">
+			    	<!-- div profiel(foto)-->
+			      <img src="img/no_image.png" width="300" height="300">			      	
+			      	<p id="p_naam">(Naam + Familienaam)</p>
+					<p id="p_nickname">(Nickname)</p>
+			    </div>  		   
+			  </div>
+
+			  <div class="row" id="row2">
+			  	 <div class="col-sm">
+			    	<!-- div gegevens-->
+				    <ul id="p_gegevens">	
+						<li id="p_geboortedatum">(Geboortedatum)</li>
+						<li id="p_email">(Email)</li>						
+						<li id="p_beroep">(Beroep)</li>
+						<li id="p_geslacht">(Geslacht)</li>
+						<li id="p_haarkleur">(Haarkleur)</li>
+						<li id="p_oogkleur">(Oogkleur)</li>
+						<li id="p_grootte">(Grootte)</li>
+						<li id="p_gewicht">(Gewicht)</li>
+						<li id="p_voorkeur">(Voorkeur)</li>
+						<li id="p_sterrenbeeld">(Sterrebeeld)</li>
+					</ul>
+			    </div>
+			  </div>
+			</div>
+
 			<!-- Profielgegevens-->
-			<img src="img/no_image.png">
-			<ul id="p_gegevens">
-				<li id="p_naam">(Naam + Familienaam)</li>
-				<li id="p_geboortedatum">(Geboortedatum)</li>
-				<li id="p_email">(Email)</li>
-				<li id="p_nickname">(Nickname)</li>
-				<li id="p_beroep">(Beroep)</li>
-				<li id="p_geslacht">(Geslacht)</li>
-				<li id="p_haarkleur">(Haarkleur)</li>
-				<li id="p_oogkleur">(Oogkleur)</li>
-				<li id="p_grootte">(Grootte)</li>
-				<li id="p_gewicht">(Gewicht)</li>
-				<li id="p_voorkeur">(Voorkeur)</li>
-				<li id="p_sterrenbeeld">(Sterrebeeld)</li>
-			</ul>
+			
 		</body>
 
 	<!-- script -->
