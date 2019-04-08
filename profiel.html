@@ -10,28 +10,39 @@
 				background-color: #EEE;
 				border-style: solid;
 				border-color: #AAA;
-				position: relative;
-				width: 100%;
-				
+				width: 850px;				
 				-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 			    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
 			    box-sizing: border-box;			/* Opera/IE 8+ */
 			}
 
+			
 
 			#row1_col1 {				
-				border: 1px solid black;		
-				margin: auto;	
+				border: 1px solid black;					
 			}
-			#row1_col2 {				
-				margin: auto;
+			#row1_col2 {
+				border: 1px solid black;									
 			}
+
+			#row2_col1 {				
+				border: 1px solid black;					
+			}
+			#row2_col2 {
+				border: 1px solid black;									
+			}
+
+			#row3_col1 {				
+				border: 1px solid black;					
+			}
+			#row3_col2 {
+				border: 1px solid black;									
+			}
+
 		</style>
 	</head>
 	<title></title>
-		<body>
-
-			
+		<body>		
 			<!-- Nav -->
 			<ul class="nav justify-content-end" id="nav_navigatie">
 			  <li class="nav-item" id="nav_favoriet">
@@ -52,23 +63,23 @@
 			<div class="container">
 
 			  <div class="row" id="row1">
-			    <div class="col-sm" id="row1_col1">
+			    <div class="col-4" id="row1_col1">
 			    	<!-- div profiel(foto)-->
-			      <img src="img/no_image.png" width="300" height="300">			      	
-			      	<p id="p_naam">(Naam + Familienaam)</p>
-					<p id="p_nickname">(Nickname)</p>
+			      <img src="img/no_image.png" width="220" height="220">			      	
 			    </div>
-
-			    <div class="col-sm" id="row1_col2">
-			    	<!-- div profiel(foto)-->
-			      <img src="img/no_image.png" width="300" height="300">			      	
+			    <div class="col-8" id="row1_col2">  
+			    	<!-- div naam -->		      	
 			      	<p id="p_naam">(Naam + Familienaam)</p>
 					<p id="p_nickname">(Nickname)</p>
 			    </div>  		   
 			  </div>
 
 			  <div class="row" id="row2">
-			  	 <div class="col-sm">
+			  	<div class="col-8" id="row2_col1">
+			  		<!-- div bio -->	
+			  		<p><b>BIO</b></p>
+			  	</div>
+			  	 <div class="col-4" id="row2_col2">
 			    	<!-- div gegevens-->
 				    <ul id="p_gegevens">	
 						<li id="p_geboortedatum">(Geboortedatum)</li>
@@ -84,6 +95,19 @@
 					</ul>
 			    </div>
 			  </div>
+
+			  <div class="row" id="row3">
+			  	<div class="col-7" id="row3_col1">
+			  		<!-- div interesses -->	
+			  		<p><b>INTERESSES</b></p>
+			  	</div>
+			  	 <div class="col-5" id="row3_col2">
+			  	 	<!-- div favorieten -->	
+			    	<p><b>FAVORIETENLIJST</b></p>
+				    
+			    </div>
+			  </div>
+
 			</div>
 
 			<!-- Profielgegevens-->
