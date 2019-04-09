@@ -1,9 +1,11 @@
 
 
-window.onload = function () {
+
     document.querySelector('#inloggen').addEventListener('click', function(e){
+        e.preventDefault();
         let nickname = document.getElementById('inputNickname').value;
         let wachtwoord = document.getElementById('inputPassword').value;
+        console.log(nickname);
 
         let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/authenticate.php';
 
@@ -27,6 +29,11 @@ window.onload = function () {
             .then(function (data) {
                 sessionStorage.setItem('id', data.id);
                 console.log(sessionStorage.getItem('id'));
+                if (data.id){
+                    location.replace('profiel.html')
+                }else{
+                    document.getElementById('error').innerText= "foutieve gegevens,probeer opnieuw"
+                }
 
             })
             .catch(function (error) {
@@ -35,29 +42,6 @@ window.onload = function () {
 
 
 
+
     });
 
-
-
-    function validateRegister(id, familienaam, voornaam, geboortedatum, email, nickname, foto, beroep, sexe, haarkleur, oogkleur, grootte, gewicht, seksvoorkeur, wachtwoord) {
-
-        const persoon = {
-            "_id": id,
-            "familienaam": familienaam,
-            "voornaam": voornaam,
-            "geboortedatum": geboortedatum,
-            "email": email,
-            "nickname": nickname,
-            "foto": foto,
-            "beroep": beroep,
-            "sexe": sexe,
-            "haarkleur": haarkleur,
-            "oogkleur": oogkleur,
-            "grootte": grootte,
-            "gewicht": gewicht,
-            "seksvoorkeur": seksvoorkeur,
-            "wachtwoord": wachtwoord
-        }
-
-    }
-}
