@@ -16,32 +16,69 @@
 
 			}
 
+			/* centreren image */
+			img {
+		  		border-radius: 50%;
+				display: block;
+				margin-left: auto;
+		  		margin-right: auto;
+			}
+
 			header {
-				margin: 30px;
+				margin: 30px;		
 			}
 
 			footer {
 				margin: 50px;
+					
 			}
 
+			/**/
+
+			#p_naam {
+				font-size: 32px;
+				text-align: center;
+				color: rgb(83,145,232);
+
+			}
+
+			#p_nickname {
+				font-size: 24px;
+				text-align: center;
+			}
+
+			#foot_privacy {
+				font-size: 18px;
+				text-align: center;
+			}
+
+			/* main css voor div in cols */
+			
+
+			/**/
 			.col,
 			   [class*="col-"] {
 			    margin-top: 10px;
 			    margin-bottom: 10px;
 			    background-color: #EEE;
+					border-radius: 10px;
 			    border: 1px solid grey;	
 			  }
 			
-
 			.container {
-				width: 850px;				
+				width: 80%;	
+				background-image: url("img/profiel_bg1.jpg");
+				border-radius: 10px;		
+				padding: 20px;
 				-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 			    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
 			    box-sizing: border-box;			/* Opera/IE 8+ */
 			}
-
+			#row1_col1 {
+				border-style: none;
+				background-color: transparent;
+			}
 						
-
 		</style>
 	</head>
 	<title></title>
@@ -69,7 +106,7 @@
 			<!-- Container/grid -->
 			<div class="container">
 
-			  <div class="row justify-content-between" id="row1">
+			  <div class="row justify-content-around" id="row1">
 			    <div class="col-4" id="row1_col1">
 			    	<!-- div profiel(foto)-->
 			      <img src="img/no_image.png" width="220" height="220">			      	
@@ -82,7 +119,7 @@
 			    </div>  		   
 			  </div>
 
-			  <div class="row justify-content-between" id="row2">
+			  <div class="row justify-content-around" id="row2">
 			  	<div class="col-7" id="row2_col1">
 			  		<!-- div bio -->	
 			  		<p><b>BIO</b></p>
@@ -104,7 +141,7 @@
 			    </div>
 			  </div>
 
-			  <div class="row justify-content-between" id="row3">
+			  <div class="row justify-content-around" id="row3">
 			  	<div class="col-6" id="row3_col1">
 			  		<!-- div interesses -->	
 			  		<p><b>INTERESSES</b></p>
@@ -119,7 +156,11 @@
 			</div>
 
 			<!-- Profielgegevens-->
-			<footer></footer>
+			<div class="card text-center">
+				<div class="card-footer text-muted">
+			    Privacy policy
+			  </div>
+		  </div>
 		</body>
 
 	<!-- script -->
