@@ -7,9 +7,41 @@
     <title>Registration</title>
 </head>
 
+<style>
+.container {
+    width: 60%;	
+	background-image: url("img/profiel_bg1.jpg");
+    border-radius: 10px;		
+	padding: 40px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;			/* Opera/IE 8+ */
+}
+
+form {
+    width: 100%; 
+    padding: 40px; 
+    background-color: #eeeeee;
+    border-radius: 10px;
+}
+.card-header {
+		  		width: 100%;
+		  		font-weight: bold;
+		  		font-size: 18px;
+		  		background-color: transparent;
+		  	}
+
+.form-row {
+				
+				padding-top: 25px;
+			}
+
+</style>
+
 <body>
-    <h1>Registration</h1>
-    <form style="width: 600px; padding: 20px; background-color: #eeeeee;">
+    <div class="container">
+    <form>
+     <div class="card-header"><h2>Registration</h2></div>
         <div class="form-group">
             <div class="form-row">
                 <div class="col">
@@ -181,6 +213,7 @@
         <br>
         <button type="submit" id = "registerBtn"class="btn btn-primary">Register</button>
     </form>
+    </div>
     <script src="js/register.js"></script>
 </body>
 
