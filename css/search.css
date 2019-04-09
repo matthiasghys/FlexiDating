@@ -1,6 +1,5 @@
 body{
     margin: 0;
-    width: 200px;
 }
 
 /* ----- Lines ----- */
@@ -13,6 +12,7 @@ body{
     border-bottom: 1px solid #dddddd;
     display: block;
     overflow:auto;
+    width: 200px;
 }
 
 /* ----- Columns ----- */
