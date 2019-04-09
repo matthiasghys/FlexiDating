@@ -26,14 +26,12 @@ window.onload = function () {
             })
             .then(function (data) {
                 sessionStorage.setItem('id', data.id);
+                console.log(sessionStorage.getItem('id'));
 
             })
             .catch(function (error) {
                 console.log(error);
             });
-
-
-
 
 
 
