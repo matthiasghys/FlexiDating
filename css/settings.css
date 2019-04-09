@@ -55,7 +55,7 @@ body{
 #enterPass{
     width: 100%;
     padding-left: 70%;
-    float: right;
+    margin-top: 5px;
 }
 
 #saveCancel{
@@ -63,3 +63,6 @@ body{
     float: right;
 }
 
+#deleteAccount{
+    margin-top: 3px;
+}
