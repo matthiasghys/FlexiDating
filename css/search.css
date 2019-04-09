@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    width: 200px;
+}
+
+/* ----- Lines ----- */
+
+.line{
+    min-height: 40px;
+    width: 100%;
+    padding: 5px;
+    background-color: #eeeeee;
+    border-bottom: 1px solid #dddddd;
+    display: block;
+    overflow:auto;
+}
+
+/* ----- Columns ----- */
+
+.col1, .col2{
+    height: 100%;
+    display: inline-block;
+}
+
+.col1{   
+    font-size: 12px;
+}
+.col2{
+    width: 60%;
+    float: right;
+}
+
+.col2 input{
+    width: 100%;
+}
+
+.col2 select{
+    width: 100%;
+}
+
+/* Other */
+
+#applyFilter{
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+#searchBar {
+    width: 500px;
+    margin-left: 250px;
+}
