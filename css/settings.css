@@ -28,6 +28,7 @@ body{
 .col1, .col2, .col3{
     height: 100%;
     display: inline-block;
+    overflow: hidden;
 }
 
 .col1{   
