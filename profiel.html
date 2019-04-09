@@ -37,6 +37,10 @@
 					
 			}
 
+			ul {
+			  /*list-style-type: none;*/
+			}
+
 			/**/
 
 			#p_naam {
@@ -61,6 +65,13 @@
 				font-weight: bold;
 				box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 				float: right;
+				margin-top: 3px;				
+			}
+
+			#p_horoscoop {
+				float: left;
+				font-size: 32px;
+				padding-left: 32px;
 			}
 
 			#foot_privacy {
@@ -80,12 +91,12 @@
 			  }
 
 			.card-header {
-			  		width: 100%;
-			  		font-weight: bold;
-			  		font-size: 18px;
-			  		font-style: italic;
-			  		background-color: transparent;
-			  	}
+		  		width: 100%;
+		  		font-weight: bold;
+		  		font-size: 18px;
+		  		font-style: italic;
+		  		background-color: transparent;
+		  	}
 			
 			.container {
 				width: 80%;	
@@ -130,7 +141,8 @@
 			  <div class="row justify-content-around" id="row1">
 			    <div class="col-4" id="row1_col1">
 			    	<!-- div profiel(foto)-->
-			      <img src="img/adl.png" width="220" height="220">		
+			      <img src="img/adl.png" width="220" height="220">	
+			      <p id="p_horoscoop" title="test">&#9800;</p>	
 			      <button id="p_favoriet" title="Voeg deze persoon toe aan je favorieten"><i class="far fa-star"></i> Favoriet</button>	      	
 			    </div>
 			    <div class="col-7" id="row1_col2">  
@@ -154,16 +166,16 @@
 			  	 	<div class="card-header">Gegevens</div>
 			    	<!-- div gegevens-->
 				    <ul id="p_gegevens">	
-						<li id="p_geboortedatum">(Geboortedatum)</li>
-						<li id="p_email">(Email)</li>						
-						<li id="p_beroep">(Beroep)</li>
-						<li id="p_geslacht">(Geslacht)</li>
-						<li id="p_haarkleur">(Haarkleur)</li>
-						<li id="p_oogkleur">(Oogkleur)</li>
-						<li id="p_grootte">(Grootte)</li>
-						<li id="p_gewicht">(Gewicht)</li>
-						<li id="p_voorkeur">(Voorkeur)</li>
-						<li id="p_sterrenbeeld">(Sterrebeeld)</li>
+						<li id="p_geboortedatum"><i class="far fa-calendar-alt"></i> (Geboortedatum)</li>
+						<li id="p_email"><i class="far fa-envelope"></i> (Email)</li>						
+						<li id="p_beroep"><i class="fas fa-industry"></i> (Beroep)</li>
+						<li id="p_geslacht"><i class="fas fa-venus-mars"></i> (Geslacht)</li>
+						<li id="p_haarkleur"><i class="fas fa-fill-drip"></i> (Haarkleur)</li>
+						<li id="p_oogkleur"><i class="far fa-eye"></i> (Oogkleur)</li>
+						<li id="p_grootte"><i class="fas fa-arrows-alt-v"></i> (Grootte)</li>
+						<li id="p_gewicht"><i class="fas fa-weight"></i> (Gewicht)</li>
+						<li id="p_voorkeur"><i class="fas fa-hand-holding-heart"></i> (Voorkeur)</li>
+						<li id="p_sterrenbeeld"><i class="fas fa-sun"></i> (Sterrebeeld)</li>
 					</ul>
 			    </div>
 			  </div>
