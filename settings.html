@@ -4,11 +4,33 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/settings.css">
     <title>Settings</title>
 </head>
 
 <body>
+<header>
+    <nav>
+        <ul class="nav justify-content-end" id="nav_navigatie">
+            <li class="nav-item" id="nav_profiel">
+                <a class="nav-link" href="profiel.html"><i class="far fa-user"></i> Profile</a>
+            </li>
+            <li class="nav-item" id="nav_zoeken">
+                <a class="nav-link" href="search.html"><i class="fas fa-search"></i> Search</a>
+            </li>
+            <li class="nav-item" id="nav_instellingen">
+                <a class="nav-link" href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            </li>
+            <li class="nav-item" id="nav_uitloggen">
+                <a class="nav-link" href="login.html" style="color: rgb(198,35,23);" id="uitloggen">Log Out</a>
+            </li>
+
+        </ul>
+    </nav>
+</header>
+<main>
     <h4>Account and privacy settings</h4>
 
     <div class="line">
@@ -85,8 +107,8 @@
         </div>
         <div class="col2" id="changeberoep"><p id="showberoep"></p></div>
         <div class="col3" id="buttonColumnberoep">
-                <button id="beroep" class="btn btn-sm btn-warning change">Change</button>
-    </div>
+            <button id="beroep" class="btn btn-sm btn-warning change">Change</button>
+        </div>
     </div>
     <div class="line">
         <div class="col1">
@@ -149,6 +171,8 @@
         <button id="saveButton" type="submit" class="btn btn-success" hidden >Save</button>
         <button type="submit" class="btn btn-secondary" hidden >Cancel</button><br>
     </div>
+
+</main>
 
 
     <script src="js/settings.js"></script>
