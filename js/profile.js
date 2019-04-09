@@ -3,12 +3,6 @@ window.onload = function () {
         let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id='+sessionStorage.getItem('id');
 
 
-        let data = {
-            id: sessionStorage.getItem('id')
-        }
-
-
-
         const request = new Request(url, {
             method: 'GET',
             headers: new Headers({
@@ -34,7 +28,7 @@ window.onload = function () {
         document.getElementById('p_naam').innerText = data.voornaam + " " +data.familienaam;
         document.getElementById('p_nickname').innerText = data.nickname;
         document.getElementById('p_nickname').innerText = data.nickname;
-        document.getElementById('profo').setAttribute('src', data.foto);
+        document.getElementById('p_foto').setAttribute('src', data.foto);
         document.getElementById('p_geboortedatum').innerText = data.geboortedatum;
         document.getElementById('p_email').innerText = data.email;
         document.getElementById('p_beroep').innerText = data.beroep;

@@ -1,0 +1,118 @@
+button {
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+
+body {
+
+}
+
+/* centreren image */
+#p_foto {
+    border: 3px solid #EEE;
+    border-radius: 50%;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    margin: 30px;
+
+
+}
+
+footer {
+    margin: 50px;
+
+}
+
+#p_naam {
+    font-size: 32px;
+    text-align: center;
+    color: rgb(83,145,232);
+    padding-top: 35px;
+}
+
+#p_nickname {
+    font-size: 24px;
+    text-align: center;
+}
+
+#p_favoriet {
+    background-color: rgb(24, 200, 226);
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+    border: 2px solid #EEE;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    float: right;
+    margin-top: 3px;
+}
+
+#p_horoscoop {
+    float: left;
+    font-size: 32px;
+    padding-left: 32px;
+}
+
+#p_logo {
+    float: top;
+    width: 100px;
+    height: 100px;
+}
+
+#foot_privacy {
+    font-size: 18px;
+    text-align: center;
+}
+
+#nav_navlogo {
+    float: left;
+    overflow: auto;
+}
+
+
+
+#p_logostring {
+    font-style: italic;
+}
+
+/* main css voor div in cols */
+
+.col,
+[class*="col-"] {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #EEE;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+
+.card-header {
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    font-style: italic;
+    background-color: transparent;
+}
+
+.container {
+    width: 80%;
+    background-image: url("../img/profiel_bg1.jpg");
+    border-radius: 10px;
+    padding: 20px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;			/* Opera/IE 8+ */
+}
+
+#row1_col1 {
+    border-style: none;
+    background-color: transparent;
+}

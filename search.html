@@ -4,13 +4,35 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/search.css">
     <title>Search Filter</title>
 </head>
 
 <body>
+<header>
+    <nav>
+        <ul class="nav justify-content-end" id="nav_navigatie">
+            <li class="nav-item" id="nav_profiel">
+                <a class="nav-link" href="profiel.html"><i class="far fa-user"></i> Profile</a>
+            </li>
+            <li class="nav-item" id="nav_zoeken">
+                <a class="nav-link" href="search.html"><i class="fas fa-search"></i> Search</a>
+            </li>
+            <li class="nav-item" id="nav_instellingen">
+                <a class="nav-link" href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            </li>
+            <li class="nav-item" id="nav_uitloggen">
+                <a class="nav-link" href="login.html" style="color: rgb(198,35,23);" id="uitloggen">Log Out</a>
+            </li>
+
+        </ul>
+    </nav>
+</header>
+<main>
     <input type="text" class="form-control" id="searchBar"
-        placeholder="Search for Name, Email, Nickname, Profession, ... ">
+           placeholder="Search for Name, Email, Nickname, Profession, ... ">
     <h4>Search filter</h4>
 
     <div class="line">
@@ -18,10 +40,10 @@
             <p>Gender</p>
         </div>
         <div class="col2"><select id="changeGender" class="form-control form-control-sm">
-                <option value="">All</option>
-                <option value='v'>Female</option>
-                <option value='m'>Male</option>
-            </select></div>
+            <option value="">All</option>
+            <option value='v'>Female</option>
+            <option value='m'>Male</option>
+        </select></div>
     </div>
 
     <div class="line">
@@ -96,17 +118,17 @@
             <p>Weight (kg)</p>
         </div>
         <div class="col2"><select class="custom-select" size="3" multiple>
-                <option selected>All</option>
-                <option value='4'>&lt;49</option>
-                <option value='5'>50-59</option>
-                <option value='6'>60-69</option>
-                <option value='7'>70-79</option>
-                <option value='8'>80-89</option>
-                <option value='9'>90-99</option>
-                <option value='10'>100-109</option>
-                <option value='11'>110-119</option>
-                <option value='12'>&gt;120</option>
-            </select>
+            <option selected>All</option>
+            <option value='4'>&lt;49</option>
+            <option value='5'>50-59</option>
+            <option value='6'>60-69</option>
+            <option value='7'>70-79</option>
+            <option value='8'>80-89</option>
+            <option value='9'>90-99</option>
+            <option value='10'>100-109</option>
+            <option value='11'>110-119</option>
+            <option value='12'>&gt;120</option>
+        </select>
         </div>
     </div>
     <div class="line">
@@ -126,6 +148,9 @@
             <button id="applyFilter" type="button" class="btn btn-outline-primary">Filter</button>
         </div>   
     
+
+</main>
+
 </body>
 
 </html>
