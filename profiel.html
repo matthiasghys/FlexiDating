@@ -17,7 +17,7 @@
 			}
 
 			/* centreren image */
-			img {
+			#p_foto {
 				border: 3px solid #EEE;
 		  		border-radius: 50%;
 		  		padding: 5px;		  
@@ -37,12 +37,6 @@
 					
 			}
 
-			ul {
-			  /*list-style-type: none;*/
-			}
-
-			/**/
-
 			#p_naam {
 				font-size: 32px;
 				text-align: center;
@@ -56,7 +50,7 @@
 			}
 
 			#p_favoriet {
-				background-color: rgb(33, 160, 196);
+				background-color: rgb(24, 200, 226);
 				text-decoration: none;				
 				display: inline-block;
 				border-radius: 8px;
@@ -74,9 +68,26 @@
 				padding-left: 32px;
 			}
 
+			#p_logo {
+				float: top;
+				width: 100px;
+				height: 100px;
+			}
+
 			#foot_privacy {
 				font-size: 18px;
 				text-align: center;
+			}
+
+			#nav_navlogo {
+				float: left;
+				overflow: auto;
+			}
+
+			
+
+			#p_logostring {
+				font-style: italic;
 			}
 
 			/* main css voor div in cols */
@@ -118,8 +129,13 @@
 	<title></title>
 		<body>		
 			<!-- Nav -->
-			<ul class="nav justify-content-end" id="nav_navigatie">
-			  
+			<!--<ul class="nav" id="nav_navlogo">
+				<li class="nav-item" id="nav_logo">
+			    	<a class="nav-link" id="p_logostring"><img src="img/profiel_logo.png" id="p_logo"></a>
+			 	</li>
+			</ul>-->
+
+			<ul class="nav justify-content-end" id="nav_navigatie">			
 			  <li class="nav-item" id="nav_profiel">
 			    <a class="nav-link" href="#"><i class="far fa-user"></i> Profiel</a>
 			  </li>
@@ -132,6 +148,7 @@
 			  <li class="nav-item" id="nav_uitloggen">
 			    <a class="nav-link" href="login.html" style="color: rgb(198,35,23);" id="uitloggen">Uitloggen</a>
 			  </li>
+
 			</ul>
 
 			<header></header>
@@ -142,9 +159,8 @@
 			    <div class="col-4" id="row1_col1">
 			    	<!-- div profiel(foto)-->
 
-			      <img src="img/adl.png" id="profo" width="220" height="220">
-
-			      <p id="p_horoscoop" title="test">&#9800;</p>	
+			      <img src="img/adl.png" width="220" height="220" id="p_foto">	
+			      <p id="p_horoscoop" title="p_horoscoop">&#9800;</p>	
 
 			      <button id="p_favoriet" title="Voeg deze persoon toe aan je favorieten"><i class="far fa-star"></i> Favoriet</button>	      	
 			    </div>
@@ -168,18 +184,18 @@
 			  	 <div class="col-4" id="row2_col2">
 			  	 	<div class="card-header">Gegevens</div>
 			    	<!-- div gegevens-->
-				    <ul id="p_gegevens">	
 
-						<li id="p_geboortedatum"><i class="far fa-calendar-alt"></i> (Geboortedatum)</li>
-						<li id="p_email"><i class="far fa-envelope"></i> (Email)</li>						
-						<li id="p_beroep"><i class="fas fa-industry"></i> (Beroep)</li>
-						<li id="p_geslacht"><i class="fas fa-venus-mars"></i> (Geslacht)</li>
-						<li id="p_haarkleur"><i class="fas fa-fill-drip"></i> (Haarkleur)</li>
-						<li id="p_oogkleur"><i class="far fa-eye"></i> (Oogkleur)</li>
-						<li id="p_grootte"><i class="fas fa-arrows-alt-v"></i> (Grootte)</li>
-						<li id="p_gewicht"><i class="fas fa-weight"></i> (Gewicht)</li>
-						<li id="p_voorkeur"><i class="fas fa-hand-holding-heart"></i> (Voorkeur)</li>
-						<li id="p_sterrenbeeld"><i class="fas fa-sun"></i> (Sterrebeeld)</li>
+				    <ul class="fa-ul" id="p_gegevens">	
+						<li id="p_geboortedatum"><span class="fa-li"><i class="far fa-calendar-alt"></i></span>(Geboortedatum)</li>
+						<li id="p_email"><span class="fa-li"><i class="far fa-envelope"></i></span>(Email)</li>						
+						<li id="p_beroep"><span class="fa-li"><i class="fas fa-industry"></i></span>(Beroep)</li>
+						<li id="p_geslacht"><span class="fa-li"><i class="fas fa-venus-mars"></i></span>(Geslacht)</li>
+						<li id="p_haarkleur"><span class="fa-li"><i class="fas fa-palette"></i></span>(Haarkleur)</li>
+						<li id="p_oogkleur"><span class="fa-li"><i class="far fa-eye"></i></span>(Oogkleur)</li>
+						<li id="p_grootte"><span class="fa-li"><i class="fas fa-arrows-alt-v"></i></span>(Grootte)</li>
+						<li id="p_gewicht"><span class="fa-li"><i class="fas fa-weight"></i></span>(Gewicht)</li>
+						<li id="p_voorkeur"><span class="fa-li"><i class="fas fa-hand-holding-heart"></i></span>(Voorkeur)</li>
+						<li id="p_sterrenbeeld"><span class="fa-li"><i class="fas fa-sun"></i></span>(Sterrebeeld)</li>
 					</ul>
 			    </div>
 			  </div>
@@ -201,7 +217,7 @@
 			<!-- Profielgegevens-->
 			<div class="card text-center">
 				<div class="card-footer text-muted">
-			    Privacy policy
+			    <a href="#">Privacy policy</a>
 			  </div>
 		  </div>
 		</body>
