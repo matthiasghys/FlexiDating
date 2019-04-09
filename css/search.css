@@ -1,6 +1,5 @@
 body{
     margin: 0;
-    width: 200px;
 }
 
 /* ----- Lines ----- */
@@ -13,6 +12,8 @@ body{
     border-bottom: 1px solid #dddddd;
     display: block;
     overflow:auto;
+    width: 200px;
+    margin-left: 10px;
 }
 
 /* ----- Columns ----- */
@@ -41,8 +42,7 @@ body{
 /* Other */
 
 #applyFilter{
-    margin: 5px;
-    float: right;
+    margin:  5px 5px 5px 150px;
     clear: both;
 }
 

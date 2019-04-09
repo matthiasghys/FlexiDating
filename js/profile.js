@@ -41,7 +41,47 @@ window.onload = function () {
     }
 
     function sterrenbeeld(geboortedatum){
-                return "Boogschutter"
+        let date = new Date(geboortedatum);
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+
+        if ((month == 3) && (day >= 21) || (month == 4) && (day <= 20)) {
+            return "Ram";
+        }
+        if ((month == 4) && (day >= 21) || (month == 5) && (day <= 20)) {
+            return "Stier";
+        }
+        if ((month == 5) && (day >= 21) || (month == 6) && (day <= 20)) {
+            return "Tweeling";
+        }
+        if ((month == 6) && (day >= 21) || (month == 7) && (day <= 20)) {
+            return "Kreeft";
+        }
+        if ((month == 7) && (day >= 21) || (month == 8) && (day <= 20)) {
+            return "Leeuw";
+        }
+        if ((month == 8) && (day >= 21) || (month == 9) && (day <= 20)) {
+            return "Maagd";
+        }
+        if ((month == 9) && (day >= 21) || (month == 10) && (day <= 20)) {
+            return "Weegschaal";
+        }
+        if ((month == 10) && (day >= 21) || (month == 11) && (day <= 20)) {
+            return "Schorpioen";
+        }
+        if ((month == 11) && (day >= 21) || (month == 12) && (day <= 20)) {
+            return "Boogschutter";
+        }
+        if ((month == 12) && (day >= 21) || (month == 1) && (day <= 20)) {
+            return "Steenbok";
+        }
+        if ((month == 1) && (day >= 21) || (month == 2) && (day <= 20)) {
+            return "Waterman";
+        }
+        if ((month == 2) && (day >= 21) || (month = 3) && (day <= 20)) {
+            return "Vis";
+        }
+        return "Onbekend";
     }
 
 
