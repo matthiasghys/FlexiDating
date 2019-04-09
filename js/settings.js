@@ -117,7 +117,7 @@ window.onload = function () {
             };
 
             const request = new Request(url, {
-                method: 'DEL',
+                method: 'DELETE',
                 body: JSON.stringify(data),
                 headers: new Headers({
                     'Content-Type': 'application/json'
