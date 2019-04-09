@@ -1,0 +1,65 @@
+body{
+    margin: 0 auto;
+    width: 800px;
+}
+
+/* ----- Lines ----- */
+
+.line{
+    height: 40px;
+    width: 100%;
+    padding: 2px 2%;
+    background-color: #eeeeee;
+    border-top: 2px solid #ffffff;
+    display: block;
+}
+
+.line p{
+    padding: 5px;
+    display:inline-block;
+}
+
+.line input{
+    position: relative;
+}
+
+/* ----- Columns ----- */
+
+.col1, .col2, .col3{
+    height: 100%;
+    display: inline-block;
+}
+
+.col1{   
+    font-size: 16px;
+    width:25%;
+}
+.col2{
+    width: 40%;
+}
+.col3{
+    width: 20%;
+    margin-left: 10%;
+}
+
+.col2 input{
+    width: 100%;
+}
+
+.col2 select{
+    width: 100%;
+}
+
+/* Other */
+
+#enterPass{
+    width: 100%;
+    padding-left: 70%;
+    float: right;
+}
+
+#saveCancel{
+    margin-top: 5px;
+    float: right;
+}
+
