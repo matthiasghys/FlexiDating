@@ -10,7 +10,7 @@ window.onload = function () {
 
         const datum = year + "-" + maand + "-" + dag;
         let foto = "";
-        if(document.getElementById('inputGender').value === "MALE"){
+        if(document.getElementById('inputGender').value === "m"){
              foto = 'https://scrumserver.tenobe.org/scrum/img/man_7.png'
         }else{
              foto = 'https://scrumserver.tenobe.org/scrum/img/woman_8.png'
@@ -48,10 +48,12 @@ window.onload = function () {
             })
             .then(function (data) {
                 console.log(data);
+                location.replace('login.html')
 
             })
             .catch(function (error) {
                 console.log(error);
             });
+
 
     });}
