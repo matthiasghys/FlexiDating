@@ -3,12 +3,6 @@ window.onload = function () {
         let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id='+sessionStorage.getItem('id');
 
 
-        let data = {
-            id: sessionStorage.getItem('id')
-        }
-
-
-
         const request = new Request(url, {
             method: 'GET',
             headers: new Headers({
