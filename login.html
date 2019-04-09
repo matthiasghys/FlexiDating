@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="EN">
 
 <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Login</title>
+    <script defer src="js/main.js"></script>
+
 </head>
 
 <body>
-    <form style="width: 300px; padding: 20px; background-color: #eeeeee;">
+    <form style="width: 300px; padding: 20px; background-color: #eeeeee;" onsubmit="validateLogin()" id="testForm"  >
         <div class="form-group">
-            <label for="inputEmail">Email address</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com">
+            <label for="inputNickname">Nickname</label>
+            <input type="text" class="form-control" id="inputNickname" placeholder="nickname">
         </div>
         <div class="form-group">
             <label for="inputPassword">Password</label>
             <input type="password" class="form-control" id="inputPassword" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary" id="inloggen">Login</button>
     </form>
-</body>
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+
+</body>
 </html>
