@@ -75,16 +75,24 @@ window.onload = function () {
         var searchcrit = document.getElementById('changeSearch').value;
         console.log(searchcrit);
 
+   //     let url=rooturl+'/profiel/search.php'
+     //           url+='?geboortedatumOperator=range&rangeMinGeboortedatum='+ rangeMinGeboortedatum +'&rangeMaxGeboortedatum='+ rangeMaxGeboortedatum ;
+       //         url+='&grootteOperator=range&rangeMinGrootte='+ rangeMinGrootte +'&rangeMaxGrootte='+ rangeMaxGrootte ;
  
         let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/search.php';
 
-        url += "?" + searchcrit + "=" + document.getElementById('searchBar').value
-        url += "&sexe=" + document.getElementById('changeGender').value
+        url += "?" + searchcrit + "=" + document.getElementById('searchBar').value;
+        url += "&sexe=" + document.getElementById('changeGender').value;
         url += "&geboortedatum="+ document.getElementById('idgeboortedatum').value + '&geboortedatumOperator='+ 
                 document.getElementById('idgeboortedatumoperator').value;
-        url += "&oogkleur=" + document.getElementById('filterEyeColor').value
+        url += "&oogkleur=" + document.getElementById('filterEyeColor').value;
+        url += "&haarkleur=" + document.getElementById('filterHairColor').value;
+        url += '&grootteOperator=range&rangeMinGrootte='+ document.getElementById('height_min').value +'&rangeMaxGrootte='+ 
+                 document.getElementById('height_max').value ;
+        url += '&gewichtOperator=range&rangeMinGewicht='+ document.getElementById('weight_min').value +'&rangeMaxGewicht='+ 
+                 document.getElementById('weight_max').value ;
 
-        console.log(document.getElementById('filterEyeColor').value);
+        console.log(document.getElementById('filterHairColor').value);
 
 
         console.log(url);
