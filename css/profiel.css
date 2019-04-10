@@ -116,3 +116,15 @@ footer {
     border-style: none;
     background-color: transparent;
 }
+
+.card{
+    margin: 0.5em;
+}
+
+.card img {
+    max-width: 100px;
+}
+
+.card p{
+    font-size: 0.8em;
+}

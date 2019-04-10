@@ -28,7 +28,6 @@
             })
             .then(function (data) {
                 sessionStorage.setItem('id', data.id);
-                console.log(sessionStorage.getItem('id'));
                 if (data.id){
                     location.replace('profiel.html')
                 }else{
