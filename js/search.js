@@ -76,14 +76,15 @@ window.onload = function () {
         console.log(searchcrit);
 
  
-    //let url=rooturl+'/profiel/search.php?geboortedatum='+ geboortedatum + '&geboortedatumOperator='+ geboortedatumOperator;
-
         let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/search.php';
 
         url += "?" + searchcrit + "=" + document.getElementById('searchBar').value
         url += "&sexe=" + document.getElementById('changeGender').value
         url += "&geboortedatum="+ document.getElementById('idgeboortedatum').value + '&geboortedatumOperator='+ 
                 document.getElementById('idgeboortedatumoperator').value;
+        url += "&oogkleur=" + document.getElementById('filterEyeColor').value
+
+        console.log(document.getElementById('filterEyeColor').value);
 
 
         console.log(url);
