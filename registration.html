@@ -11,7 +11,7 @@
     .container {
         width: 60%;
         background-image: url("img/profiel_bg1.jpg");
-        background-size:cover;
+        background-size: cover;
         border-radius: 10px;
         padding: 40px;
         -webkit-box-sizing: border-box;
@@ -51,14 +51,14 @@
         margin-top: 20px;
     }
 
-    .form-row{
+    .form-row {
         padding: 0;
-        margin-top:10px;
+        margin-top: 10px;
     }
 
-    form > button{
+    form>button {
         float: right;
-        margin-top:-20px;
+        margin-top: -20px;
     }
 </style>
 
@@ -69,6 +69,7 @@
             <div class="card-header">
                 <h2>Registration</h2>
             </div>
+
             <div class="form-group">
                 <p>Personal Info</p>
                 <div class="form-row">
@@ -165,7 +166,7 @@
                     <div class="col">
                         <label for="inputDateYear">Year</label>
                         <input type="number" class="form-control" id="inputDateYear" placeholder="Year of Birth"
-                            required>
+                            required max="2019" min="1900">
                     </div>
                 </div>
                 <div class="form-row">
@@ -177,21 +178,23 @@
                 <p>Login Data</p>
 
                 <label for="inputUsername">Username</label>
-                <input type="text" class="form-control" id="inputUsername" placeholder="Username" required>
+                <input type="text" class="form-control" id="inputUsername" placeholder="Username" required
+                    minlength="3">
 
 
                 <div class="form-row">
                     <div class="col-md-6">
                         <label for="inputPassword1">Password</label>
-                        <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+                        <input type="password" class="form-control" id="inputPassword1" placeholder="Password"
+                            minlength="3" required>
                     </div>
                     <div class="col-md-6">
                         <label for="inputPassword2">Repeat Password</label>
-                        <input type="password" class="form-control" id="inputPassword2" placeholder="Repeat Password">
+                        <input type="password" class="form-control" id="inputPassword2" placeholder="Repeat Password"
+                            minlength="3" required>
                     </div>
                 </div>
             </div>
-
             <div class="form-group">
                 <p>Other Info</p>
                 <label for="inputUsername">Profession</label>
@@ -227,19 +230,19 @@
                 <div class="form-row">
                     <div class="col">
                         <label for="form-check">Weight (kg)</label>
-                        <input type="number" class="form-control" id="inputWeight" placeholder="Weight in kilograms"
-                            required>
+                        <input type="text" class="form-control" id="inputWeight" placeholder="Weight in kilograms"
+                            required min="0" max="500">
                     </div>
                     <div class="col">
                         <label for="form-check">Height (cm)</label>
-                        <input type="number" class="form-control" id="inputHeight" placeholder="Height in centimeters"
-                            required>
+                        <input type="text" class="form-control" id="inputHeight" placeholder="Height in centimeters"
+                            required min="0" max="250">
                     </div>
                 </div>
             </div>
 
             <br>
-            <button type="submit" id="registerBtn" class="btn btn-primary">Register</button>
+            <button type="submit" value="Submit" id="registerBtn" class="btn btn-primary">Register</button>
         </form>
     </div>
     <script src="js/register.js"></script>
