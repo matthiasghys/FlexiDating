@@ -1,6 +1,7 @@
 function getQueryVariable(variable)
 {
     var query = window.location.search.substring(1);
+    console.log(query)
     var vars = query.split("&");
     for (var i=0;i<vars.length;i++) {
         var pair = vars[i].split("=");
@@ -8,8 +9,6 @@ function getQueryVariable(variable)
     }
     return(false);
 }
-console.log(getQueryVariable("id"))
-console.log(sessionStorage.getItem("id"))
 
 document.querySelector('#p_favoriet').addEventListener('click', ()=>{
     let url = 'https://scrumserver.tenobe.org/scrum/api/favoriet/like.php';
