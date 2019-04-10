@@ -82,7 +82,6 @@ window.onload = function () {
         document.getElementById('p_nickname').innerText = data.nickname;
         document.getElementById('p_foto').setAttribute('src', data.foto);
         document.getElementById('p_geboortedatum').innerText = data.geboortedatum;
-        document.getElementById('p_email').innerText = data.email;
         document.getElementById('p_beroep').innerText = data.beroep;
         document.getElementById('p_geslacht').innerText = data.sexe;
         document.getElementById('p_haarkleur').innerText = data.haarkleur;

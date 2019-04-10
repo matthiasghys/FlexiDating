@@ -1,0 +1,30 @@
+.card:hover{
+    background-color:#BBB;
+}
+.card {
+    border:0;
+    border-right: 1px solid black;
+    border-radius: 0;
+    padding: 0;
+
+}
+.card-body{
+    padding: 0;
+}
+.card img {
+    max-width: 30px;
+    display:inline;
+}
+.card h5 {
+    display:inline;
+    margin-bottom: 1.5em;
+}
+
+.messageContent br {
+    display: none;
+}
+
+.berichtIk{
+    text-align:left;
+    background-color: green;
+}
