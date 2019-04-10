@@ -89,6 +89,8 @@ window.onload = function () {
         url += "&haarkleur=" + document.getElementById('filterHairColor').value;
         url += '&grootteOperator=range&rangeMinGrootte='+ document.getElementById('height_min').value +'&rangeMaxGrootte='+ 
                  document.getElementById('height_max').value ;
+        url += '&gewichtOperator=range&rangeMinGewicht='+ document.getElementById('weight_min').value +'&rangeMaxGewicht='+ 
+                 document.getElementById('weight_max').value ;
 
         console.log(document.getElementById('filterHairColor').value);
 
