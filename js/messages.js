@@ -66,7 +66,7 @@ window.onload = ()=>{
                                 console.log(convo)
                                 convo.forEach((bericht)=>{
 
-                                    const berichtje = document.createElement('p')
+                                    const berichtje = document.createElement('div')
                                     if (bericht.vanId === sessionStorage.getItem('id')){
                                         berichtje.className="berichtIk"
                                     }else{

@@ -24,7 +24,38 @@
     display: none;
 }
 
+.berichtBody{
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 .berichtIk{
     text-align:left;
-    background-color: green;
+    align-items: flex-end;
+    color: white;
+    border-radius: 15px;
+    margin-left: 25%;
+    background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+    background-attachment: fixed;
+    position: relative;
+    padding: 8px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+
+}
+.berichtJij{
+
+    align-items: flex-start;
+    margin-right: 25%;
+    background-color: #eee;
+    position: relative;
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+
 }
