@@ -75,6 +75,9 @@ window.onload = function () {
         var searchcrit = document.getElementById('changeSearch').value;
         console.log(searchcrit);
 
+   //     let url=rooturl+'/profiel/search.php'
+     //           url+='?geboortedatumOperator=range&rangeMinGeboortedatum='+ rangeMinGeboortedatum +'&rangeMaxGeboortedatum='+ rangeMaxGeboortedatum ;
+       //         url+='&grootteOperator=range&rangeMinGrootte='+ rangeMinGrootte +'&rangeMaxGrootte='+ rangeMaxGrootte ;
  
         let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/search.php';
 
@@ -84,6 +87,8 @@ window.onload = function () {
                 document.getElementById('idgeboortedatumoperator').value;
         url += "&oogkleur=" + document.getElementById('filterEyeColor').value;
         url += "&haarkleur=" + document.getElementById('filterHairColor').value;
+        url += '&grootteOperator=range&rangeMinGrootte='+ document.getElementById('height_min').value +'&rangeMaxGrootte='+ 
+                 document.getElementById('height_max').value ;
 
         console.log(document.getElementById('filterHairColor').value);
 
