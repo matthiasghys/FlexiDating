@@ -76,7 +76,7 @@
                             <p>Age</p>
                         </div>
                         <div class="col2">
-                            <select id="filterEyeColor" class="custom-select" size="3" multiple>
+                            <!--                           <select id="filterAge" class="custom-select" size="3" multiple>
                                 <option selected>All</option>
                                 <option value='1'>18-21</option>
                                 <option value='2'>22-25</option>
@@ -90,8 +90,19 @@
                                 <option value='10'>53-56</option>
                                 <option value='11'>57-60</option>
                                 <option value='12'>60+</option>
-                            </select></div>
+                            </select> -->
+                                <input type="text" id="idgeboortedatum" value="1980-01-01" placeholder="JJJJ-MM-DD"
+                                    class="api_demo_param" /><br />
+                                <select id="idgeboortedatumoperator" class="api_demo_param_chb">
+                                    <option value="st" selected="">ouder</option>
+                                    <option value="gt">jonger</option>
+                                    <option value="eq">even oud</option>
+                                    <option value="steq">ouder of even oud</option>
+                                    <option value="gteq">jonger of even oud</option>
+                                </select>
+                        </div>
                     </div>
+
 
                     <!-- <div class="line">
         <div class="col1">

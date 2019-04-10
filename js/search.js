@@ -75,14 +75,15 @@ window.onload = function () {
         var searchcrit = document.getElementById('changeSearch').value;
         console.log(searchcrit);
 
- //       let url=rooturl+'/profiel/search.php'
-  //              url+='?geboortedatumOperator=range&rangeMinGeboortedatum='+ rangeMinGeboortedatum +'&rangeMaxGeboortedatum='+ rangeMaxGeboortedatum ;
-    //            url+='&grootteOperator=range&rangeMinGrootte='+ rangeMinGrootte +'&rangeMaxGrootte='+ rangeMaxGrootte ;
+ 
+    //let url=rooturl+'/profiel/search.php?geboortedatum='+ geboortedatum + '&geboortedatumOperator='+ geboortedatumOperator;
 
         let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/search.php';
 
         url += "?" + searchcrit + "=" + document.getElementById('searchBar').value
         url += "&sexe=" + document.getElementById('changeGender').value
+        url += "&geboortedatum="+ document.getElementById('idgeboortedatum').value + '&geboortedatumOperator='+ 
+                document.getElementById('idgeboortedatumoperator').value;
 
 
         console.log(url);
