@@ -8,211 +8,239 @@
 </head>
 
 <style>
-.container {
-    width: 60%;	
-	background-image: url("img/profiel_bg1.jpg");
-    border-radius: 10px;		
-	padding: 40px;
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-	box-sizing: border-box;			/* Opera/IE 8+ */
-}
+    .container {
+        width: 60%;
+        background-image: url("img/profiel_bg1.jpg");
+        background-size:cover;
+        border-radius: 10px;
+        padding: 40px;
+        -webkit-box-sizing: border-box;
+        /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;
+        /* Firefox, other Gecko */
+        box-sizing: border-box;
+        /* Opera/IE 8+ */
+    }
 
-form {
-    width: 100%; 
-    padding: 40px; 
-    background-color: #eeeeee;
-    border-radius: 10px;
-}
-.card-header {
-		  		width: 100%;
-		  		font-weight: bold;
-		  		font-size: 18px;
-		  		background-color: transparent;
-		  	}
+    form {
+        width: 100%;
+        padding: 40px;
+        background-color: #eeeeee;
+        border-radius: 10px;
+    }
 
-.form-row {
-				
-				padding-top: 25px;
-			}
+    .card-header {
+        width: 100%;
+        font-weight: bold;
+        font-size: 18px;
+        background-color: transparent;
+        border: none;
+        padding-left: 0;
+        padding-top: 0;
+    }
 
+    .form-group {
+        border-top: #dddddd 1px solid;
+        scroll-padding-top: 25px;
+    }
+
+    .form-group>p {
+        /* color: #48488f; */
+        font-size: 20px;
+        font-weight: normal;
+        margin-top: 20px;
+    }
+
+    .form-row{
+        padding: 0;
+        margin-top:10px;
+    }
+
+    form > button{
+        float: right;
+        margin-top:-20px;
+    }
 </style>
 
 <body>
     <div class="container">
-    <form>
-     <div class="card-header"><h2>Registration</h2></div>
-        <div class="form-group">
-            <div class="form-row">
-                <div class="col">
-                    <label for="inputFirstName">First Name</label>
-                    <input type="text" id="inputFirstName" class="form-control" placeholder="First name" required>
+
+        <form id="form">
+            <div class="card-header">
+                <h2>Registration</h2>
+            </div>
+            <div class="form-group">
+                <p>Personal Info</p>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="inputFirstName">First Name</label>
+                        <input type="text" id="inputFirstName" class="form-control" placeholder="First name" required>
+                    </div>
+                    <div class="col">
+                        <label for="inputLastName">Last Name</label>
+                        <input type="text" id="inputLastName" class="form-control" placeholder="Last name" required>
+                    </div>
                 </div>
-                <div class="col">
-                    <label for="inputLastName">Last Name</label>
-                    <input type="text" id="inputLastName" class="form-control" placeholder="Last name">
+
+
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="inputGender">Gender</label>
+                        <select id="inputGender" class="form-control" required>
+                            <option value=''>--Select Gender--</option>
+                            <option value='v'>Female</option>
+                            <option value='m'>Male</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputSexPref">Sexual Preference</label>
+                        <select id="inputSexPref" class="form-control" required>
+                            <option value=''>--Select Preference--</option>
+                            <option value='hetero'>Straight</option>
+                            <option value='homo'>Gay</option>
+                            <option value='bi'>Bisexual</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-row">
+                    <div class="col">
+                        <label for="inputDateDay">Day</label>
+                        <select id="inputDateDay" class="form-control" required>
+                            <option value=''>--Select Day--</option>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                            <option value='6'>6</option>
+                            <option value='7'>7</option>
+                            <option value='8'>8</option>
+                            <option value='9'>9</option>
+                            <option value='10'>10</option>
+                            <option value='11'>11</option>
+                            <option value='12'>12</option>
+                            <option value='13'>13</option>
+                            <option value='14'>14</option>
+                            <option value='15'>15</option>
+                            <option value='16'>16</option>
+                            <option value='17'>17</option>
+                            <option value='18'>18</option>
+                            <option value='19'>19</option>
+                            <option value='20'>20</option>
+                            <option value='21'>21</option>
+                            <option value='22'>22</option>
+                            <option value='23'>23</option>
+                            <option value='24'>24</option>
+                            <option value='25'>25</option>
+                            <option value='26'>26</option>
+                            <option value='27'>27</option>
+                            <option value='28'>28</option>
+                            <option value='29'>29</option>
+                            <option value='30'>30</option>
+                            <option value='31'>31</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="inputDateMonth">Month</label>
+                        <select id="inputDateMonth" class="form-control" required>
+                            <option value=''>--Select Month--</option>
+                            <option value='1'>January</option>
+                            <option value='2'>February</option>
+                            <option value='3'>March</option>
+                            <option value='4'>April</option>
+                            <option value='5'>May</option>
+                            <option value='6'>June</option>
+                            <option value='7'>July</option>
+                            <option value='8'>August</option>
+                            <option value='9'>September</option>
+                            <option value='10'>October</option>
+                            <option value='11'>November</option>
+                            <option value='12'>December</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="inputDateYear">Year</label>
+                        <input type="number" class="form-control" id="inputDateYear" placeholder="Year of Birth"
+                            required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
                 </div>
             </div>
-        </div>
+            <div class="form-group">
+                <p>Login Data</p>
 
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputGender">Gender</label>
-                <select id="inputGender" class="form-control">
-                    <option value=''>--Select Gender--</option>
-                    <option value='v'>Female</option>
-                    <option value='m'>Male</option>
-                </select>
-            </div>
-            <div class="form-group col-md-6">
-                    <label for="inputSexPref">Sexual Preference</label>
-                    <select id="inputSexPref" class="form-control">
-                        <option value=''>--Select Preference--</option>
-                        <option value='hetero'>Straight</option>
-                        <option value='homo'>Gay</option>
-                        <option value='bi'>Bisexual</option>
-                    </select>
-            </div>
-
-        </div>
+                <label for="inputUsername">Username</label>
+                <input type="text" class="form-control" id="inputUsername" placeholder="Username" required>
 
 
-        <div class="form-group">
-            <div class="form-row">
-                <div class="col">
-                    <label for="inputDateDay">Day</label>
-                    <select id="inputDateDay" class="form-control">
-                        <option value=''>--Select Day--</option>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
-                        <option value='5'>5</option>
-                        <option value='6'>6</option>
-                        <option value='7'>7</option>
-                        <option value='8'>8</option>
-                        <option value='9'>9</option>
-                        <option value='10'>10</option>
-                        <option value='11'>11</option>
-                        <option value='12'>12</option>
-                        <option value='13'>13</option>
-                        <option value='14'>14</option>
-                        <option value='15'>15</option>
-                        <option value='16'>16</option>
-                        <option value='17'>17</option>
-                        <option value='18'>18</option>
-                        <option value='19'>19</option>
-                        <option value='20'>20</option>
-                        <option value='21'>21</option>
-                        <option value='22'>22</option>
-                        <option value='23'>23</option>
-                        <option value='24'>24</option>
-                        <option value='25'>25</option>
-                        <option value='26'>26</option>
-                        <option value='27'>27</option>
-                        <option value='28'>28</option>
-                        <option value='29'>29</option>
-                        <option value='30'>30</option>
-                        <option value='31'>31</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label for="inputDateMonth">Month</label>
-                    <select id="inputDateMonth" class="form-control">
-                        <option value=''>--Select Month--</option>
-                        <option value='1'>January</option>
-                        <option value='2'>February</option>
-                        <option value='3'>March</option>
-                        <option value='4'>April</option>
-                        <option value='5'>May</option>
-                        <option value='6'>June</option>
-                        <option value='7'>July</option>
-                        <option value='8'>August</option>
-                        <option value='9'>September</option>
-                        <option value='10'>October</option>
-                        <option value='11'>November</option>
-                        <option value='12'>December</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label for="inputDateYear">Year</label>
-                    <input type="text" class="form-control" id="inputDateYear" placeholder="Year of Birth">
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="inputPassword1">Password</label>
+                        <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputPassword2">Repeat Password</label>
+                        <input type="password" class="form-control" id="inputPassword2" placeholder="Repeat Password">
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
-        </div>
+            <div class="form-group">
+                <p>Other Info</p>
+                <label for="inputUsername">Profession</label>
+                <input type="text" class="form-control" id="inputProfession" placeholder="Profession" required>
 
-        <div class="form-group">
-            <label for="inputUsername">Username</label>
-            <input type="text" class="form-control" id="inputUsername" placeholder="Username">
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputPassword1">Password</label>
-                <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputPassword2">Repeat Password</label>
-                <input type="password" class="form-control" id="inputPassword2" placeholder="Repeat Password">
-            </div>
-        </div>
-
-        <br>
-        <p>OPTIONAL</p>
-
-        <div class="form-group">
-            <label for="inputUsername">Profession</label>
-            <input type="text" class="form-control" id="inputProfession" placeholder="Profession">
-        </div>
-
-        <div class="form-group">
-            <div class="form-row">
-                <div class="col">
-                    <label for="inputEyeColor">Eye Color</label>
-                    <select id="inputEyeColor" class="form-control">
-                        <option value=''>--Select Eye Color--</option>
-                        <option value='Blue'>Blue</option>
-                        <option value='Green'>Green</option>
-                        <option value='Brown'>Brown</option>
-                        <option value='Grey'>Grey</option>
-                        <option value='Something else'>Other</option>
-                    </select>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="inputEyeColor">Eye Color</label>
+                        <select id="inputEyeColor" class="form-control" required>
+                            <option value=''>--Select Eye Color--</option>
+                            <option value='Blue'>Blue</option>
+                            <option value='Green'>Green</option>
+                            <option value='Brown'>Brown</option>
+                            <option value='Grey'>Grey</option>
+                            <option value='Something else'>Other</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="inputHairColor">Hair Color</label>
+                        <select id="inputHairColor" class="form-control" required>
+                            <option value=''>--Select Hair Color--</option>
+                            <option value='Blonde'>Blonde</option>
+                            <option value='Brown'>Brown</option>
+                            <option value='Black'>Black</option>
+                            <option value='Red'>Red</option>
+                            <option value='Something else'>Other</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col">
-                    <label for="inputHairColor">Hair Color</label>
-                    <select id="inputHairColor" class="form-control">
-                        <option value=''>--Select Hair Color--</option>
-                        <option value='Blonde'>Blonde</option>
-                        <option value='Brown'>Brown</option>
-                        <option value='Black'>Black</option>
-                        <option value='Red'>Red</option>
-                        <option value='Something else'>Other</option>
-                    </select>
+
+
+
+                <div class="form-row">
+                    <div class="col">
+                        <label for="form-check">Weight (kg)</label>
+                        <input type="number" class="form-control" id="inputWeight" placeholder="Weight in kilograms"
+                            required>
+                    </div>
+                    <div class="col">
+                        <label for="form-check">Height (cm)</label>
+                        <input type="number" class="form-control" id="inputHeight" placeholder="Height in centimeters"
+                            required>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="form-row">
-                <div class="col">
-                    <label for="form-check">Weight (kg)</label>
-                    <input type="text" class="form-control" id="inputWeight" placeholder="Weight in kilograms">
-                </div>
-                <div class="col">
-                    <label for="form-check">Height (cm)</label>
-                    <input type="text" class="form-control" id="inputHeight" placeholder="Height in centimeters">
-                </div>
-            </div>
-        </div>
-
-        <br>
-        <button type="submit" id = "registerBtn"class="btn btn-primary">Register</button>
-    </form>
+            <br>
+            <button type="submit" id="registerBtn" class="btn btn-primary">Register</button>
+        </form>
     </div>
     <script src="js/register.js"></script>
 </body>
