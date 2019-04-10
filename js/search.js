@@ -5,8 +5,8 @@ window.onload = function () {
     var filterbtn = document.getElementById("applyFilter");
     filterbtn.addEventListener("click", ophalendata);
 
-            document.getElementById("previous").addEventListener("click", ophalendataprevious);
-            document.getElementById("next").addEventListener("click", ophalendatanext);
+    document.getElementById("previous").addEventListener("click", ophalendataprevious);
+    document.getElementById("next").addEventListener("click", ophalendatanext);
 
     function ophalendatanext() {
         console.log("ophalendatanext");
@@ -33,7 +33,7 @@ window.onload = function () {
 
         } else {
             document.getElementById("next").addEventListener("click", ophalendatanext);
-  
+
         }
         document.getElementById("previous").addEventListener("click", ophalendataprevious);
     }
@@ -75,9 +75,15 @@ window.onload = function () {
         var searchcrit = document.getElementById('changeSearch').value;
         console.log(searchcrit);
 
+ //       let url=rooturl+'/profiel/search.php'
+  //              url+='?geboortedatumOperator=range&rangeMinGeboortedatum='+ rangeMinGeboortedatum +'&rangeMaxGeboortedatum='+ rangeMaxGeboortedatum ;
+    //            url+='&grootteOperator=range&rangeMinGrootte='+ rangeMinGrootte +'&rangeMaxGrootte='+ rangeMaxGrootte ;
+
         let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/search.php';
 
-        url = url + "?" + searchcrit + "=" + document.getElementById('searchBar').value
+        url += "?" + searchcrit + "=" + document.getElementById('searchBar').value
+        url += "&sexe=" + document.getElementById('changeGender').value
+
 
         console.log(url);
 
@@ -96,6 +102,13 @@ window.onload = function () {
                 if (data.message != "Geen profielen gevonden.") {
                     resultdata = data;
                     invullenProfiel(resultdata);
+                    if (resultdata.length <= 10) {
+                        document.getElementById("next").removeEventListener("click", ophalendatanext);
+                        document.getElementById("previous").removeEventListener("click", ophalendataprevious);
+                    } else {
+                        document.getElementById("next").addEventListener("click", ophalendatanext);
+                        document.getElementById("previous").addEventListener("click", ophalendataprevious);
+                    }
                 } else {
                     var eTable = document.getElementById("containerprofielen");
                     var eP = document.createElement("p");
@@ -140,8 +153,8 @@ window.onload = function () {
         cell1.innerHTML = element.voornaam;
         cell2.innerHTML = element.familienaam;
         cell3.innerHTML = element.geboortedatum;
-        cell4.innerHTML = element.email;
-        cell5.innerHTML = element.beroep;
+        cell4.innerHTML = element.beroep;
+        cell5.innerHTML = element.nickname;
 
     }
 
@@ -158,16 +171,16 @@ window.onload = function () {
         cell.innerHTML = "<b>foto</b>";
 
         var cell1 = row.insertCell(1);
-        cell1.innerHTML = "<b>familienaam</b>";
+        cell1.innerHTML = "<b>voornaam</b>";
 
         var cell2 = row.insertCell(2);
-        cell2.innerHTML = "<b>voornaam</b>";
+        cell2.innerHTML = "<b>familienaam</b>";
 
         var cell3 = row.insertCell(3);
         cell3.innerHTML = "<b>geboortedatum</b>";
 
         var cell4 = row.insertCell(4);
-        cell4.innerHTML = "<b>email</b>";
+        cell4.innerHTML = "<b>beroep</b>";
 
         var cell5 = row.insertCell(5);
         cell5.innerHTML = "<b>nickname</b>";
