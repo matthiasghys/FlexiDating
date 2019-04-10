@@ -42,7 +42,7 @@ window.onload = function () {
 
     function sterrenbeeld(geboortedatum){
         let date = new Date(geboortedatum);
-        let day = date.getDate();
+        let day = date.getDay();
         let month = date.getMonth() + 1;
 
         if ((month == 3) && (day >= 21) || (month == 4) && (day <= 20)) {
