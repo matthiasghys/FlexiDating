@@ -64,7 +64,7 @@
                         <div class="col1">
                             <p>Gender</p>
                         </div>
-                        <div class="col2"><select id="changeGender" class="form-control form-control-sm">
+                        <div class="col2"><select id="changeGender" class="custom-select">
                                 <option value="">All</option>
                                 <option value='v'>Female</option>
                                 <option value='m'>Male</option>
@@ -95,7 +95,7 @@
                         </div>
                         <div class="col2">
                             <select id="filterEyeColor" class="custom-select" size="3" multiple>
-                                <option selected>All</option>
+                                <option value="" selected>All</option>
                                 <option value='blue'>Blue</option>
                                 <option value='green'>Green</option>
                                 <option value='brown'>Brown</option>
@@ -109,13 +109,13 @@
                             <p>Hair color</p>
                         </div>
                         <div class="col2">
-                            <select class="custom-select" size="3" multiple>
-                                <option selected>All</option>
-                                <option value='1'>Blonde</option>
-                                <option value='2'>Brown</option>
-                                <option value='3'>Black</option>
-                                <option value='4'>Red</option>
-                                <option value='0'>Other</option>
+                            <select id="filterHairColor" class="custom-select" size="3" multiple>
+                                <option value="" selected>All</option>
+                                <option value='blonde'>Blonde</option>
+                                <option value='brown'>Brown</option>
+                                <option value='black'>Black</option>
+                                <option value='red'>Red</option>
+                                <option value='other'>Other</option>
                             </select>
                         </div>
 
@@ -126,7 +126,7 @@
                             <p>Weight (kg)</p>
                         </div>
                         <div class="col2"><select class="custom-select" size="3" multiple>
-                                <option selected>All</option>
+                                <option value="" selected>All</option>
                                 <option value='4'>&lt;49</option>
                                 <option value='5'>50-59</option>
                                 <option value='6'>60-69</option>
@@ -144,7 +144,7 @@
                             <p>Height (cm)</p>
                         </div>
                         <div class="col2"><select class="custom-select" size="3" multiple>
-                                <option selected>All</option>
+                                <option value="" selected>All</option>
                                 <option value='14'>&lt;149</option>
                                 <option value='15'>150-159</option>
                                 <option value='16'>160-169</option>
