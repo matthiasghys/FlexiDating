@@ -34,8 +34,6 @@ document.querySelector('#registerBtn').addEventListener('click', function (e) {
 
     };
 
-    alert(JSON.stringify(data))
-
 
     const request = new Request(url, {
         method: 'POST',
