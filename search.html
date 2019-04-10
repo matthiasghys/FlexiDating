@@ -37,46 +37,60 @@
 
 
     <main>
-            <div class="container">
-        <input type="text" class="form-control" id="searchBar"
-            placeholder="Search for Name, Email, Nickname, Profession, ... ">
-                <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <select id="changeSearch" class="form-control form-control-sm">
+                        <option value="voornaam">Voornaam</option>
+                        <option value='familienaam'>Familienaam</option>
+                        <option value='nickname'>Nickname</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <input type="text" class="form-control" id="searchBar"
+                        placeholder="Search for Name, Email, Nickname, Profession, ... ">
+
+                </div>
+            </div>
+
+
+            <div class="row">
                 <div class="col-4">
-        <h4>Search filter</h4>
-        <div class="line">
-            <div class="col1">
-                <p>Gender</p>
-            </div>
-            <div class="col2"><select id="changeGender" class="form-control form-control-sm">
-                    <option value="">All</option>
-                    <option value='v'>Female</option>
-                    <option value='m'>Male</option>
-                </select></div>
-        </div>
+                    <h4>Search filter</h4>
+                    <div class="line">
+                        <div class="col1">
+                            <p>Gender</p>
+                        </div>
+                        <div class="col2"><select id="changeGender" class="form-control form-control-sm">
+                                <option value="">All</option>
+                                <option value='v'>Female</option>
+                                <option value='m'>Male</option>
+                            </select></div>
+                    </div>
 
-        <div class="line">
-            <div class="col1">
-                <p>Age</p>
-            </div>
-            <div class="col2">
-                <select id="filterEyeColor" class="custom-select" size="3" multiple>
-                    <option selected>All</option>
-                    <option value='1'>18-21</option>
-                    <option value='2'>22-25</option>
-                    <option value='3'>25-28</option>
-                    <option value='4'>29-32</option>
-                    <option value='5'>33-36</option>
-                    <option value='6'>37-40</option>
-                    <option value='7'>41-44</option>
-                    <option value='8'>45-48</option>
-                    <option value='9'>49-52</option>
-                    <option value='10'>53-56</option>
-                    <option value='11'>57-60</option>
-                    <option value='12'>60+</option>
-                </select></div>
-        </div>
+                    <div class="line">
+                        <div class="col1">
+                            <p>Age</p>
+                        </div>
+                        <div class="col2">
+                            <select id="filterEyeColor" class="custom-select" size="3" multiple>
+                                <option selected>All</option>
+                                <option value='1'>18-21</option>
+                                <option value='2'>22-25</option>
+                                <option value='3'>25-28</option>
+                                <option value='4'>29-32</option>
+                                <option value='5'>33-36</option>
+                                <option value='6'>37-40</option>
+                                <option value='7'>41-44</option>
+                                <option value='8'>45-48</option>
+                                <option value='9'>49-52</option>
+                                <option value='10'>53-56</option>
+                                <option value='11'>57-60</option>
+                                <option value='12'>60+</option>
+                            </select></div>
+                    </div>
 
-        <!-- <div class="line">
+                    <!-- <div class="line">
         <div class="col1">
             <p>Sexual Preference</p>
         </div>
@@ -89,91 +103,91 @@
             </select></div>
     </div> -->
 
-        <div class="line">
-            <div class="col1">
-                <p>Eye color</p>
-            </div>
-            <div class="col2">
-                <select id="filterEyeColor" class="custom-select" size="3" multiple>
-                    <option selected>All</option>
-                    <option value='1'>Blue</option>
-                    <option value='2'>Green</option>
-                    <option value='3'>Brown</option>
-                    <option value='4'>Grey</option>
-                    <option value='0'>Other</option>
-                </select></div>
-        </div>
+                    <div class="line">
+                        <div class="col1">
+                            <p>Eye color</p>
+                        </div>
+                        <div class="col2">
+                            <select id="filterEyeColor" class="custom-select" size="3" multiple>
+                                <option selected>All</option>
+                                <option value='1'>Blue</option>
+                                <option value='2'>Green</option>
+                                <option value='3'>Brown</option>
+                                <option value='4'>Grey</option>
+                                <option value='0'>Other</option>
+                            </select></div>
+                    </div>
 
-        <div class="line">
-            <div class="col1">
-                <p>Hair color</p>
-            </div>
-            <div class="col2">
-                <select class="custom-select" size="3" multiple>
-                    <option selected>All</option>
-                    <option value='1'>Blonde</option>
-                    <option value='2'>Brown</option>
-                    <option value='3'>Black</option>
-                    <option value='4'>Red</option>
-                    <option value='0'>Other</option>
-                </select>
-            </div>
+                    <div class="line">
+                        <div class="col1">
+                            <p>Hair color</p>
+                        </div>
+                        <div class="col2">
+                            <select class="custom-select" size="3" multiple>
+                                <option selected>All</option>
+                                <option value='1'>Blonde</option>
+                                <option value='2'>Brown</option>
+                                <option value='3'>Black</option>
+                                <option value='4'>Red</option>
+                                <option value='0'>Other</option>
+                            </select>
+                        </div>
 
-        </div>
+                    </div>
 
-        <div class="line">
-            <div class="col1">
-                <p>Weight (kg)</p>
-            </div>
-            <div class="col2"><select class="custom-select" size="3" multiple>
-                    <option selected>All</option>
-                    <option value='4'>&lt;49</option>
-                    <option value='5'>50-59</option>
-                    <option value='6'>60-69</option>
-                    <option value='7'>70-79</option>
-                    <option value='8'>80-89</option>
-                    <option value='9'>90-99</option>
-                    <option value='10'>100-109</option>
-                    <option value='11'>110-119</option>
-                    <option value='12'>&gt;120</option>
-                </select>
-            </div>
-        </div>
-        <div class="line">
-            <div class="col1">
-                <p>Height (cm)</p>
-            </div>
-            <div class="col2"><select class="custom-select" size="3" multiple>
-                    <option selected>All</option>
-                    <option value='14'>&lt;149</option>
-                    <option value='15'>150-159</option>
-                    <option value='16'>160-169</option>
-                    <option value='17'>170-79</option>
-                    <option value='18'>180-189</option>
-                    <option value='19'>190-199</option>
-                    <option value='20'>&gt;200</option>
-                </select></div>
-        </div>
-        <button id="applyFilter" type="button" class="btn btn-primary">Filter</button>
-        </div> 
-        <div class="col-8">
-        <h4>Search Results</h4>
-        <div class="col8">
-            <p>Test</p>
-        </div>
-        </div>
-        </div>
-        </div>
+                    <div class="line">
+                        <div class="col1">
+                            <p>Weight (kg)</p>
+                        </div>
+                        <div class="col2"><select class="custom-select" size="3" multiple>
+                                <option selected>All</option>
+                                <option value='4'>&lt;49</option>
+                                <option value='5'>50-59</option>
+                                <option value='6'>60-69</option>
+                                <option value='7'>70-79</option>
+                                <option value='8'>80-89</option>
+                                <option value='9'>90-99</option>
+                                <option value='10'>100-109</option>
+                                <option value='11'>110-119</option>
+                                <option value='12'>&gt;120</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="col1">
+                            <p>Height (cm)</p>
+                        </div>
+                        <div class="col2"><select class="custom-select" size="3" multiple>
+                                <option selected>All</option>
+                                <option value='14'>&lt;149</option>
+                                <option value='15'>150-159</option>
+                                <option value='16'>160-169</option>
+                                <option value='17'>170-79</option>
+                                <option value='18'>180-189</option>
+                                <option value='19'>190-199</option>
+                                <option value='20'>&gt;200</option>
+                            </select></div>
+                    </div>
+                    <button id="applyFilter" type="button" class="btn btn-primary">Filter</button>
+                </div>
 
 
-        <h4>Search results</h4>
+                <div id="profielen" class="col-8">
+                    <h4>Search Results</h4>
+                    <div id="containerprofielen" class="col8">
+                        <p>Resultaten</p>
+                    </div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item" id="previous"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item" id="next"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
 
-        <div id="profielen">
-            <h2>Search results</h2>
-            <div id="containerprofielen">
-                <p>Geen profielen</p>
+
+
             </div>
-
         </div>
 
     </main>

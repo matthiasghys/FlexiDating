@@ -48,6 +48,10 @@ body{
 
 #searchBar {
     width: 500px;
+    margin-left: 220px;
+}
+#changeSearch {
+    width: 150px;
     margin-left: 250px;
 }
 
