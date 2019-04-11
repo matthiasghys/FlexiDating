@@ -27,8 +27,11 @@ window.onload = function(){
     function createCards(data){
         data.forEach((data)=>{
             if (data.statusCode === "1" || data.statusCode ==="2"){
+                
                 const card = document.createElement('div');
+                
                 const img = document.createElement('img');
+                img.setAttribute("id", "jsImg");
                 const cardbody = document.createElement('div');
                 const link = document.createElement('a');
                 const naam = document.createElement('p');
@@ -36,9 +39,19 @@ window.onload = function(){
                 const deleteButton = document.createElement('button')
                 deleteButton.className="btn btn-sm btn-danger deleteFav";
                 deleteButton.id=data.id;
-                deleteButton.innerText="Delete"
-                wederzijds.innerText = data.status;
+                deleteButton.innerHTML= "<i class='fas fa-trash-alt'></i> Delete"
 
+                if (data.status == "wederzijds")
+                {
+                    wederzijds.innerHTML = '<i class="fas fa-heart"></i> Wederzijds<br><br>';
+                    wederzijds.setAttribute("id", "wederYES");
+                }
+                else
+                {
+                    wederzijds.innerHTML = '<i class="fas fa-heart-broken"></i> Niet wederzijds ';
+                    wederzijds.setAttribute("id", "wederNOT");
+                }
+            
 
                 let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id=' + data.anderId;
                 const request = new Request(url, {
@@ -55,7 +68,7 @@ window.onload = function(){
                     .then(function (data) {
                         img.setAttribute('src', data.foto)
                         link.setAttribute('href', 'anderProfiel.html?id=' + data.id)
-                        naam.innerText = data.voornaam + ' ' + data.familienaam;
+                        naam.innerHTML = data.voornaam + '<br>' + data.familienaam;
 
                     })
                     .catch(function (error) {
