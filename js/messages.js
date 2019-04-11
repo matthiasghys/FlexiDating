@@ -179,7 +179,7 @@ window.onload = () => {
                             afzenderLaatsteBericht.className = "messageContent";
                             let jij = ""
                             if (laatsteBericht.vanId === sessionStorage.getItem('id')) {
-                                jij = "jij: "
+                                jij = "You: "
                             } else {
                                 jij = "";
                             }
