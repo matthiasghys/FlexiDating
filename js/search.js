@@ -92,6 +92,7 @@ window.onload = function () {
                  document.getElementById('height_max').value ;
         url += '&gewichtOperator=range&rangeMinGewicht='+ document.getElementById('weight_min').value +'&rangeMaxGewicht='+ 
                  document.getElementById('weight_max').value ;
+        url += '&orderBy='+ document.getElementById('changeSearch').value; 
 
         const request = new Request(url, {
             method: 'GET',
