@@ -57,6 +57,9 @@ window.onload = function () {
         console.log(resultdata);
 
         var ifrom = indexresultdata - (MAX_ROWS * 2) + 1;
+        if (ifrom < 0) {
+            ifrom = 1;
+        }
         var ito = ifrom + (MAX_ROWS - 1);
         var i = 1;
         console.log(ifrom);
