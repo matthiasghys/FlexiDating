@@ -24,7 +24,7 @@
     display: none;
 }
 
-body {
+main {
     font-family: helvetica;
     display: flex ;
     flex-direction: column;
@@ -36,6 +36,7 @@ body {
 
 .berichtenvlak{
     width: 800px;
+
 }
 .chat {
     width: 800px;
@@ -126,7 +127,7 @@ body {
 }
 
 .sturen{
-    width:100%
+    width:100%;
 }
 
 #inputBericht{
