@@ -33,7 +33,9 @@ window.onload = function () {
         });
 
         indexresultdata = ito;
-        if (indexresultdata == resultdata.length) {
+        console.log(indexresultdata);
+        console.log(resultdata.length);
+        if (indexresultdata >= resultdata.length) {
             console.log("remove ev next")
             document.getElementById("next").removeEventListener("click", ophalendatanext);
 
