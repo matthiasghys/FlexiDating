@@ -15,7 +15,43 @@ function getQueryVariable(variable) {
 window.onload = () => {
     console.log(getQueryVariable('id'))
 
-    if (getQueryVariable('id')) {
+    if(getQueryVariable('new')&&getQueryVariable('id')){
+
+        let url = "https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id=" + getQueryVariable('id');
+        let request = new Request(url, {
+            method: "GET",
+            headers: new Headers({
+                "Content-Type": "JSON"
+            })
+        })
+        fetch(request)
+            .then((resp) => {
+                return resp.json()
+            })
+            .then((data) => {
+
+        const card2 = document.createElement('div');
+        card2.className = "card";
+        card2.id = "convo" + data.id
+        if (data.id === getQueryVariable('id')) {
+            card2.className = "card highlighted"
+
+        }
+        const cardBody = document.createElement('div');
+        cardBody.className = "card-body";
+        const afzenderFoto = document.createElement('img')
+        afzenderFoto.setAttribute('src', data.foto)
+        const afzenderNaam = document.createElement('h6')
+        afzenderNaam.innerText = data.voornaam + " " + data.familienaam;
+
+        cardBody.appendChild(afzenderFoto)
+        cardBody.appendChild(afzenderNaam)
+        card2.appendChild(cardBody);
+
+        document.getElementById('berichtenZenders').appendChild(card2);
+
+    })}
+    else if (getQueryVariable('id')) {
         let url = "https://scrumserver.tenobe.org/scrum/api/bericht/read.php?profielId=" + sessionStorage.getItem('id');
 
         let request = new Request(url, {
@@ -131,7 +167,12 @@ window.onload = () => {
 
 
             })
-    } else {
+    }
+
+
+
+
+    else {
         let url = "https://scrumserver.tenobe.org/scrum/api/bericht/read.php?profielId=" + sessionStorage.getItem('id');
 
         let request = new Request(url, {
@@ -246,7 +287,11 @@ berichtSturen.addEventListener('click', () => {
             return resp;
         })
         .then((data) => {
-            location.reload();
+            if (getQueryVariable('new')){
+               location.replace('berichten.html?id='+ getQueryVariable('id'))
+            }else {
+                location.reload();
+            }
         })
         .catch((error) => {
             console.log(error);
