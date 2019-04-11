@@ -1,11 +1,7 @@
 
-let profiel ={}
-
-
 function getQueryVariable(variable)
 {
     var query = window.location.search.substring(1);
-    console.log(query)
     var vars = query.split("&");
     for (var i=0;i<vars.length;i++) {
         var pair = vars[i].split("=");
@@ -35,7 +31,6 @@ document.querySelector('#p_favoriet').addEventListener('click', ()=>{
             return resp.json();
         })
         .then(function (data) {
-            console.log(data);
             toegevoegd();
         })
         .catch(function (error) {
@@ -52,8 +47,27 @@ function toegevoegd(){
     document.querySelector('#p_favoriet').innerHTML = "toegevoegd";
     document.querySelector('#p_favoriet').disabled=true;
 }
-
+let profiel={};
 window.onload = function () {
+
+
+    let url3 ="https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id="+sessionStorage.getItem('id')
+
+    let request3= new Request(url3,{
+        method: "GET",
+        headers: new Headers({
+            "Content-Type": "JSON"
+        })
+    })
+    fetch(request3)
+        .then((resp)=>{
+            return resp.json();
+        })
+        .then((data)=>{
+            console.log(data)
+
+            profiel=data;
+        })
 
 
 
@@ -72,7 +86,6 @@ window.onload = function () {
                 return resp.json();
             })
             .then(function (data) {
-                profiel = data;
                 invullenProfiel(data);
 
             })
@@ -82,10 +95,10 @@ window.onload = function () {
 
     function invullenProfiel(data){
 
+
+
         document.getElementById('modalDescr').innerText = "Do you want to send a message to " + data.voornaam + " " + data.familienaam +
             "? We'll deduct one Lovecoin from your account. You have " + profiel.lovecoins + " lovecoins left."
-
-
         document.getElementById('p_naam').innerText = data.voornaam + " " +data.familienaam;
         document.getElementById('p_nickname').innerText = data.nickname;
         document.getElementById('p_nickname').innerText = data.nickname;
@@ -104,8 +117,7 @@ window.onload = function () {
             let day = date.getDate();
             let month = date.getMonth() + 1;
     
-            console.log(month);
-    
+
             document.getElementById('p_horoscoop').title = "Onbekend";
     
             if ((month == 3) && (day >= 21) || (month == 4) && (day <= 20)) {
@@ -175,9 +187,8 @@ window.onload = function () {
             return resp.json();
         })
         .then(function (data) {
-            console.log(data);
             data.forEach((data)=>{
-                console.log(data)
+
                 if(data.anderId === getQueryVariable('id') ){
                     if(data.statusCode === "1" || data.statusCode==="2"){
                         toegevoegd();
@@ -206,11 +217,14 @@ window.onload = function () {
         location.replace('login.html')
     });
 
-    document.querySelector('#sendMessage').addEventListener('click',()=>{
-            let url ="https://scrumserver.tenobe.org/scrum/api/profiel/update.php "
-        profiel.lovecoins = profiel.lovecoins-1;
 
+    document.querySelector('#sendMessage').addEventListener('click',()=>{
+
+            profiel.lovecoins = profiel.lovecoins-1;
             console.log(profiel)
+
+            let url ="https://scrumserver.tenobe.org/scrum/api/profiel/update.php"
+
             let data = JSON.stringify(profiel);
             let request= new Request(url,{
                 method: "PUT",
@@ -224,8 +238,7 @@ window.onload = function () {
                 return resp.json();
             })
             .then((data)=>{
-                console.log(data)
-                //location.replace("berichten.html?id="+getQueryVariable('id'))
+              location.replace("berichten.html?id="+getQueryVariable('id') + "&new=" + true)
             })
     })
 
