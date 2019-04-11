@@ -56,10 +56,16 @@
         margin-top: 10px;
     }
 
-    form>button {
+    #bottom {
         float: right;
         margin-top: -20px;
     }
+
+    #bottom > button{
+        margin-left:10px;
+    }
+
+    
 </style>
 
 <body>
@@ -242,7 +248,10 @@
             </div>
 
             <br>
+            <div id="bottom">
+            <small><a href="login.html">Already have an account? Sign in here.</a></small>
             <button type="submit" value="Submit" id="registerBtn" class="btn btn-primary">Register</button>
+        </div>
         </form>
     </div>
     <script src="js/register.js"></script>
