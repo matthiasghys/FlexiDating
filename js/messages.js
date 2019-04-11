@@ -1,5 +1,5 @@
-let conversaties= [];
-let welkeOntvanger=0;
+let conversaties = [];
+let welkeOntvanger = 0;
 function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
     console.log(query)
@@ -12,11 +12,7 @@ function getQueryVariable(variable) {
     }
     return (false);
 }
-window.onload = ()=> {
-
-
-
-
+window.onload = () => {
     console.log(getQueryVariable('id'))
 
     if (getQueryVariable('id')) {
@@ -90,10 +86,10 @@ window.onload = ()=> {
                             const card = document.createElement('div');
                             card.className = "card";
                             card.id = "convo" + data.id
-                            if (data.id === getQueryVariable('id')){
+                            if (data.id === getQueryVariable('id')) {
                                 card.className = "card highlighted"
 
-                    }
+                            }
                             const cardBody = document.createElement('div');
                             cardBody.className = "card-body";
                             const afzenderFoto = document.createElement('img')
@@ -104,7 +100,7 @@ window.onload = ()=> {
                             afzenderLaatsteBericht.className = "messageContent";
                             let jij = ""
                             if (laatsteBericht.vanId === sessionStorage.getItem('id')) {
-                                jij = "jij: "
+                                jij = "You: "
                             } else {
                                 jij = "";
                             }
@@ -183,7 +179,7 @@ window.onload = ()=> {
                             afzenderLaatsteBericht.className = "messageContent";
                             let jij = ""
                             if (laatsteBericht.vanId === sessionStorage.getItem('id')) {
-                                jij = "jij: "
+                                jij = "You: "
                             } else {
                                 jij = "";
                             }
@@ -197,8 +193,8 @@ window.onload = ()=> {
                             cardBody.appendChild(afzenderLaatsteBericht)
                             card.appendChild(cardBody);
                             document.getElementById('berichtenZenders').appendChild(card);
-                            document.querySelector('.chat').style.display="none"
-                            document.querySelector('.mb-3').style.display="none";
+                            document.querySelector('.chat').style.display = "none"
+                            document.querySelector('.mb-3').style.display = "none";
                             card.addEventListener('click', () => {
 
                                 welkeOntvanger = card.id.slice(5, card.length);
@@ -222,39 +218,38 @@ window.onload = ()=> {
 
             })
     }
-
-
+    let element = document.getElementById("berichtContent");
+    element.scrollTop = element.scrollHeight;
 }
 
 
+const berichtSturen = document.getElementById('sendBericht')
+berichtSturen.addEventListener('click', () => {
+    const bericht = document.querySelector('#inputBericht').value
+    let url = "https://scrumserver.tenobe.org/scrum/api/bericht/post.php"
+    let data = {
+        "vanId": sessionStorage.getItem('id'),
+        "naarId": getQueryVariable('id'),
+        "bericht": bericht
+    }
 
-    const berichtSturen = document.getElementById('sendBericht')
-    berichtSturen.addEventListener('click', () => {
-        const bericht = document.querySelector('#inputBericht').value
-        let url = "https://scrumserver.tenobe.org/scrum/api/bericht/post.php"
-        let data = {
-            "vanId": sessionStorage.getItem('id'),
-            "naarId": getQueryVariable('id'),
-            "bericht": bericht
-        }
-
-        let request = new Request(url, {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: new Headers({
-                "Content-Type": "text"
-            })
+    let request = new Request(url, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: new Headers({
+            "Content-Type": "text"
         })
-
-        fetch(request)
-            .then((resp) => {
-                return resp;
-            })
-            .then((data) => {
-                location.reload();
-            })
-            .catch((error) => {
-                console.log(error);
-            })
     })
+
+    fetch(request)
+        .then((resp) => {
+            return resp;
+        })
+        .then((data) => {
+            location.reload();
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+})
 

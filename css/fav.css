@@ -1,0 +1,62 @@
+body{
+}
+
+main{
+    margin: 0 auto;
+    width: 800px;
+}
+
+.row {
+    background-color: #EEE;
+    -webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+
+
+#logCol {
+    background-color: blue;
+    padding: 50px;
+}
+
+#jsImg {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
+
+#wederYES {
+    font-weight: bold;
+    color: rgb(244, 66, 134);
+}
+
+#wederNOT {
+    font-style: italic;
+    color: rgb(102, 12, 12);
+}
+
+#loginContainer {
+    background-image: url("../img/profiel_bg1.jpg");
+    border-radius: 10px;
+    padding: 40px;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+main {
+    margin-top: 50px;
+}
+
+#jsImg {
+    border-color: rgb(66, 167, 244);
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 50%;
+    padding: 3px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
