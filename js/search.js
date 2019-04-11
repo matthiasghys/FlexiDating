@@ -130,8 +130,7 @@ window.onload = function () {
                         var eP = document.createElement("p");
                         eP.innerHTML = data.message;
                         eTable.appendChild(eP);
-                        document.getElementById("aantalresult").innerHTML = "Results found: 0";
-                        document.getElementById("bladen").innerHTML = "0/0";
+                        document.getElementById("bladen").innerHTML = "0/0 (0)";
                     }
 
                 })
