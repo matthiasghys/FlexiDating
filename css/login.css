@@ -1,0 +1,39 @@
+#loginContainer {
+    background-image: url("../img/profiel_bg1.jpg");
+    border-radius: 10px;
+    padding: 40px;
+    width: 400px;
+    height: 400px;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+#lh4 {
+    background-color: #EEE;
+    margin-bottom: 10px;
+}
+
+#logCol {
+    padding: 20px;
+}
+
+#row1 {
+    border-radius: 10px;
+    background-color: #EEE;
+}
+
+#noAcc {
+    float: right;
+    overflow: auto;
+}
+
+main{
+    margin: 0 auto;
+    
+}
+
+body {
+    margin-top: 100px;
+}
