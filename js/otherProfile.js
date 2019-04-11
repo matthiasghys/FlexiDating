@@ -149,31 +149,6 @@ window.onload = function () {
 
 
 
-    let url2 = "https://scrumserver.tenobe.org/scrum/api/favoriet/read.php?profielId=" + sessionStorage.getItem("id") ;
-
-    const request2 = new Request(url2, {
-        method: 'GET',
-        headers: new Headers({
-            'Content-Type': 'application/json'
-        })
-    });
-
-    fetch(request2)
-        .then(function (resp) {
-            return resp.json();
-        })
-        .then(function (data) {
-            console.log(data);
-            data.forEach((data)=>{
-                if(data.anderId === getQueryVariable('id')){
-                    toegevoegd();
-                }
-            })
-
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
 
 
 
