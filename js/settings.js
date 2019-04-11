@@ -26,8 +26,12 @@ window.onload = function () {
             // event op btn Uploaden, roept upload.php op met POST
             document.getElementById('uploadBtn').addEventListener('click', function (e) { 
 
+                // font awesome toevoegen:
+
+
                 document.getElementById("uploadBtn").disabled = true;
-                document.getElementById("uploadBtn").innerHTML = "Busy. . ." 
+
+                document.getElementById("uploadBtn").innerHTML = '<div class="fa-spin"><i class="fas fa-spinner fa-spin"></i> </div>Busy. . . ' 
 
                 let naam =  document.getElementById('fotoString').value; 
                 let afbeelding =  document.getElementById('base64textarea').value; 
@@ -110,7 +114,7 @@ window.onload = function () {
                         
                         
                         document.getElementById("base64textarea").value = "data:image/png;base64," +  btoa(binaryString);
-                        document.getElementById("uploadBtn").innerHTML = "Upload"
+                        document.getElementById("uploadBtn").innerHTML = '<i class="fas fa-file-upload"></i> ' + "Upload"
                         document.getElementById("uploadBtn").disabled = false;           
                     };
 
@@ -220,6 +224,7 @@ window.onload = function () {
         document.getElementById('showgrootte').innerText = data.grootte;
         document.getElementById('showgewicht').innerText = data.gewicht;
         document.getElementById('showwachtwoord').innerText = data.wachtwoord;
+        document.getElementById('showcoins').innerText = data.lovecoins;
     }
 
     document.querySelector('#deleteAccount').addEventListener('click', ()=>{
