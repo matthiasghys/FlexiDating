@@ -89,8 +89,10 @@ window.onload = function () {
 
         url += "?" + document.getElementById('changeSearch').value + "=" + document.getElementById('searchBar').value;
         url += "&sexe=" + document.getElementById('changeGender').value;
+
         url += "&geboortedatum=" + document.getElementById('idgeboortedatum').value + '&geboortedatumOperator=' +
             document.getElementById('idgeboortedatumoperator').value;
+
         url += "&oogkleur=" + document.getElementById('filterEyeColor').value;
         url += "&haarkleur=" + document.getElementById('filterHairColor').value;
         url += '&grootteOperator=range&rangeMinGrootte=' + document.getElementById('height_min').value + '&rangeMaxGrootte=' +
@@ -126,7 +128,9 @@ window.onload = function () {
                     var eP = document.createElement("p");
                     eP.innerHTML = data.message;
                     eTable.appendChild(eP);
-                    document.getElementById("aantalresult").innerHTML = 0;
+
+                    document.getElementById("aantalresult").innerHTML = "Results found: " + 0;
+
                 }
 
             })
@@ -165,6 +169,7 @@ window.onload = function () {
         var cell3 = eRow.insertCell(3);
         var cell4 = eRow.insertCell(4);
         var cell5 = eRow.insertCell(5);
+        var cell6 = eRow.insertCell(6);
 
         var eImage = document.createElement('img');
         eImage.setAttribute("src", element.foto);
@@ -181,7 +186,7 @@ window.onload = function () {
         link.setAttribute('href', 'anderProfiel.html?id=' + element.id)
         var linkText = document.createTextNode("Go to profile");
         link.appendChild(linkText);
-        cell1.appendChild(link);
+        cell6.appendChild(link);
     }
 
     function maakTabel() {
