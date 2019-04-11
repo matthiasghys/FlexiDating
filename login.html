@@ -3,25 +3,38 @@
 
 <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" href="css/login.css">
     <title>Login</title>
 
 </head>
 
 <body>
-    <form style="width: 300px; padding: 20px; background-color: #eeeeee;" id="testForm"  >
+    <main>
+    <div class="container" id="loginContainer">
+    
+    <div class="row justify-content-around" id="row1">
+        
+        <div class="col" id="logCol">
+            <div class="card-header" id="lh4"><h4>Login</h4></div>
+    <form id="testForm">
         <div id="error"></div>
         <div class="form-group">
             <label for="inputNickname">Nickname</label>
-            <input type="text" class="form-control" id="inputNickname" placeholder="nickname">
+            <input type="text" class="form-control" id="inputNickname" placeholder="Nickname">
         </div>
         <div class="form-group">
             <label for="inputPassword">Password</label>
             <input type="password" class="form-control" id="inputPassword" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary" id="inloggen">Login</button>
-        <small><a href="registration.html">No account yet? register here</a></small>
+        <button type="submit" class="btn btn-primary" id="inloggen"><i class="fas fa-sign-in-alt"></i> Login</button>
+        <small><a href="registration.html" id="noAcc">No account yet?<br>Register here</a></small>
     </form>
-
+</div>
+</div>
+</div>
+</main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
