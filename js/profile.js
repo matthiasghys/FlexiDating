@@ -42,8 +42,10 @@ window.onload = function () {
 
     function sterrenbeeld(geboortedatum){
         let date = new Date(geboortedatum);
-        let day = date.getDay();
+        let day = date.getDate();
         let month = date.getMonth() + 1;
+
+        console.log(month);
 
         document.getElementById('p_horoscoop').title = "Onbekend";
 
@@ -87,11 +89,11 @@ window.onload = function () {
             document.getElementById('p_horoscoop').innerHTML = "&#9809;";
             document.getElementById('p_horoscoop').title = "Steenbok";
         }
-        else if ((month == 1) && (day >= 21) || (month == 2) && (day <= 20)) {
+        else if ((month == 1) && (day >= 21) || (month == 2) && (day <= 18)) {
             document.getElementById('p_horoscoop').innerHTML = "&#9810;";
             document.getElementById('p_horoscoop').title = "Waterman";
         }
-        else if ((month == 2) && (day >= 21) || (month = 3) && (day <= 20)) {
+        else if ((month == 2) && (day >= 19) || (month = 3) && (day <= 20)) {
             document.getElementById('p_horoscoop').innerHTML = "&#9811;";
             document.getElementById('p_horoscoop').title = "Vis";
         }
