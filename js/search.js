@@ -57,6 +57,9 @@ window.onload = function () {
         console.log(resultdata);
 
         var ifrom = indexresultdata - (MAX_ROWS * 2) + 1;
+        if (ifrom < 0) {
+            ifrom = 1;
+        }
         var ito = ifrom + (MAX_ROWS - 1);
         var i = 1;
         console.log(ifrom);
@@ -127,8 +130,7 @@ window.onload = function () {
                         var eP = document.createElement("p");
                         eP.innerHTML = data.message;
                         eTable.appendChild(eP);
-                        document.getElementById("aantalresult").innerHTML = "Results found: 0";
-                        document.getElementById("bladen").innerHTML = "0/0";
+                        document.getElementById("bladen").innerHTML = "0/0 (0)";
                     }
 
                 })
