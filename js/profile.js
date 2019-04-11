@@ -17,6 +17,7 @@ window.onload = function () {
             .then(function (data) {
                 console.log(data);
                 console.log(data.voornaam);
+                console.log(sessionStorage)
                 invullenProfiel(data);
 
             })

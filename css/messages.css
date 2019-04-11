@@ -30,7 +30,13 @@ body {
     flex-direction: column;
     align-items: center;
 }
+.container{
+    width: 1300px;
+}
 
+.berichtenvlak{
+    width: 800px;
+}
 .chat {
     width: 800px;
     border: solid 1px #EEE;
@@ -126,4 +132,12 @@ body {
 #inputBericht{
     width: 600px;
     padding:1em;
+}
+
+.jumbotron{
+    padding:2rem 1rem;
+}
+
+.highlighted{
+    background-color: #BBB;
 }

@@ -66,3 +66,9 @@ body{
 /*    width: 600px;*/
     margin-left: -130px;
 }
+#test {
+    margin-left: -130px;
+}
+#aantalresult {
+    float: right;
+}
