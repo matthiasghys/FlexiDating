@@ -107,3 +107,7 @@ body{
 #fileContainer {
     margin-top: 20px;
 }
+
+#uploadBtn {
+    font-size: 13px;
+}
