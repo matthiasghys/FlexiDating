@@ -6,7 +6,7 @@ button {
 }
 
 body {
-
+    min-width: 100%;;
 }
 
 /* centreren image */
@@ -21,13 +21,6 @@ body {
 
 header {
     margin: 30px;
-
-
-}
-
-footer {
-    margin: 50px;
-
 }
 
 #p_naam {
