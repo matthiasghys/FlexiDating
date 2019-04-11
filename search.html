@@ -41,9 +41,10 @@
 
     <main>
         <div class="container">
-            <div class="row">
+
+           <div class="row">
                 <div class="col-2">
-                    <select id="changeSearch" class="form-control form-control-sm">
+                    <select id="changeSearch" class="form-control">
                         <option value="voornaam">Voornaam</option>
                         <option value='familienaam'>Familienaam</option>
                         <option value='nickname'>Nickname</option>
@@ -55,7 +56,7 @@
 
                 </div>
             </div>
-
+        
 
             <div class="row">
                 <div class="col-4">
@@ -155,19 +156,18 @@
 
                 <div id="profielen" class="col-8">
                     <h4>Search Results</h4>
-                    <div id="containerprofielen" class="col8">
-                        <p>Resultaten</p>
+                    <div id="containerprofielen" class="col10">
+                        <p>Results</p>
                     </div>
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
                             <li class="page-item" id="previous"><a class="page-link" href="#">Previous</a></li>
                             <li class="page-item" id="next"><a class="page-link" href="#">Next</a></li>
+                            <li class="page-link" > Results found= <li>
+                            <li class="page-link" id="aantalresult"></li>
                         </ul>
                     </nav>
                 </div>
-
-
-
             </div>
         </div>
 

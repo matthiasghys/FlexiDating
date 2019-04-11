@@ -1,12 +1,17 @@
 window.onload = function () {
     var resultdata = [];
     var indexresultdata = 1;
+    var MAX_ROWS = 20;
 
     var filterbtn = document.getElementById("applyFilter");
     filterbtn.addEventListener("click", ophalendata);
+    
+    document.getElementById('searchBar').addEventListener('keypress', ophalendata);
 
     document.getElementById("previous").addEventListener("click", ophalendataprevious);
     document.getElementById("next").addEventListener("click", ophalendatanext);
+
+    ophalendata();
 
     function ophalendatanext() {
         console.log("ophalendatanext");
@@ -17,7 +22,7 @@ window.onload = function () {
 
         var i = 1;
         var ifrom = indexresultdata + 1;
-        var ito = ifrom + 9;
+        var ito = ifrom + (MAX_ROWS - 1);
         console.log(ifrom);
         console.log(ito);
         resultdata.forEach(element => {
@@ -26,6 +31,7 @@ window.onload = function () {
             }
             i++;
         });
+
         indexresultdata = ito;
         if (indexresultdata == resultdata.length) {
             console.log("remove ev next")
@@ -45,8 +51,8 @@ window.onload = function () {
 
         console.log(resultdata);
 
-        var ifrom = indexresultdata - 20 + 1;
-        var ito = ifrom + 9;
+        var ifrom = indexresultdata - (MAX_ROWS * 2) + 1;
+        var ito = ifrom + (MAX_ROWS - 1);
         var i = 1;
         console.log(ifrom);
         console.log(ito);
@@ -57,7 +63,7 @@ window.onload = function () {
             i++;
         });
         indexresultdata = ito;
-        if (indexresultdata <= 10) {
+        if (indexresultdata <= MAX_ROWS) {
             console.log("remove ev previous")
             document.getElementById("previous").removeEventListener("click", ophalendataprevious);
 
@@ -72,16 +78,9 @@ window.onload = function () {
     function ophalendata() {
         cleanTabel();
 
-        var searchcrit = document.getElementById('changeSearch').value;
-        console.log(searchcrit);
-
-   //     let url=rooturl+'/profiel/search.php'
-     //           url+='?geboortedatumOperator=range&rangeMinGeboortedatum='+ rangeMinGeboortedatum +'&rangeMaxGeboortedatum='+ rangeMaxGeboortedatum ;
-       //         url+='&grootteOperator=range&rangeMinGrootte='+ rangeMinGrootte +'&rangeMaxGrootte='+ rangeMaxGrootte ;
- 
         let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/search.php';
 
-        url += "?" + searchcrit + "=" + document.getElementById('searchBar').value;
+        url += "?" + document.getElementById('changeSearch').value + "=" + document.getElementById('searchBar').value;
         url += "&sexe=" + document.getElementById('changeGender').value;
         url += "&geboortedatum="+ document.getElementById('idgeboortedatum').value + '&geboortedatumOperator='+ 
                 document.getElementById('idgeboortedatumoperator').value;
@@ -91,11 +90,6 @@ window.onload = function () {
                  document.getElementById('height_max').value ;
         url += '&gewichtOperator=range&rangeMinGewicht='+ document.getElementById('weight_min').value +'&rangeMaxGewicht='+ 
                  document.getElementById('weight_max').value ;
-
-        console.log(document.getElementById('filterHairColor').value);
-
-
-        console.log(url);
 
         const request = new Request(url, {
             method: 'GET',
@@ -138,12 +132,13 @@ window.onload = function () {
             maakTabel();
             var i = 0;
             data.forEach(element => {
-                if (i < 10) {
+                if (i < MAX_ROWS) {
                     addrow(element);
                     i++;
                 }
-                indexresultdata = 10;
+                indexresultdata = MAX_ROWS;
             });
+            document.getElementById("aantalresult").innerHTML = data.length;
         }
 
 

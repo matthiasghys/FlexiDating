@@ -56,13 +56,13 @@ body{
 }
 
 /*Extra toegevoegd, nog aan te passen */
-.col8 {
-    width: 100%;
+.col10 {
+    width: 140%;
     padding: 5px;
     background-color: #eeeeee;
     border-bottom: 1px solid #dddddd;
-    display: block;
-    overflow:auto;
+ /*   display: block;*/
+ /*   overflow:auto;*/
 /*    width: 600px;*/
     margin-left: -130px;
 }
