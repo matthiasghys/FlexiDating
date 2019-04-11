@@ -24,7 +24,7 @@ button {
 
 #imageContainer {
     
-    background-image: url("../profiel_bg1.jpg");
+    background-image: url("../img/profiel_bg1.jpg");
     border-radius: 10px;
     padding: 20px;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */

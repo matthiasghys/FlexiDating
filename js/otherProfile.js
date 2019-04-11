@@ -83,7 +83,7 @@ window.onload = function () {
     function invullenProfiel(data){
 
         document.getElementById('modalDescr').innerText = "Do you want to send a message to " + data.voornaam + " " + data.familienaam +
-            "? We'll deduct one Lovecoin from your account. You have " + data.lovecoins + " lovecoins left."
+            "? We'll deduct one Lovecoin from your account. You have " + profiel.lovecoins + " lovecoins left."
 
 
         document.getElementById('p_naam').innerText = data.voornaam + " " +data.familienaam;
@@ -208,7 +208,9 @@ window.onload = function () {
 
     document.querySelector('#sendMessage').addEventListener('click',()=>{
             let url ="https://scrumserver.tenobe.org/scrum/api/profiel/update.php "
-            profiel.lovecoins = profiel.lovecoins-1;
+        profiel.lovecoins = profiel.lovecoins-1;
+
+            console.log(profiel)
             let data = JSON.stringify(profiel);
             let request= new Request(url,{
                 method: "PUT",
@@ -222,7 +224,8 @@ window.onload = function () {
                 return resp.json();
             })
             .then((data)=>{
-                location.replace("berichten.html?id="+getQueryVariable('id'))
+                console.log(data)
+                //location.replace("berichten.html?id="+getQueryVariable('id'))
             })
     })
 
