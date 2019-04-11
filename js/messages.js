@@ -95,7 +95,7 @@ window.onload = () => {
                             const afzenderFoto = document.createElement('img')
                             afzenderFoto.setAttribute('src', data.foto)
                             const afzenderNaam = document.createElement('h6')
-                            afzenderNaam.innerText = data.voornaam + " " + data.familienaam;
+                            afzenderNaam.innerText = data.voornaam + " " + data.familienaam + " (" + data.nickname + ")";
                             const afzenderLaatsteBericht = document.createElement('p')
                             afzenderLaatsteBericht.className = "messageContent";
                             let jij = ""
@@ -174,7 +174,7 @@ window.onload = () => {
                             const afzenderFoto = document.createElement('img')
                             afzenderFoto.setAttribute('src', data.foto)
                             const afzenderNaam = document.createElement('h6')
-                            afzenderNaam.innerText = data.voornaam + " " + data.familienaam;
+                            afzenderNaam.innerText = data.voornaam + " " + data.familienaam + " (" + data.nickname + ")";
                             const afzenderLaatsteBericht = document.createElement('p')
                             afzenderLaatsteBericht.className = "messageContent";
                             let jij = ""
