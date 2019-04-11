@@ -1,5 +1,4 @@
-document.querySelector('#registerBtn').addEventListener('click', function (e) {
-    if (document.getElementById("form").checkValidity()){
+document.querySelector('#form').addEventListener('submit', function (e) {
     e.preventDefault();
 
     let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/create.php';
@@ -54,4 +53,5 @@ document.querySelector('#registerBtn').addEventListener('click', function (e) {
         .catch(function (error) {
             console.log(error);
         });
-    }});
+
+});
