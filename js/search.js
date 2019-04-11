@@ -126,7 +126,7 @@ window.onload = function () {
                     var eP = document.createElement("p");
                     eP.innerHTML = data.message;
                     eTable.appendChild(eP);
-                    document.getElementById("aantalresult").innerHTML = 0;
+                    document.getElementById("aantalresult").innerHTML = "Results found: 0";
                 }
 
             })
@@ -147,7 +147,7 @@ window.onload = function () {
                 }
                 indexresultdata = MAX_ROWS;
             });
-            document.getElementById("aantalresult").innerHTML = data.length;
+            document.getElementById("aantalresult").innerHTML = "Results found: " + data.length;
         }
 
 
@@ -212,8 +212,7 @@ window.onload = function () {
         cell5.innerHTML = "<b>Beroep</b>";
 
 
-        var eWinkelmandje = document.getElementById("containerprofielen");
-        eWinkelmandje.appendChild(eTable);
+        document.getElementById("containerprofielen").appendChild(eTable);
     }
 
     function cleanTabel() {
