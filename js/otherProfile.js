@@ -1,4 +1,7 @@
+
 let profiel ={}
+
+
 function getQueryVariable(variable)
 {
     var query = window.location.search.substring(1);
@@ -78,8 +81,11 @@ window.onload = function () {
             });
 
     function invullenProfiel(data){
+
         document.getElementById('modalDescr').innerText = "Do you want to send a message to " + data.voornaam + " " + data.familienaam +
             "? We'll deduct one Lovecoin from your account. You have " + data.lovecoins + " lovecoins left."
+
+
         document.getElementById('p_naam').innerText = data.voornaam + " " +data.familienaam;
         document.getElementById('p_nickname').innerText = data.nickname;
         document.getElementById('p_nickname').innerText = data.nickname;
