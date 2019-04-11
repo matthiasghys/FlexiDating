@@ -212,8 +212,7 @@ window.onload = function () {
         cell5.innerHTML = "<b>Beroep</b>";
 
 
-        var eWinkelmandje = document.getElementById("containerprofielen");
-        eWinkelmandje.appendChild(eTable);
+        document.getElementById("containerprofielen").appendChild(eTable);
     }
 
     function cleanTabel() {
