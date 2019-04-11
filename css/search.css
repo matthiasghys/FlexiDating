@@ -57,18 +57,57 @@ body{
 
 /*Extra toegevoegd, nog aan te passen */
 .col10 {
-    width: 140%;
     padding: 5px;
     background-color: #eeeeee;
-    border-bottom: 1px solid #dddddd;
+    margin-bottom: 5px;
  /*   display: block;*/
  /*   overflow:auto;*/
 /*    width: 600px;*/
-    margin-left: -130px;
 }
 #test {
-    margin-left: -130px;
+  
 }
 #aantalresult {
     float: right;
+}
+
+table, td, tr, th{
+    padding: 0;
+}
+
+td{
+    padding-top: 3px;
+    padding-right: 20px;
+}
+
+tr:nth-child(0n+0){
+    width:100px;
+}
+
+tr:nth-child(1n+0){
+    width:100px;
+}
+
+tr:nth-child(2n+0){
+    width: 120px;
+}
+
+table:nth-child(3n+0){
+    width: 150px;
+}
+
+tr:nth-child(4n+0){
+    width: 150px;
+}
+
+tr:nth-child(5n+0){
+    width:200px ;
+}
+
+tr:nth-child(6n+0){
+    width: 100px;
+}
+
+#containerprofielen {
+    width: 1050px;
 }
