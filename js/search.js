@@ -1,7 +1,7 @@
 window.onload = function () {
     var resultdata = [];
     var indexresultdata = 1;
-    var MAX_ROWS = 16;
+    var MAX_ROWS = 5;
     var errormessage = "";
 
     var filterbtn = document.getElementById("applyFilter");
@@ -45,6 +45,8 @@ window.onload = function () {
             document.getElementById("next").addEventListener("click", ophalendatanext);
         }
         document.getElementById("previous").addEventListener("click", ophalendataprevious);
+
+        toonbladen();
     }
 
     function ophalendataprevious() {
@@ -55,6 +57,9 @@ window.onload = function () {
         console.log(resultdata);
 
         var ifrom = indexresultdata - (MAX_ROWS * 2) + 1;
+        if (ifrom < 0) {
+            ifrom = 1;
+        }
         var ito = ifrom + (MAX_ROWS - 1);
         var i = 1;
         console.log(ifrom);
@@ -76,14 +81,16 @@ window.onload = function () {
         }
         document.getElementById("next").addEventListener("click", ophalendatanext);
 
+        toonbladen();
     }
+
 
     function ophalendata() {
         if (isinputvalid()) {
             cleanTabel();
 
             let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/search.php';
-    
+
             url += "?" + document.getElementById('changeSearch').value + "=" + document.getElementById('searchBar').value;
             url += "&sexe=" + document.getElementById('changeGender').value;
             url += "&geboortedatum=" + document.getElementById('idgeboortedatum').value + '&geboortedatumOperator=' +
@@ -95,14 +102,14 @@ window.onload = function () {
             url += '&gewichtOperator=range&rangeMinGewicht=' + document.getElementById('weight_min').value + '&rangeMaxGewicht=' +
                 document.getElementById('weight_max').value;
             url += '&orderBy=' + document.getElementById('changeSearch').value;
-    
+
             const request = new Request(url, {
                 method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json'
                 })
             });
-    
+
             fetch(request)
                 .then(function (resp) {
                     return resp.json();
@@ -123,14 +130,14 @@ window.onload = function () {
                         var eP = document.createElement("p");
                         eP.innerHTML = data.message;
                         eTable.appendChild(eP);
-                        document.getElementById("aantalresult").innerHTML = "Results found: 0";
+                        document.getElementById("bladen").innerHTML = "0/0 (0)";
                     }
-    
+
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
-    
+
         } else {
             alert(errormessage);
         }
@@ -166,7 +173,16 @@ window.onload = function () {
             }
             indexresultdata = MAX_ROWS;
         });
-        document.getElementById("aantalresult").innerHTML = "Results found: " + data.length;
+
+        toonbladen();
+    }
+
+    function toonbladen() {
+        var aantalbladen = Math.ceil(resultdata.length / MAX_ROWS);
+        console.log(indexresultdata);
+        var huidigblad = Math.round(indexresultdata / MAX_ROWS);
+        console.log(huidigblad);
+        document.getElementById("bladen").innerHTML = "Pagina: " + huidigblad + "/" + aantalbladen + " (" + resultdata.length + ")";
     }
 
     function addrow(element) {
@@ -185,7 +201,8 @@ window.onload = function () {
 
         var eImage = document.createElement('img');
         eImage.setAttribute("src", element.foto);
-        eImage.setAttribute("width", "30px");
+        eImage.setAttribute("width", "100px");
+        eImage.setAttribute("height", "100px");
         cell0.appendChild(eImage);
 
         cell1.innerHTML = element.voornaam;
