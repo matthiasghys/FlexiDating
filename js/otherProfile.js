@@ -1,4 +1,3 @@
-
 function getQueryVariable(variable)
 {
     var query = window.location.search.substring(1);
@@ -78,6 +77,7 @@ window.onload = function () {
             });
 
     function invullenProfiel(data){
+
         document.getElementById('p_naam').innerText = data.voornaam + " " +data.familienaam;
         document.getElementById('p_nickname').innerText = data.nickname;
         document.getElementById('p_nickname').innerText = data.nickname;
