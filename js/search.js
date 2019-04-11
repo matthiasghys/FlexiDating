@@ -147,7 +147,7 @@ window.onload = function () {
                 }
                 indexresultdata = MAX_ROWS;
             });
-            document.getElementById("aantalresult").innerHTML = data.length;
+            document.getElementById("aantalresult").innerHTML = "Results found: " + data.length;
         }
 
 
