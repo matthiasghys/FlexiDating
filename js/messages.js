@@ -1,4 +1,5 @@
 let conversaties= [];
+let welkeOntvanger=0;
 window.onload = ()=>{
     let url = "https://scrumserver.tenobe.org/scrum/api/bericht/read.php?profielId="+sessionStorage.getItem('id');
 
@@ -16,13 +17,12 @@ window.onload = ()=>{
         .then((data)=>{
 
             conversaties = data;
-            console.log(conversaties)
 
 
             data.forEach((convo)=>{
                 const partner = convo[0].partnerId;
-                const laatsteBericht = convo[convo.length-1].bericht;
-                laatsteBericht.replace("<br>", " ");
+                const laatsteBericht = convo[convo.length-1];
+                laatsteBericht.bericht.replace("<br>", " ");
 
                 let url = "https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id="+partner;
                 let request = new Request(url,{
@@ -47,11 +47,16 @@ window.onload = ()=>{
                             afzenderNaam.innerText= data.voornaam + " " + data.familienaam;
                         const afzenderLaatsteBericht = document.createElement('p')
                         afzenderLaatsteBericht.className= "messageContent";
-                        if (laatsteBericht.length > 100 ){
-                            const previewBericht = laatsteBericht.slice(0,100) + "..."
-                            afzenderLaatsteBericht.innerText = previewBericht;
+                        let jij =""
+                        if(laatsteBericht.vanId === sessionStorage.getItem('id')){
+                            jij = "jij: "
                         }else{
-                            afzenderLaatsteBericht.innerText = laatsteBericht;
+                            jij = "";
+                        }
+                        if (laatsteBericht.length > 100 ){
+                            afzenderLaatsteBericht.innerText = jij + laatsteBericht.bericht.slice(0, 100) + "...";
+                        }else{
+                            afzenderLaatsteBericht.innerText = jij + laatsteBericht.bericht;
                         }
                         cardBody.appendChild(afzenderFoto)
                         cardBody.appendChild(afzenderNaam)
@@ -59,22 +64,24 @@ window.onload = ()=>{
                         card.appendChild(cardBody);
                         document.getElementById('berichtenZenders').appendChild(card);
                             card.addEventListener('click',()=>{
+                                welkeOntvanger=card.id.slice(5,6);
                                 const myNode = document.getElementById("berichtContent");
                                 while (myNode.firstChild) {
                                     myNode.removeChild(myNode.firstChild);
                                 }
-                                console.log(convo)
                                 convo.forEach((bericht)=>{
 
                                     const berichtje = document.createElement('div')
                                     if (bericht.vanId === sessionStorage.getItem('id')){
-                                        berichtje.className="berichtIk"
+                                        berichtje.className="mine messages message "
+                                        berichtje.innerText = bericht.bericht;
+                                        document.querySelector("#berichtContent").appendChild(berichtje)
                                     }else{
-                                        berichtje.className =  "berichtJij"
+                                        berichtje.className=" yours messages message "
+
+                                        berichtje.innerText = bericht.bericht;
+                                        document.querySelector("#berichtContent").appendChild(berichtje)
                                     }
-                                    console.log(bericht)
-                                    berichtje.innerText = bericht.bericht;
-                                    document.querySelector("#berichtContent").appendChild(berichtje)
                                 })
                             })
 
@@ -100,3 +107,33 @@ window.onload = ()=>{
 
 
 }
+
+const berichtSturen = document.getElementById('sendBericht')
+berichtSturen.addEventListener('click', ()=>{
+    const bericht = document.querySelector('#inputBericht').value
+    let url = "https://scrumserver.tenobe.org/scrum/api/bericht/post.php"
+    let data = {
+        "vanId": sessionStorage.getItem('id'),
+        "naarId": welkeOntvanger,
+        "bericht":bericht
+    }
+
+    let request = new Request(url, {
+        method:"POST",
+        body: JSON.stringify(data),
+        headers: new Headers({
+            "Content-Type": "text"
+        })
+    })
+
+    fetch(request)
+        .then((resp)=>{
+            return resp;
+        })
+        .then((data)=>{
+            location.reload();
+        })
+        .catch((error)=>{
+            console.log(error);
+        })
+})
