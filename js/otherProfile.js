@@ -1,3 +1,4 @@
+
 function getQueryVariable(variable)
 {
     var query = window.location.search.substring(1);
@@ -89,64 +90,67 @@ window.onload = function () {
         document.getElementById('p_grootte').innerText = data.grootte;
         document.getElementById('p_gewicht').innerText = data.gewicht;
         document.getElementById('p_sterrenbeeld').innerText = sterrenbeeld(data.geboortedatum);
+
+        function sterrenbeeld(geboortedatum){
+            let date = new Date(geboortedatum);
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+    
+            console.log(month);
+    
+            document.getElementById('p_horoscoop').title = "Onbekend";
+    
+            if ((month == 3) && (day >= 21) || (month == 4) && (day <= 20)) {
+                document.getElementById('p_horoscoop').innerHTML = "&#9800;";
+                document.getElementById('p_horoscoop').title = "Ram";
+            }
+            else if ((month == 4) && (day >= 21) || (month == 5) && (day <= 20)) {
+                document.getElementById('p_horoscoop').innerHTML = "&#9801;";
+                document.getElementById('p_horoscoop').title = "Stier";
+            }
+            else if ((month == 5) && (day >= 21) || (month == 6) && (day <= 20)) {
+                document.getElementById('p_horoscoop').innerHTML = "&#9802;";
+                document.getElementById('p_horoscoop').title = "Tweeling";
+            }
+            else if ((month == 6) && (day >= 21) || (month == 7) && (day <= 20)) {
+                document.getElementById('p_horoscoop').innerHTML = "&#9803;";
+                document.getElementById('p_horoscoop').title = "Kreeft";
+            }
+            else if ((month == 7) && (day >= 21) || (month == 8) && (day <= 20)) {
+                document.getElementById('p_horoscoop').innerHTML = "&#9804;"; //ok
+                document.getElementById('p_horoscoop').title = "Leeuw";
+            }
+            else if ((month == 8) && (day >= 21) || (month == 9) && (day <= 20)) {
+                document.getElementById('p_horoscoop').innerHTML = "&#9805;"; //ok
+                document.getElementById('p_horoscoop').title = "Maagd";
+            }
+            else if ((month == 9) && (day >= 21) || (month == 10) && (day <= 20)) {
+                document.getElementById('p_horoscoop').innerHTML = "&#9806;"; //ok
+                document.getElementById('p_horoscoop').title = "Weegschaal";
+            }
+            else if ((month == 10) && (day >= 21) || (month == 11) && (day <= 20)) {
+                document.getElementById('p_horoscoop').innerHTML = "&#9807;";
+                document.getElementById('p_horoscoop').title = "Schorpioen";
+            }
+            else if ((month == 11) && (day >= 21) || (month == 12) && (day <= 20)) {
+                document.getElementById('p_horoscoop').innerHTML = "&#9808;";
+                document.getElementById('p_horoscoop').title = "Boogschutter";
+            }
+            else if ((month == 12) && (day >= 21) || (month == 1) && (day <= 20)) {
+                document.getElementById('p_horoscoop').innerHTML = "&#9809;";
+                document.getElementById('p_horoscoop').title = "Steenbok";
+            }
+            else if ((month == 1) && (day >= 21) || (month == 2) && (day <= 18)) {
+                document.getElementById('p_horoscoop').innerHTML = "&#9810;";
+                document.getElementById('p_horoscoop').title = "Waterman";
+            }
+            else if ((month == 2) && (day >= 19) || (month = 3) && (day <= 20)) {
+                document.getElementById('p_horoscoop').innerHTML = "&#9811;";
+                document.getElementById('p_horoscoop').title = "Vis";
+            }
+            return document.getElementById('p_horoscoop').title;
+        }
     }
-
-    function sterrenbeeld(geboortedatum){
-        let date = new Date(geboortedatum);
-        let day = date.getDay();
-        let month = date.getMonth() + 1;
-
-        if ((month == 3) && (day >= 21) || (month == 4) && (day <= 20)) {
-            document.getElementById('p_horoscoop').innerHTML = "&#9800;";
-            return "Ram";
-        }
-        if ((month == 4) && (day >= 21) || (month == 5) && (day <= 20)) {
-            document.getElementById('p_horoscoop').innerHTML = "&#9801;";
-            return "Stier";
-        }
-        if ((month == 5) && (day >= 21) || (month == 6) && (day <= 20)) {
-            document.getElementById('p_horoscoop').innerHTML = "&#9802;";
-            return "Tweeling";
-        }
-        if ((month == 6) && (day >= 21) || (month == 7) && (day <= 20)) {
-            document.getElementById('p_horoscoop').innerHTML = "&#9803;";
-            return "Kreeft";
-        }
-        if ((month == 7) && (day >= 21) || (month == 8) && (day <= 20)) {
-            document.getElementById('p_horoscoop').innerHTML = "&#9804;"; //ok
-            return "Leeuw";
-        }
-        if ((month == 8) && (day >= 21) || (month == 9) && (day <= 20)) {
-            document.getElementById('p_horoscoop').innerHTML = "&#9805;"; //ok
-            return "Maagd";
-        }
-        if ((month == 9) && (day >= 21) || (month == 10) && (day <= 20)) {
-            document.getElementById('p_horoscoop').innerHTML = "&#9806;"; //ok
-            return "Weegschaal";
-        }
-        if ((month == 10) && (day >= 21) || (month == 11) && (day <= 20)) {
-            document.getElementById('p_horoscoop').innerHTML = "&#9807;";
-            return "Schorpioen";
-        }
-        if ((month == 11) && (day >= 21) || (month == 12) && (day <= 20)) {
-            document.getElementById('p_horoscoop').innerHTML = "&#9808;";
-            return "Boogschutter";
-        }
-        if ((month == 12) && (day >= 21) || (month == 1) && (day <= 20)) {
-            document.getElementById('p_horoscoop').innerHTML = "&#9809;";
-            return "Steenbok";
-        }
-        if ((month == 1) && (day >= 21) || (month == 2) && (day <= 20)) {
-            document.getElementById('p_horoscoop').innerHTML = "&#9810;";
-            return "Waterman";
-        }
-        if ((month == 2) && (day >= 21) || (month = 3) && (day <= 20)) {
-            document.getElementById('p_horoscoop').innerHTML = "&#9811;";
-            return "Vis";
-        }
-        return "Onbekend";
-    }
-
 
 
     let url2 = "https://scrumserver.tenobe.org/scrum/api/favoriet/read.php?profielId=" + sessionStorage.getItem("id") ;
@@ -192,6 +196,5 @@ window.onload = function () {
         e.preventDefault();
         sessionStorage.clear();
         location.replace('login.html')
-    })
-
+    });
 
