@@ -25,14 +25,15 @@ header {
 }
 
 #p_naam {
-    font-size: 32px;
+    font-size: 40px;
     text-align: center;
     color: rgb(83,145,232);
-    padding-top: 35px;
+    padding-top: 42px;
 }
 
 #p_nickname {
-    font-size: 24px;
+    font-size: 28px;
+    font-style: italic;
     text-align: center;
 }
 

@@ -7,11 +7,40 @@ main{
 }
 
 button {
-    width: 100px;
+    width: 98px;
     margin-right: 5px;
 }
 
 /* ----- Lines ----- */
+
+.row {
+    -webkit-border-radius: 3px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius: 3px;
+-moz-border-radius-topright: 5px;
+border-radius: 3px;
+border-top-right-radius: 5px;
+}
+
+#imageContainer {
+    
+    background-image: url("../img/profiel_bg1.jpg");
+    border-radius: 10px;
+    padding: 20px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+#innerContainer {
+    
+    background-color: #EEE;
+    border-radius: 10px;
+    padding: 20px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
 
 .line{
     height: 40px;
@@ -76,7 +105,7 @@ button {
 #fileContainer {
     overflow: hidden;
     position: relative;
-    width: 100px;
+    width: 98px;
 }
 
 #fileContainer [type=file] {
@@ -126,4 +155,8 @@ button {
 
 #uploadBtn {
     font-size: 13px;
+}
+
+#cardHead {
+    background-color: #EEE;
 }
