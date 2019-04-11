@@ -48,7 +48,7 @@ window.onload = function(){
                 }
                 else
                 {
-                    wederzijds.innerHTML = '<i class="fas fa-heart-broken"></i> Niet wederzijds ';
+                    wederzijds.innerHTML = '<i class="fas fa-heart-broken"></i> Niet wederzijds';
                     wederzijds.setAttribute("id", "wederNOT");
                 }
             
