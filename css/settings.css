@@ -15,11 +15,11 @@ button {
 
 .row {
     -webkit-border-radius: 3px;
--webkit-border-top-right-radius: 5px;
--moz-border-radius: 3px;
--moz-border-radius-topright: 5px;
-border-radius: 3px;
-border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius: 3px;
+    -moz-border-radius-topright: 5px;
+    border-radius: 3px;
+    border-top-right-radius: 5px;
 }
 
 #imageContainer {
