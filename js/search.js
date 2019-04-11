@@ -128,7 +128,11 @@ window.onload = function () {
                     var eP = document.createElement("p");
                     eP.innerHTML = data.message;
                     eTable.appendChild(eP);
+<<<<<<< HEAD
                     document.getElementById("aantalresult").innerHTML = "Results found: " + 0;
+=======
+                    document.getElementById("aantalresult").innerHTML = "Results found: 0";
+>>>>>>> 2ec9e8047576b7b133fc0edd0d503eb896b10f40
                 }
 
             })
@@ -215,8 +219,7 @@ window.onload = function () {
         cell5.innerHTML = "<b>Beroep</b>";
 
 
-        var eWinkelmandje = document.getElementById("containerprofielen");
-        eWinkelmandje.appendChild(eTable);
+        document.getElementById("containerprofielen").appendChild(eTable);
     }
 
     function cleanTabel() {
