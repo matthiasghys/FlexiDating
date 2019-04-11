@@ -24,10 +24,10 @@
                 <a class="nav-link" href="settings.html"><i class="fas fa-cog"></i> Settings</a>
             </li>
             <li class="nav-item" id="nav_favorieten">
-                <a class="nav-link" href="favourites.html"><i class="fas fa-heart"></i>Favourites</a>
+                <a class="nav-link" href="favourites.html"><i class="fas fa-heart"></i> Favourites</a>
             </li>
             <li class="nav-item" id="nav_berichten">
-                <a class="nav-link" href="berichten.html"><i class="fas fa-envelope"></i>Messages</a>
+                <a class="nav-link" href="berichten.html"><i class="fas fa-envelope"></i> Messages</a>
             </li>
             <li class="nav-item" id="nav_uitloggen">
                 <a class="nav-link" href="login.html" style="color: rgb(198,35,23);" id="uitloggen">Log Out</a>
@@ -46,7 +46,7 @@
         <div class="col2" id="changefamilienaam"><p id="showfamilienaam"></p>
         </div>
         <div class="col3" id="buttonColumnfamilienaam">
-            <button class="btn btn-sm btn-warning change" id="familienaam">Change</button>
+            <button class="btn btn-sm btn-primary change" id="familienaam">Change</button>
         </div>
     </div>
     <div class="line">
@@ -56,9 +56,30 @@
         <div class="col2" id="changevoornaam"><p id="showvoornaam"></p>
         </div>
         <div class="col3" id="buttonColumnvoornaam">
-            <button class="btn btn-sm btn-warning change" id="voornaam">Change</button>
+            <button class="btn btn-sm btn-primary change" id="voornaam">Change</button>
         </div>
     </div>
+
+
+    <!-- wijzig profielfoto -->
+    <div class="line" id="colProfile">
+        <div class="col1">
+            <p>Profile picture</p>
+        </div>
+        <div class="col2" id="changefoto"><p id="showfoto"><img src="" id="displayFoto" width="100" height="100"></p>
+        </div>
+        <div class="col3" id="buttonColumnfoto">
+        <label class="btn btn-sm btn-primary change" id="fileContainer">
+            Change
+            <input type="file" id="filePicker" accept="image/*">
+        </label>
+        
+        <br><button  id="uploadBtn" disabled>Upload</button>
+
+        </div>
+    </div>
+
+
     <div class="line">
         <div class="col1">
             <p>Birth Date</p>
@@ -66,7 +87,7 @@
         <div class="col2" id="changegeboortedatum"><p id="showgeboortedatum"></p>
         </div>
         <div class="col3" id="buttonColumngeboortedatum">
-            <button class="btn btn-sm btn-warning change" id="geboortedatum">Change</button>
+            <button class="btn btn-sm btn-primary change" id="geboortedatum">Change</button>
         </div>
     </div>
 
@@ -78,7 +99,7 @@
         <div class="col2" id="changeemail"><p id="showemail"></p>
         </div>
         <div class="col3" id="buttonColumnemail">
-            <button class="btn btn-sm btn-warning change" id="email">Change</button>
+            <button class="btn btn-sm btn-primary change" id="email">Change</button>
         </div>
     </div>
 
@@ -87,10 +108,10 @@
         <div class="col1">
             <p>Password</p>
         </div>
-        <div class="col2" id="changewachtwoord"><div id="showwachtwoord"><p></p></div>
+        <div class="col2" id="changewachtwoord"><p id="showwachtwoord"></p>
         </div>
         <div class="col3" id="buttonColumnwachtwoord">
-            <button class="btn btn-sm btn-warning change" id="wachtwoord">Change</button>
+            <button class="btn btn-sm btn-primary change" id="wachtwoord">Change</button>
         </div>
     </div>
 
@@ -104,7 +125,7 @@
         </div>
         <!-- <button type="submit" class="btn btn-primary btn-sm">Check</button> -->
         <div class="col3" id="buttonColumnnickname">
-            <button class="btn btn-sm btn-warning change" id="nickname">Change</button>
+            <button class="btn btn-sm btn-primary change" id="nickname">Change</button>
         </div>
     </div>
     <div class="line">
@@ -113,7 +134,7 @@
         </div>
         <div class="col2" id="changeberoep"><p id="showberoep"></p></div>
         <div class="col3" id="buttonColumnberoep">
-            <button id="beroep" class="btn btn-sm btn-warning change">Change</button>
+            <button id="beroep" class="btn btn-sm btn-primary change">Change</button>
         </div>
     </div>
     <div class="line">
@@ -122,7 +143,7 @@
         </div>
         <div class="col2" id="changesexe"><p id="showsexe"></p></div>
         <div class="col3" id="buttonColumnsexe">
-            <button id="sexe" class="btn btn-sm btn-warning change">Change</button>
+            <button id="sexe" class="btn btn-sm btn-primary change">Change</button>
         </div>
     </div>
 
@@ -134,7 +155,7 @@
         <div class="col2" id="changeoogkleur">
             <p id="showoogkleur"></p></div>
         <div class="col3" id="buttonColumnoogkleur">
-            <button id="oogkleur" class="btn btn-sm btn-warning change">Change</button>
+            <button id="oogkleur" class="btn btn-sm btn-primary change">Change</button>
         </div>
     </div>
 
@@ -145,7 +166,7 @@
         <div class="col2" id="changehaarkleur">
             <p id="showhaarkleur" ></p></div>
         <div class="col3" id="buttonColumnhaarkleur">
-            <button id="haarkleur" class="btn btn-sm btn-warning change">Change</button>
+            <button id="haarkleur" class="btn btn-sm btn-primary change">Change</button>
         </div>
     </div>
 
@@ -155,7 +176,7 @@
         </div>
         <div class="col2" id="changegewicht"><p id="showgewicht"></p></div>
         <div class="col3" id="buttonColumngewicht">
-            <button id="gewicht" class="btn btn-sm btn-warning change">Change</button>
+            <button id="gewicht" class="btn btn-sm btn-primary change">Change</button>
         </div>
     </div>
 
@@ -165,7 +186,7 @@
         </div>
         <div class="col2" id="changegrootte"><p id="showgrootte"></p></div>
         <div class="col3" id="buttonColumngrootte">
-            <button id="grootte" class="btn btn-sm btn-warning change">Change</button>
+            <button id="grootte" class="btn btn-sm btn-primary change">Change</button>
         </div>
     </div>
     <button id="deleteAccount"type="button" class="btn btn-link" >Delete Account</button>
@@ -177,11 +198,15 @@
         <button id="saveButton" type="submit" class="btn btn-success" hidden >Save</button>
         <button type="submit" class="btn btn-secondary" hidden >Cancel</button><br>
     </div>
-
+    <textarea id="fotoString" placeholder="string foto" disabled></textarea>
+    <textarea id="dateId" placeholder="DateID" cols="50" disabled></textarea> 
+    <textarea id="base64textarea" placeholder="Base64 will appear here" cols="50" rows="15" disabled></textarea>
 </main>
 
 
     <script src="js/settings.js"></script>
+    
+
 </body>
 
 </html>

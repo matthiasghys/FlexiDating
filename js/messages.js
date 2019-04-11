@@ -64,7 +64,7 @@ window.onload = ()=>{
                         card.appendChild(cardBody);
                         document.getElementById('berichtenZenders').appendChild(card);
                             card.addEventListener('click',()=>{
-                                welkeOntvanger=card.id.slice(5,6);
+                                welkeOntvanger=card.id.slice(5, card.length);
                                 const myNode = document.getElementById("berichtContent");
                                 while (myNode.firstChild) {
                                     myNode.removeChild(myNode.firstChild);
