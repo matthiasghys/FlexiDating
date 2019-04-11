@@ -142,8 +142,8 @@ window.onload = function () {
                 button.addEventListener('click', () => {
                     document.getElementById("change" + button.id).innerHTML =
                         "<input type='text' id = 'nieuw" + button.id + "' value ='" + document.getElementById('show' + button.id).textContent + "'>"
-                    document.getElementById('buttonColumn' + button.id).innerHTML = "<button id='save%" + button.id + "' class='btn btn-sm btn-success save'>Save</button>" +
-                        "<button id='cancel" + button.id + "' class='btn btn-sm btn-danger cancel'>Cancel</button>"
+                    document.getElementById('buttonColumn' + button.id).innerHTML = "<button id='save%" + button.id + "' class='btn btn-sm btn-success save'><i class='fas fa-check'></i></button>" +
+                        "<button id='cancel" + button.id + "' class='btn btn-sm btn-danger cancel'><i class='fas fa-times'></i></button>"
                     const buttonsSave = document.querySelectorAll('button.save');
                     buttonsSave.forEach((button) => {
                         button.addEventListener('click', () => {
