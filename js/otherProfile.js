@@ -165,8 +165,12 @@ window.onload = function () {
         .then(function (data) {
             console.log(data);
             data.forEach((data)=>{
-                if(data.anderId === getQueryVariable('id')){
-                    toegevoegd();
+                console.log(data)
+                if(data.anderId === getQueryVariable('id') ){
+                    if(data.statusCode === "1" || data.statusCode==="2"){
+                        toegevoegd();
+                    }
+
                 }
             })
 

@@ -181,6 +181,7 @@ window.onload = function () {
         var cell3 = eRow.insertCell(3);
         var cell4 = eRow.insertCell(4);
         var cell5 = eRow.insertCell(5);
+        var cell6 = eRow.insertCell(6);
 
         var eImage = document.createElement('img');
         eImage.setAttribute("src", element.foto);
@@ -197,7 +198,7 @@ window.onload = function () {
         link.setAttribute('href', 'anderProfiel.html?id=' + element.id)
         var linkText = document.createTextNode("Go to profile");
         link.appendChild(linkText);
-        cell1.appendChild(link);
+        cell6.appendChild(link);
     }
 
     function maakTabel() {
