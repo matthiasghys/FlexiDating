@@ -131,7 +131,7 @@ window.onload = function () {
                         var eP = document.createElement("p");
                         eP.setAttribute("id", "nietsGevonden");
                         eP.setAttribute("class", "text-muted");
-                        eP.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + data.message + '<br>Gelieve je zoekcriteria aan te passen.';
+                        eP.innerHTML = '<i><i class="fas fa-exclamation-circle"></i> ' + data.message + '<br>Gelieve je zoekcriteria aan te passen.</i>';
                         eTable.appendChild(eP);
                         document.getElementById("bladen").innerHTML = "0/0 (0)";
                     }
