@@ -192,12 +192,12 @@ window.onload = function () {
 
 
         var cell0 = eRow.insertCell(0); // voeg een nieuwe cell toe aan de rij
-        var cell1 = eRow.insertCell(1);
-        var cell2 = eRow.insertCell(2);
-        var cell3 = eRow.insertCell(3);
-        var cell4 = eRow.insertCell(4);
-        var cell5 = eRow.insertCell(5);
-        var cell6 = eRow.insertCell(6);
+        
+        var cell2 = eRow.insertCell(1);
+        var cell3 = eRow.insertCell(2);
+        var cell4 = eRow.insertCell(3);
+        
+        var cell6 = eRow.insertCell(4);
 
         var eImage = document.createElement('img');
         eImage.setAttribute("src", element.foto);
@@ -205,17 +205,19 @@ window.onload = function () {
         eImage.setAttribute("height", "100px");
         cell0.appendChild(eImage);
 
-        cell1.innerHTML = element.voornaam;
-        cell2.innerHTML = element.familienaam;
+        
+        cell2.innerHTML = element.voornaam + " " + element.familienaam;
         cell3.innerHTML = element.geboortedatum;
         cell4.innerHTML = element.nickname;
-        cell5.innerHTML = element.beroep;
+       
 
         var link = document.createElement("a");
         link.setAttribute('href', 'anderProfiel.html?id=' + element.id)
-        var linkText = document.createTextNode("Go to profile");
+        var linkText = document.createTextNode("defaultString");
+
         link.appendChild(linkText);
         cell6.appendChild(link);
+        link.innerHTML = '<i class="far fa-user-circle"></i><br>' + "Profiel";
     }
 
     function maakTabel() {
@@ -230,20 +232,16 @@ window.onload = function () {
         var cell = row.insertCell(0);
         cell.innerHTML = "<b>Foto</b>";
 
-        var cell1 = row.insertCell(1);
-        cell1.innerHTML = "<b>Voornaam</b>";
+        
 
-        var cell2 = row.insertCell(2);
-        cell2.innerHTML = "<b>Familienaam</b>";
+        var cell2 = row.insertCell(1);
+        cell2.innerHTML = "<b>Naam</b>";
 
-        var cell3 = row.insertCell(3);
+        var cell3 = row.insertCell(2);
         cell3.innerHTML = "<b>Geboortedatum</b>";
 
-        var cell4 = row.insertCell(4);
+        var cell4 = row.insertCell(3);
         cell4.innerHTML = "<b>Nickname</b>";
-
-        var cell5 = row.insertCell(5);
-        cell5.innerHTML = "<b>Beroep</b>";
 
 
         document.getElementById("containerprofielen").appendChild(eTable);
@@ -251,6 +249,7 @@ window.onload = function () {
 
     function cleanTabel() {
         var eTable = document.getElementById("containerprofielen");
+
         console.log(eTable);
         if (eTable != null) {
             var eChildNodes = eTable.childNodes;

@@ -60,3 +60,7 @@ main {
     margin-right: auto;
     margin-top: 5px;
 }
+
+#emptyString {
+    margin-left: 25px;
+}

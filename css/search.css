@@ -44,21 +44,22 @@ body{
 #applyFilter{
     margin:  5px 5px 5px 150px;
     clear: both;
+    padding-right: 10px;
 }
 
 #searchBar {
     width: 500px;
-    margin-left: 220px;
+   
 }
 #changeSearch {
     width: 150px;
-    margin-left: 250px;
+    
 }
 
 /*Extra toegevoegd, nog aan te passen */
 .col10 {
     padding: 5px;
-    background-color: #eeeeee;
+    background-color: #eee;
     margin-bottom: 5px;
  /*   display: block;*/
  /*   overflow:auto;*/
@@ -82,32 +83,91 @@ td{
 
 tr:nth-child(0n+0){
     width:100px;
+    
 }
 
 tr:nth-child(1n+0){
     width:100px;
+    
 }
 
 tr:nth-child(2n+0){
     width: 120px;
+    
 }
 
 table:nth-child(3n+0){
     width: 150px;
+    
 }
 
 tr:nth-child(4n+0){
     width: 150px;
-}
+    
+}   
 
 tr:nth-child(5n+0){
     width:200px ;
+    
 }
 
 tr:nth-child(6n+0){
     width: 100px;
+    
 }
 
-#containerprofielen {
-    width: 1050px;
+
+
+.container {
+    width: 100%;
+    background-image: url("../img/profiel_bg1.jpg");
+    border-radius: 10px;
+    padding: 50px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+#gridFilter {
+    background-color: #EEE;
+    border-radius: 10px;
+    float: left;
+    
+}
+
+#profielen {
+    background-color: #EEE;
+    border-radius: 10px;
+    float: right;
+
+}
+
+tr:nth-child(2) {
+    background-color: #DDD;
+    
+}
+
+tr:nth-child(3) {
+    
+}
+
+tr:nth-child(4) {
+    background-color: #DDD;
+}
+
+tr:nth-child(5) {
+    
+}
+
+tr:nth-child(6) {
+    background-color: #DDD;
+}
+
+tr img {
+    border-color: rgb(66, 167, 244);
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 50%;
+    padding: 3px;
+    display: block;
 }
