@@ -1,171 +1,162 @@
 <html>
-
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" href="css/profiel.css">
 </head>
 <title></title>
-
 <body>
-    <!-- Nav -->
-    <!--<ul class="nav" id="nav_navlogo">
+<!-- Nav -->
+<!--<ul class="nav" id="nav_navlogo">
     <li class="nav-item" id="nav_logo">
         <a class="nav-link" id="p_logostring"><img src="img/profiel_logo.png" id="p_logo"></a>
      </li>
 </ul>-->
-    <nav>
-        <ul class="nav justify-content-end" id="nav_navigatie">
-            <li class="nav-item" id="nav_profiel">
-                <a class="nav-link" href="profiel.html"><i class="far fa-user"></i> Profile</a>
-            </li>
-            <li class="nav-item" id="nav_zoeken">
-                <a class="nav-link" href="search.html"><i class="fas fa-search"></i> Search</a>
-            </li>
-            <li class="nav-item" id="nav_instellingen">
-                <a class="nav-link" href="settings.html"><i class="fas fa-cog"></i> Settings</a>
-            </li>
-            <li class="nav-item" id="nav_favorieten">
-                <a class="nav-link" href="favourites.html"><i class="fas fa-heart"></i> Favourites</a>
-            </li>
-            <li class="nav-item" id="nav_berichten">
-                <a class="nav-link" href="berichten.html"><i class="fas fa-envelope"></i> Messages</a>
-            </li>
-            <li class="nav-item" id="nav_lucky">
-                <a class="nav-link" href="lucky.html"><i class="fas fa-dice"></i> Lucky</a>
-            </li>
-            <li class="nav-item" id="nav_uitloggen">
-                <a class="nav-link" href="login.html" style="color: rgb(198,35,23);" id="uitloggen">Log Out</a>
-            </li>
+<nav>
+    <ul class="nav justify-content-end" id="nav_navigatie">
+        <li class="nav-item" id="nav_profiel">
+            <a class="nav-link" href="profiel.html"><i class="far fa-user"></i> Profile</a>
+        </li>
+        <li class="nav-item" id="nav_zoeken">
+            <a class="nav-link" href="search.html"><i class="fas fa-search"></i> Search</a>
+        </li>
+        <li class="nav-item" id="nav_instellingen">
+            <a class="nav-link" href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+        </li>
+        <li class="nav-item" id="nav_favorieten">
+            <a class="nav-link" href="favourites.html"><i class="fas fa-heart"></i> Favourites</a>
+        </li>
+        <li class="nav-item" id="nav_berichten">
+            <a class="nav-link" href="berichten.html"><i class="fas fa-envelope"></i> Messages</a>
+        </li>
+        <li class="nav-item" id="nav_lucky">
+            <a class="nav-link" href="lucky.html"><i class="fas fa-dice"></i> Lucky</a>
+        </li>
+        <li class="nav-item" id="nav_uitloggen">
+            <a class="nav-link" href="login.html" style="color: rgb(198,35,23);" id="uitloggen">Log Out</a>
+        </li>
 
-        </ul>
-    </nav>
+    </ul>
+</nav>
 
-    <header></header>
-    <!-- Container/grid -->
-    <div class="container">
+<header></header>
+<!-- Container/grid -->
+<div class="container">
 
-        <div class="row justify-content-around" id="row1">
-            <div class="col-4" id="row1_col1">
-                <!-- div profiel(foto)-->
+    <div class="row justify-content-around" id="row1">
+        <div class="col-4" id="row1_col1">
+            <!-- div profiel(foto)-->
 
-                <img src="adl.png" width="220" height="220" id="p_foto">
-                <p id="p_horoscoop" title="p_horoscoop">&#9800;</p>
+            <img src="adl.png" width="220" height="220" id="p_foto">
+            <p id="p_horoscoop" title="p_horoscoop">&#9800;</p>
 
-                <button id="p_favoriet" title="Voeg deze persoon toe aan je favorieten"><i class="far fa-star"></i>
-                    Favoriet
-                </button>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Message
-                </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Send a Message</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p id="modalDescr"></p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" id="sendMessage">Save changes</button>
-                            </div>
+            
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Send a Message</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="modalDescr"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="sendMessage">Save changes</button>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-7" id="row1_col2">
-                <div class="card-header">Profiel</div>
-                <!-- div naam -->
-                <p id="p_naam">(Naam + Familienaam)</p>
-                <p id="p_nickname">(Nickname)</p>
 
-                <br>
-                <!--<button id="button_test" title="Wijzigen"><i class="fas fa-pencil-alt"></i></button>-->
-            </div>
         </div>
+        <div class="col-7" id="row1_col2">
+            <div class="card-header">Profile</div>
+            <!-- div naam -->
+            <p id="p_naam">(Naam + Familienaam)</p>
+            <p id="p_nickname">(Nickname)</p>
 
-        <div class="row justify-content-around" id="row2">
-            <div class="col-7" id="row2_col1">
-                <div class="card-header">Biografie</div>
-                <!-- div bio -->
-
-            </div>
-            <div class="col-4" id="row2_col2">
-                <div class="card-header">Gegevens</div>
-                <!-- div gegevens-->
-
-                <ul class="fa-ul" id="p_gegevens">
-                    <li><span class="fa-li"><i class="far fa-calendar-alt"></i></span><span
-                            id="p_geboortedatum">Geboortedatum</span>
-                    </li>
-                    <li><span class="fa-li"><i class="fas fa-industry"></i></span><span id="p_beroep">(Beroep)</span>
-                    </li>
-                    <li><span class="fa-li"><i class="fas fa-venus-mars"></i></span><span
-                            id="p_geslacht">(Geslacht)</span>
-                    </li>
-                    <li><span class="fa-li"><i class="fas fa-palette"></i></span><span
-                            id="p_haarkleur">(Haarkleur)</span>
-                    </li>
-                    <li><span class="fa-li"><i class="far fa-eye"></i></span> <span id="p_oogkleur">(Oogkleur)</span>
-                    </li>
-                    <li><span class="fa-li"><i class="fas fa-arrows-alt-v"></i></span><span
-                            id="p_grootte">(Grootte)</span>
-                    </li>
-                    <li><span class="fa-li"><i class="fas fa-weight"></i></span><span id="p_gewicht">(Gewicht)</span>
-                    </li>
-                    <li><span class="fa-li"><i class="fas fa-hand-holding-heart"></i></span><span
-                            id="p_voorkeur">(Voorkeur)</span></li>
-                    <li><span class="fa-li"><i class="fas fa-sun"></i></span><span
-                            id="p_sterrenbeeld">(Sterrebeeld)</span></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row justify-content-around" id="row3">
-            <div class="col-6" id="row3_col1">
-                <!-- div interesses -->
-                <div class="card-header">Interesses</div>
-            </div>
-            <div class="col-5" id="row3_col2">
-                <!-- div favorieten -->
-                <div class="card-header">Favorieten</div>
-
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Profielgegevens-->
-    <div class="card text-center">
-        <div class="card-footer text-muted">
-            <a href="#">Privacy policy</a>
+            <br>
+            <!--<button id="button_test" title="Wijzigen"><i class="fas fa-pencil-alt"></i></button>-->
         </div>
     </div>
+
+    <div class="row justify-content-around" id="row2">
+        <div class="col-7" id="row2_col1">
+            <div class="card-header">Actions</div>
+            <!-- div act -->
+            <div class="card-group">
+              <div class="card" id="kaart1">
+                <img src="">
+                <div class="card-body">
+                  <h5 class="card-title">Favourite</h5><hr>
+                  <button type="button" class="btn btn-primary" id="p_favoriet" title="Add this person to your favourites"><i class="far fa-star"></i>
+                  	Favourite
+            		</button>
+                  <br><p class="card-text"><small class="text-muted"><br><b>Favorite this person</b><br>You can check on the Favourites page if
+                  this person has favourited you too.</small></p>
+                </div>
+              </div>
+              <div class="card" id="kaart2">
+                <img src="">
+                <div class="card-body">
+                  <h5 class="card-title">Message</h5><hr>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" title="Message with this person"><i class="far fa-comments"></i>
+		                Message
+		            </button>
+                  <br><p class="card-text"><small class="text-muted"><br><b>Message with this person</b><br>If this is your first time messaging
+                  with this person, then this will cost you one LoveCoin&#8482;.</small></p>
+                </div>
+              </div>
+          </div>
+            <!-- div bio -->
+
+        </div>
+        <div class="col-4" id="row2_col2">
+            <div class="card-header" id="infoHead">Information</div>
+            <!-- div gegevens-->
+
+            <ul class="fa-ul" id="p_gegevens">
+                <li><span class="fa-li"><i class="far fa-calendar-alt"></i></span><span id="p_geboortedatum">Geboortedatum</span>
+                </li>
+                <li><span class="fa-li"><i class="fas fa-industry"></i></span><span id="p_beroep">(Beroep)</span></li>
+                <li><span class="fa-li"><i class="fas fa-venus-mars"></i></span><span id="p_geslacht">(Geslacht)</span>
+                </li>
+                <li><span class="fa-li"><i class="fas fa-palette"></i></span><span id="p_haarkleur">(Haarkleur)</span>
+                </li>
+                <li><span class="fa-li"><i class="far fa-eye"></i></span> <span id="p_oogkleur">(Oogkleur)</span></li>
+                <li><span class="fa-li"><i class="fas fa-arrows-alt-v"></i></span><span id="p_grootte">(Grootte)</span>
+                </li>
+                <li><span class="fa-li"><i class="fas fa-weight"></i></span><span id="p_gewicht">(Gewicht)</span></li>
+                <li><span class="fa-li"><i class="fas fa-hand-holding-heart"></i></span><span id="p_voorkeur">(Voorkeur)</span></li>
+                <li><span class="fa-li"><i class="fas fa-sun"></i></span><span id="p_sterrenbeeld">(Sterrebeeld)</span></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- Profielgegevens-->
+<div class="card text-center">
+    <div class="card-footer text-muted">
+        <a href="#">Privacy policy</a>
+    </div>
+</div>
 </body>
 
 <!-- script -->
 <script src="js/lucky.js"></script>
 <!-- Script Bootstrap (niet aankomen) -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- Script dat nakijkt of script geladen is -->
 <script type="js/loadchecker"></script>
-
 </html>

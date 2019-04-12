@@ -1,28 +1,24 @@
-
-let profiel = {}
-
-var id = 0;
+var id = Math.floor((Math.random() * 5000) + 1);
 
 
-function getQueryVariable(variable) {
+function getQueryVariable(variable)
+{
     var query = window.location.search.substring(1);
-    console.log(query)
     var vars = query.split("&");
-    for (var i = 0; i < vars.length; i++) {
+    for (var i=0;i<vars.length;i++) {
         var pair = vars[i].split("=");
-        if (pair[0] === variable) { return pair[1]; }
+        if(pair[0] === variable){return pair[1];}
     }
-    return (false);
+    return(false);
 }
 
-document.querySelector('#p_favoriet').addEventListener('click', () => {
+document.querySelector('#p_favoriet').addEventListener('click', ()=>{
+    let url = 'https://scrumserver.tenobe.org/scrum/api/favoriet/like.php';
 
-    let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/read.php?id=' + id;
-
-    let data = {
-        mijnId: sessionStorage.getItem("id"),
-        anderId: getQueryVariable("id")
-    };
+        let data = {
+            mijnId: sessionStorage.getItem("id"),
+            anderId: id
+        };
 
     const request = new Request(url, {
         method: 'POST',
@@ -37,7 +33,6 @@ document.querySelector('#p_favoriet').addEventListener('click', () => {
             return resp.json();
         })
         .then(function (data) {
-            console.log(data);
             toegevoegd();
         })
         .catch(function (error) {
@@ -49,51 +44,62 @@ document.querySelector('#p_favoriet').addEventListener('click', () => {
 
 
 })
-
-
-function toegevoegd() {
+function toegevoegd(){
     document.querySelector('#p_favoriet').style.color = "red";
     document.querySelector('#p_favoriet').innerHTML = "toegevoegd";
-    document.querySelector('#p_favoriet').disabled = true;
+    document.querySelector('#p_favoriet').disabled=true;
 }
-
-
+let profiel={};
 window.onload = function () {
 
-    id = Math.floor((Math.random() * 5000) + 1);
-        
-    console.log("Lucky id= " + id);
+    let url3 ="https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id="+sessionStorage.getItem('id')
 
-    let url1 = 'https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id=' + id;
-
-
-    const request1 = new Request(url1, {
-        method: 'GET',
+    let request3= new Request(url3,{
+        method: "GET",
         headers: new Headers({
-            'Content-Type': 'application/json'
+            "Content-Type": "JSON"
         })
-    });
-
-    fetch(request1)
-        .then(function (resp) {
+    })
+    fetch(request3)
+        .then((resp)=>{
             return resp.json();
         })
-        .then(function (data) {
-            profiel = data;
-            invullenProfiel(data);
+        .then((data)=>{
+            console.log(data)
 
+            profiel=data;
         })
-        .catch(function (error) {
-            console.log(error);
+
+
+        let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id='+id;
+
+
+        const request = new Request(url, {
+            method: 'GET',
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
         });
 
-    function invullenProfiel(data) {
+        fetch(request)
+            .then(function (resp) {
+                return resp.json();
+            })
+            .then(function (data) {
+                invullenProfiel(data);
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+    function invullenProfiel(data){
+
+
 
         document.getElementById('modalDescr').innerText = "Do you want to send a message to " + data.voornaam + " " + data.familienaam +
             "? We'll deduct one Lovecoin from your account. You have " + profiel.lovecoins + " lovecoins left."
-
-
-        document.getElementById('p_naam').innerText = data.voornaam + " " + data.familienaam;
+        document.getElementById('p_naam').innerText = data.voornaam + " " +data.familienaam;
         document.getElementById('p_nickname').innerText = data.nickname;
         document.getElementById('p_nickname').innerText = data.nickname;
         document.getElementById('p_foto').setAttribute('src', data.foto);
@@ -106,15 +112,14 @@ window.onload = function () {
         document.getElementById('p_gewicht').innerText = data.gewicht;
         document.getElementById('p_sterrenbeeld').innerText = sterrenbeeld(data.geboortedatum);
 
-        function sterrenbeeld(geboortedatum) {
+        function sterrenbeeld(geboortedatum){
             let date = new Date(geboortedatum);
             let day = date.getDate();
             let month = date.getMonth() + 1;
-
-            console.log(month);
+    
 
             document.getElementById('p_horoscoop').title = "Onbekend";
-
+    
             if ((month == 3) && (day >= 21) || (month == 4) && (day <= 20)) {
                 document.getElementById('p_horoscoop').innerHTML = "&#9800;";
                 document.getElementById('p_horoscoop').title = "Ram";
@@ -168,7 +173,7 @@ window.onload = function () {
     }
 
 
-    let url2 = "https://scrumserver.tenobe.org/scrum/api/favoriet/read.php?profielId=" + sessionStorage.getItem("id");
+    let url2 = "https://scrumserver.tenobe.org/scrum/api/favoriet/read.php?profielId=" + sessionStorage.getItem("id") ;
 
     const request2 = new Request(url2, {
         method: 'GET',
@@ -182,11 +187,10 @@ window.onload = function () {
             return resp.json();
         })
         .then(function (data) {
-            console.log(data);
-            data.forEach((data) => {
-                console.log(data)
-                if (data.anderId === getQueryVariable('id')) {
-                    if (data.statusCode === "1" || data.statusCode === "2") {
+            data.forEach((data)=>{
+
+                if(data.anderId === getQueryVariable('id') ){
+                    if(data.statusCode === "1" || data.statusCode==="2"){
                         toegevoegd();
                     }
 
@@ -200,39 +204,41 @@ window.onload = function () {
 
 
 
-    if (getQueryVariable('id') === sessionStorage.getItem('id')) {
-        document.getElementById('p_favoriet').hidden = true;
-    }
+        if (getQueryVariable('id') === sessionStorage.getItem('id')){
+            document.getElementById('p_favoriet').hidden=true;
+        }
 
 
 };
 
-document.getElementById('uitloggen').addEventListener('click', function (e) {
-    e.preventDefault();
-    sessionStorage.clear();
-    location.replace('login.html')
-});
+    document.getElementById('uitloggen').addEventListener('click', function(e){
+        e.preventDefault();
+        sessionStorage.clear();
+        location.replace('login.html')
+    });
 
-document.querySelector('#sendMessage').addEventListener('click', () => {
-    let url3 = "https://scrumserver.tenobe.org/scrum/api/profiel/update.php "
-    profiel.lovecoins = profiel.lovecoins - 1;
 
-    console.log(profiel)
-    let data = JSON.stringify(profiel);
-    let request3 = new Request(url3, {
-        method: "PUT",
-        body: data,
-        headers: new Headers({
-            "Content-Type": "JSON"
-        })
+    document.querySelector('#sendMessage').addEventListener('click',()=>{
+
+            profiel.lovecoins = profiel.lovecoins-1;
+            console.log(profiel)
+
+            let url ="https://scrumserver.tenobe.org/scrum/api/profiel/update.php"
+
+            let data = JSON.stringify(profiel);
+            let request= new Request(url,{
+                method: "PUT",
+                body: data,
+                headers: new Headers({
+                    "Content-Type": "JSON"
+                })
+            })
+        fetch(request)
+            .then((resp)=>{
+                return resp.json();
+            })
+            .then((data)=>{
+              location.replace("berichten.html?id="+getQueryVariable('id') + "&new=" + true)
+            })
     })
-    fetch(request3)
-        .then((resp) => {
-            return resp.json();
-        })
-        .then((data) => {
-            console.log(data)
-            //location.replace("berichten.html?id="+getQueryVariable('id'))
-        })
-})
 
