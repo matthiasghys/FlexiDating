@@ -32,6 +32,9 @@
         <li class="nav-item" id="nav_berichten">
             <a class="nav-link" href="berichten.html"><i class="fas fa-envelope"></i> Messages</a>
         </li>
+        <li class="nav-item" id="nav_lucky">
+            <a class="nav-link" href="lucky.html"><i class="fas fa-dice"></i> Lucky</a>
+        </li>
         <li class="nav-item" id="nav_uitloggen">
             <a class="nav-link" href="login.html" style="color: rgb(198,35,23);" id="uitloggen">Log Out</a>
         </li>
@@ -50,11 +53,8 @@
             <img src="adl.png" width="220" height="220" id="p_foto">
             <p id="p_horoscoop" title="p_horoscoop">&#9800;</p>
 
-            <button id="p_favoriet" title="Add this person to your favourites"><i class="far fa-star"></i> Favourites
-            </button>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Message
-            </button>
+            
+            
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -69,7 +69,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" id="sendMessage">Save changes</button>
+                            <button id="sendMessage"></button>
                         </div>
                     </div>
                 </div>
@@ -89,12 +89,37 @@
 
     <div class="row justify-content-around" id="row2">
         <div class="col-7" id="row2_col1">
-            <div class="card-header">Biography</div>
+            <div class="card-header">Actions</div>
+            <!-- div act -->
+            <div class="card-group">
+              <div class="card" id="kaart1">
+                <img src="">
+                <div class="card-body">
+                  <h5 class="card-title">Favourite</h5><hr>
+                  <button type="button" class="btn btn-primary" id="p_favoriet" title="Add this person to your favourites"><i class="far fa-star"></i>
+                  	Favourite
+            		</button>
+                  <br><p class="card-text"><small class="text-muted"><br><b>Favorite this person</b><br>You can check on the Favourites page if
+                  this person has favourited you too.</small></p>
+                </div>
+              </div>
+              <div class="card" id="kaart2">
+                <img src="">
+                <div class="card-body">
+                  <h5 class="card-title">Message</h5><hr>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" title="Message with this person"><i class="far fa-comments"></i>
+		                Message
+		            </button>
+                  <br><p class="card-text"><small class="text-muted"><br><b>Message with this person</b><br>If this is your first time messaging
+                  with this person, then this will cost you one LoveCoin&#8482;.</small></p>
+                </div>
+              </div>
+          </div>
             <!-- div bio -->
 
         </div>
         <div class="col-4" id="row2_col2">
-            <div class="card-header">Information</div>
+            <div class="card-header" id="infoHead">Information</div>
             <!-- div gegevens-->
 
             <ul class="fa-ul" id="p_gegevens">
@@ -115,17 +140,6 @@
         </div>
     </div>
 
-    <div class="row justify-content-around" id="row3">
-        <div class="col-6" id="row3_col1">
-            <!-- div interesses -->
-            <div class="card-header">Interests</div>
-        </div>
-        <div class="col-5" id="row3_col2">
-            <!-- div favorieten -->
-            <div class="card-header">Favorites</div>
-
-        </div>
-    </div>
 
 </div>
 

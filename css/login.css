@@ -37,3 +37,10 @@ main{
 body {
     margin-top: 100px;
 }
+#succesMsg{
+    background: green;
+    color:white;
+    border-radius: 15px;
+    padding: .2em;
+    display:none;
+}
