@@ -289,6 +289,7 @@ window.onload = function () {
                         let url ="https://scrumserver.tenobe.org/scrum/api/profiel/update.php"
 
                         let data2 = JSON.stringify(data);
+
                         let request= new Request(url,{
                             method: "PUT",
                             body: data2,
@@ -301,10 +302,10 @@ window.onload = function () {
                                 return resp.json();
                             })
                             .then((data)=>{
-
+                                console.log(data)
 
                             })
-                        //location.replace("berichten.html?id="+getQueryVariable('id') + "&new=" + true)
+                        location.replace("berichten.html?id="+getQueryVariable('id') + "&new=" + true)
                     }
                     else{
                         location.replace('settings.html#showcoins')
