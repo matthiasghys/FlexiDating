@@ -65,9 +65,19 @@ window.onload = function () {
             return resp.json();
         })
         .then((data)=>{
-            console.log(data)
+            console.log(data.lovecoins)
 
-            profiel=data;
+            if (data.lovecoins === "0") {
+                buttonChange();
+            }else{
+                const button = document.getElementById('sendMessage')
+                button.className = "btn btn-primary"
+                button.innerText = "Use lovecoin"
+                document.getElementById('modalDescr').innerText = "Do you want to send a message ? We'll deduct one Lovecoin from your account. You have " + data.lovecoins + " lovecoins left."
+
+
+            }
+
         })
 
 
@@ -218,27 +228,51 @@ window.onload = function () {
     });
 
 
-    document.querySelector('#sendMessage').addEventListener('click',()=>{
+    function buttonChange(){
+        const button =document.querySelector('#sendMessage')
+        button.className = "btn btn-warning"
+        button.innerHTML = "Purchase lovecoins"
+        console.log(button)
+        document.getElementById('modalDescr').innerText = "You have no lovecoins left to chat. Buy more"}
 
-            profiel.lovecoins = profiel.lovecoins-1;
-            console.log(profiel)
 
-            let url ="https://scrumserver.tenobe.org/scrum/api/profiel/update.php"
 
-            let data = JSON.stringify(profiel);
-            let request= new Request(url,{
-                method: "PUT",
-                body: data,
+
+
+        document.querySelector('#sendMessage').addEventListener('click',()=>{
+
+            let url2= "https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id="+sessionStorage.getItem('id')
+
+            let request= new Request(url2,{
+                method: "GET",
                 headers: new Headers({
                     "Content-Type": "JSON"
                 })
             })
-        fetch(request)
-            .then((resp)=>{
-                return resp.json();
-            })
-            .then((data)=>{
-              location.replace("berichten.html?id="+getQueryVariable('id') + "&new=" + true)
-            })
-    })
+            fetch(request)
+                .then((resp)=>{
+                    return resp.json();
+                })
+                .then((data)=>{
+                    data.lovecoins= data.lovecoins-1;
+                    let url ="https://scrumserver.tenobe.org/scrum/api/profiel/update.php"
+
+                    let data2 = JSON.stringify(data);
+                    let request= new Request(url,{
+                        method: "PUT",
+                        body: data2,
+                        headers: new Headers({
+                            "Content-Type": "JSON"
+                        })
+                    })
+                    fetch(request)
+                        .then((resp)=>{
+                            return resp.json();
+                        })
+                        .then((data)=>{
+
+                            location.replace("berichten.html?id="+id + "&new=" + true)
+                        })
+                })
+        })
 
