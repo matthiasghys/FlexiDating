@@ -14,35 +14,37 @@ document.querySelector('#form').addEventListener('submit', function (e) {
         })
         .then((data)=>{
 
-            if(emailCheck(data)|| usernameCheck(data)){
-                toevoegen(data);
-            }else{
-
-            }
-
+            usernameCheck(data)
         })
 
     function usernameCheck(data){
+        document.getElementById('errorMsg2').style.display="none"
+        document.getElementById('errorMsg2').style.display="none"
+
+        let i=0
         data.forEach((acc)=>{
             if(document.getElementById('inputUsername').value === acc.nickname){
                 document.getElementById('errorMsg').innerText="Username bestaat al"
                 document.getElementById('errorMsg').style.display="block"
+               i++
+            }})
 
-                return false;
-            }else{return true}
+
+            data.forEach((acc)=>{
+                if(document.getElementById('inputEmail').value === acc.email){
+                    document.getElementById('errorMsg2').innerText="e-mailadres bestaat al"
+                    document.getElementById('errorMsg2').style.display="block"
+                    i++
+                }
+                console.log(i)
+
         })
-    }
-    function emailCheck(data){
-        data.forEach((acc)=>{
-            if(document.getElementById('inputEmail').value === acc.email){
-                document.getElementById('errorMsg2').innerText="e-mailadres bestaat al"
-                document.getElementById('errorMsg2').style.display="block"
-                return false;
-            }else{return true}
-        })
+        if(i===0){
+            toevoegen();
+        }
     }
 
-function toevoegen(data){
+function toevoegen(){
     let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/create.php';
 
     const dag = document.getElementById('inputDateDay').value;
@@ -89,7 +91,7 @@ function toevoegen(data){
             return resp.json();
         })
         .then(function (data2) {
-            console.log(data);
+            console.log(data2);
             location.replace('login.html?register=true')
         })
         .catch(function (error) {
@@ -99,4 +101,4 @@ function toevoegen(data){
 
 
 
-});
+})
