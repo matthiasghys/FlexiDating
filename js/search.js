@@ -125,10 +125,13 @@ window.onload = function () {
                             document.getElementById("next").addEventListener("click", ophalendatanext);
                             document.getElementById("previous").addEventListener("click", ophalendataprevious);
                         }
+
                     } else {
                         var eTable = document.getElementById("containerprofielen");
                         var eP = document.createElement("p");
-                        eP.innerHTML = data.message;
+                        eP.setAttribute("id", "nietsGevonden");
+                        eP.setAttribute("class", "text-muted");
+                        eP.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + data.message + '<br>Gelieve je zoekcriteria aan te passen.';
                         eTable.appendChild(eP);
                         document.getElementById("bladen").innerHTML = "0/0 (0)";
                     }

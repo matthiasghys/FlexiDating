@@ -1,122 +1,140 @@
 <html>
+
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" href="css/profiel.css">
 </head>
 <title></title>
+
 <body>
-<!-- Nav -->
-<!--<ul class="nav" id="nav_navlogo">
+    <!-- Nav -->
+    <!--<ul class="nav" id="nav_navlogo">
     <li class="nav-item" id="nav_logo">
         <a class="nav-link" id="p_logostring"><img src="img/profiel_logo.png" id="p_logo"></a>
      </li>
 </ul>-->
-<nav>
-    <ul class="nav justify-content-end" id="nav_navigatie">
-        <li class="nav-item" id="nav_profiel">
-            <a class="nav-link" href="#"><i class="far fa-user"></i> Profile</a>
-        </li>
-        <li class="nav-item" id="nav_zoeken">
-            <a class="nav-link" href="search.html"><i class="fas fa-search"></i> Search</a>
-        </li>
-        <li class="nav-item" id="nav_instellingen">
-            <a class="nav-link" href="settings.html"><i class="fas fa-cog"></i> Settings</a>
-        </li>
-        <li class="nav-item" id="nav_favorieten">
-            <a class="nav-link" href="favourites.html"><i class="fas fa-heart"></i> Favourites</a>
-        </li>
-        <li class="nav-item" id="nav_berichten">
-            <a class="nav-link" href="berichten.html"><i class="fas fa-envelope"></i> Messages</a>
-        </li>
-        <li class="nav-item" id="nav_lucky">
-            <a class="nav-link" href="lucky.html"><i class="fas fa-dice"></i> Lucky</a>
-        </li>
-        <li class="nav-item" id="nav_uitloggen">
-            <a class="nav-link" href="login.html" style="color: rgb(198,35,23);" id="uitloggen">Log Out</a>
-        </li>
+    <nav>
+        <ul class="nav justify-content-end" id="nav_navigatie">
+            <li class="nav-item" id="nav_profiel">
+                <a class="nav-link" href="#"><i class="far fa-user"></i> Profile</a>
+            </li>
+            <li class="nav-item" id="nav_zoeken">
+                <a class="nav-link" href="search.html"><i class="fas fa-search"></i> Search</a>
+            </li>
+            <li class="nav-item" id="nav_instellingen">
+                <a class="nav-link" href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            </li>
+            <li class="nav-item" id="nav_favorieten">
+                <a class="nav-link" href="favourites.html"><i class="fas fa-heart"></i> Favourites</a>
+            </li>
+            <li class="nav-item" id="nav_berichten">
+                <a class="nav-link" href="berichten.html"><i class="fas fa-envelope"></i> Messages</a>
+            </li>
+            <li class="nav-item" id="nav_lucky">
+                <a class="nav-link" href="lucky.html"><i class="fas fa-dice"></i> Lucky</a>
+            </li>
+            <li class="nav-item" id="nav_uitloggen">
+                <a class="nav-link" href="login.html" style="color: rgb(198,35,23);" id="uitloggen">Log Out</a>
+            </li>
 
-    </ul>
-</nav>
+        </ul>
+    </nav>
 
-<header></header>
-<!-- Container/grid -->
-<div class="container">
+    <header></header>
+    <!-- Container/grid -->
+    <div class="container">
 
-    <div class="row justify-content-around" id="row1">
-        <div class="col-4" id="row1_col1">
-            <!-- div profiel(foto)-->
+        <div class="row justify-content-around" id="row1">
+            <div class="col-4" id="row1_col1">
+                <!-- div profiel(foto)-->
 
-            <img src="adl.png" width="220" height="220" id="p_foto">
-            <p id="p_horoscoop" title="p_horoscoop"></p>
+                <img src="adl.png" width="220" height="220" id="p_foto">
+                <p id="p_horoscoop" title="p_horoscoop"></p>
 
+                <div id="divLovecoin">
+                    
+                    <img src="img/lovecoin.png" width="45" height="45">
+                    <p id="amountLovecoin"></p>
+                </div>
+
+
+            </div>
+            <div class="col-7" id="row1_col2">
+                <div class="card-header">Profile</div>
+                <!-- div naam -->
+                <p id="p_naam">(Naam + Familienaam)</p>
+                <p id="p_nickname">(Nickname)</p>
+
+                <br>
+                <!--<button id="button_test" title="Wijzigen"><i class="fas fa-pencil-alt"></i></button>-->
+            </div>
         </div>
-        <div class="col-7" id="row1_col2">
-            <div class="card-header">Profile</div>
-            <!-- div naam -->
-            <p id="p_naam">(Naam + Familienaam)</p>
-            <p id="p_nickname">(Nickname)</p>
 
-            <br>
-            <!--<button id="button_test" title="Wijzigen"><i class="fas fa-pencil-alt"></i></button>-->
+        <div class="row justify-content-around" id="row2">
+            <div class="col-6" id="row2_col1">
+                <div class="card-header">Actions</div>
+                <!-- div act -->
+                <p class="text-muted" id="ownAction"><i>Nothing to commit here.</i></p>
+
+            </div>
+            <div class="col-4" id="row2_col2">
+                <div class="card-header" id="infoHead">Information</div>
+                <!-- div gegevens-->
+
+                <ul class="fa-ul" id="p_gegevens">
+                    <li><span class="fa-li"><i class="far fa-calendar-alt"></i></span><span
+                            id="p_geboortedatum">Geboortedatum</span>
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-industry"></i></span><span id="p_beroep">(Beroep)</span>
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-venus-mars"></i></span><span
+                            id="p_geslacht">(Geslacht)</span>
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-palette"></i></span><span
+                            id="p_haarkleur">(Haarkleur)</span>
+                    </li>
+                    <li><span class="fa-li"><i class="far fa-eye"></i></span> <span id="p_oogkleur">(Oogkleur)</span>
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-arrows-alt-v"></i></span><span
+                            id="p_grootte">(Grootte)</span>
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-weight"></i></span><span id="p_gewicht">(Gewicht)</span>
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-sun"></i></span><span
+                            id="p_sterrenbeeld">(Sterrebeeld)</span></li>
+                </ul>
+            </div>
         </div>
+
+
+
     </div>
 
-    <div class="row justify-content-around" id="row2">
-        <div class="col-6" id="row2_col1">
-            <div class="card-header">Actions</div>
-            <!-- div act -->
-            <p class="text-muted" id="ownAction"><i>Nothing to commit here.</i></p>
-            
-        </div>
-        <div class="col-4" id="row2_col2">
-            <div class="card-header" id="infoHead">Information</div>
-            <!-- div gegevens-->
-
-            <ul class="fa-ul" id="p_gegevens">
-                <li><span class="fa-li"><i class="far fa-calendar-alt"></i></span><span id="p_geboortedatum">Geboortedatum</span>
-                </li>
-                <li><span class="fa-li"><i class="fas fa-industry"></i></span><span id="p_beroep">(Beroep)</span></li>
-                <li><span class="fa-li"><i class="fas fa-venus-mars"></i></span><span id="p_geslacht">(Geslacht)</span>
-                </li>
-                <li><span class="fa-li"><i class="fas fa-palette"></i></span><span id="p_haarkleur">(Haarkleur)</span>
-                </li>
-                <li><span class="fa-li"><i class="far fa-eye"></i></span> <span id="p_oogkleur">(Oogkleur)</span></li>
-                <li><span class="fa-li"><i class="fas fa-arrows-alt-v"></i></span><span id="p_grootte">(Grootte)</span>
-                </li>
-                <li><span class="fa-li"><i class="fas fa-weight"></i></span><span id="p_gewicht">(Gewicht)</span></li>
-                <li><span class="fa-li"><i class="fas fa-sun"></i></span><span id="p_sterrenbeeld">(Sterrebeeld)</span></li>
-            </ul>
+    <!-- Profielgegevens-->
+    <div class="card text-center">
+        <div class="card-footer text-muted">
+            <a href="#">Privacy policy</a>
         </div>
     </div>
-
-    
-
-</div>
-
-<!-- Profielgegevens-->
-<div class="card text-center">
-    <div class="card-footer text-muted">
-        <a href="#">Privacy policy</a>
-    </div>
-</div>
 </body>
 
 <!-- script -->
 <script src="js/profile.js"></script>
 <!-- Script Bootstrap (niet aankomen) -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 <!-- Script dat nakijkt of script geladen is -->
 <script type="js/loadchecker"></script>
+
 </html>
