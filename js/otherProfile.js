@@ -43,8 +43,7 @@ document.querySelector('#p_favoriet').addEventListener('click', ()=>{
 
 })
 function toegevoegd(){
-    document.querySelector('#p_favoriet').style.color = "red";
-    document.querySelector('#p_favoriet').innerHTML = "toegevoegd";
+    document.querySelector('#p_favoriet').innerHTML = '<i class="fas fa-star"></i> ' + "Added";
     document.querySelector('#p_favoriet').disabled=true;
 }
 window.onload = function () {
