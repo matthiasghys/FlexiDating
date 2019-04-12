@@ -1,3 +1,5 @@
+var id = Math.floor((Math.random() * 5000) + 1);
+
 
 function getQueryVariable(variable)
 {
@@ -15,7 +17,7 @@ document.querySelector('#p_favoriet').addEventListener('click', ()=>{
 
         let data = {
             mijnId: sessionStorage.getItem("id"),
-            anderId: getQueryVariable("id")
+            anderId: id
         };
 
     const request = new Request(url, {
@@ -47,31 +49,8 @@ function toegevoegd(){
     document.querySelector('#p_favoriet').innerHTML = "toegevoegd";
     document.querySelector('#p_favoriet').disabled=true;
 }
+let profiel={};
 window.onload = function () {
-
-    let url5= "https://scrumserver.tenobe.org/scrum/api/bericht/read.php?profielId="+sessionStorage.getItem('id')
-    let request5 = new Request(url5,{
-        method:"GET",
-        headers: new Headers({
-            "Content-Type": "application/json"
-        })
-    })
-    fetch(request5)
-        .then((resp)=>{
-            return resp.json();
-        })
-        .then((data)=>{
-            data.forEach((convo)=>{
-              if(convo[0].vanId === getQueryVariable('id') || convo[0].naarId === getQueryVariable('id')){
-                  const btn= document.getElementById('messageClick')
-                  btn.addEventListener('click', (e)=>{
-                      e.preventDefault();
-                      location.replace("berichten.html?id="+getQueryVariable('id'))
-                  })
-              }
-            })
-        })
-
 
     let url3 ="https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id="+sessionStorage.getItem('id')
 
@@ -88,7 +67,7 @@ window.onload = function () {
         .then((data)=>{
             console.log(data.lovecoins)
 
-            if (data.lovecoins < 0) {
+            if (data.lovecoins === "0") {
                 buttonChange();
             }else{
                 const button = document.getElementById('sendMessage')
@@ -102,9 +81,7 @@ window.onload = function () {
         })
 
 
-
-
-        let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id='+getQueryVariable('id');
+        let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id='+id;
 
 
         const request = new Request(url, {
@@ -130,7 +107,8 @@ window.onload = function () {
 
 
 
-
+        document.getElementById('modalDescr').innerText = "Do you want to send a message to " + data.voornaam + " " + data.familienaam +
+            "? We'll deduct one Lovecoin from your account. You have " + profiel.lovecoins + " lovecoins left."
         document.getElementById('p_naam').innerText = data.voornaam + " " +data.familienaam;
         document.getElementById('p_nickname').innerText = data.nickname;
         document.getElementById('p_nickname').innerText = data.nickname;
@@ -249,6 +227,7 @@ window.onload = function () {
         location.replace('login.html')
     });
 
+
     function buttonChange(){
         const button =document.querySelector('#sendMessage')
         button.className = "btn btn-warning"
@@ -261,6 +240,7 @@ window.onload = function () {
 
 
         document.querySelector('#sendMessage').addEventListener('click',()=>{
+
             let url2= "https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id="+sessionStorage.getItem('id')
 
             let request= new Request(url2,{
@@ -274,45 +254,25 @@ window.onload = function () {
                     return resp.json();
                 })
                 .then((data)=>{
-                    const button = document.getElementById('sendMessage')
-                    if(button.innerText === "Use lovecoin"){
-                        data.lovecoins= data.lovecoins-1;
-                        let url ="https://scrumserver.tenobe.org/scrum/api/profiel/update.php"
+                    data.lovecoins= data.lovecoins-1;
+                    let url ="https://scrumserver.tenobe.org/scrum/api/profiel/update.php"
 
-                        let data2 = JSON.stringify(data);
-                        let request= new Request(url,{
-                            method: "PUT",
-                            body: data2,
-                            headers: new Headers({
-                                "Content-Type": "JSON"
-                            })
+                    let data2 = JSON.stringify(data);
+                    let request= new Request(url,{
+                        method: "PUT",
+                        body: data2,
+                        headers: new Headers({
+                            "Content-Type": "JSON"
                         })
-                        fetch(request)
-                            .then((resp)=>{
-                                return resp.json();
-                            })
-                            .then((data)=>{
+                    })
+                    fetch(request)
+                        .then((resp)=>{
+                            return resp.json();
+                        })
+                        .then((data)=>{
 
-
-                            })
-                        location.replace("berichten.html?id="+getQueryVariable('id') + "&new=" + true)
-                    }
-                    else{
-                        location.replace('settings.html#showcoins')
-                    }
-
+                            location.replace("berichten.html?id="+id + "&new=" + true)
+                        })
                 })
         })
-
-
-
-
-
-
-
-
-
-
-
-
 

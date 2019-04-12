@@ -18,7 +18,7 @@
 <nav>
     <ul class="nav justify-content-end" id="nav_navigatie">
         <li class="nav-item" id="nav_profiel">
-            <a class="nav-link" href="#"><i class="far fa-user"></i> Profile</a>
+            <a class="nav-link" href="profiel.html"><i class="far fa-user"></i> Profile</a>
         </li>
         <li class="nav-item" id="nav_zoeken">
             <a class="nav-link" href="search.html"><i class="fas fa-search"></i> Search</a>
@@ -51,7 +51,29 @@
             <!-- div profiel(foto)-->
 
             <img src="adl.png" width="220" height="220" id="p_foto">
-            <p id="p_horoscoop" title="p_horoscoop"></p>
+            <p id="p_horoscoop" title="p_horoscoop">&#9800;</p>
+
+            
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Send a Message</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="modalDescr"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="sendMessage">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
         <div class="col-7" id="row1_col2">
@@ -66,11 +88,35 @@
     </div>
 
     <div class="row justify-content-around" id="row2">
-        <div class="col-6" id="row2_col1">
+        <div class="col-7" id="row2_col1">
             <div class="card-header">Actions</div>
             <!-- div act -->
-            <p class="text-muted" id="ownAction"><i>Nothing to commit here.</i></p>
-            
+            <div class="card-group">
+              <div class="card" id="kaart1">
+                <img src="">
+                <div class="card-body">
+                  <h5 class="card-title">Favourite</h5><hr>
+                  <button type="button" class="btn btn-primary" id="p_favoriet" title="Add this person to your favourites"><i class="far fa-star"></i>
+                  	Favourite
+            		</button>
+                  <br><p class="card-text"><small class="text-muted"><br><b>Favorite this person</b><br>You can check on the Favourites page if
+                  this person has favourited you too.</small></p>
+                </div>
+              </div>
+              <div class="card" id="kaart2">
+                <img src="">
+                <div class="card-body">
+                  <h5 class="card-title">Message</h5><hr>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" title="Message with this person"><i class="far fa-comments"></i>
+		                Message
+		            </button>
+                  <br><p class="card-text"><small class="text-muted"><br><b>Message with this person</b><br>If this is your first time messaging
+                  with this person, then this will cost you one LoveCoin&#8482;.</small></p>
+                </div>
+              </div>
+          </div>
+            <!-- div bio -->
+
         </div>
         <div class="col-4" id="row2_col2">
             <div class="card-header" id="infoHead">Information</div>
@@ -88,12 +134,12 @@
                 <li><span class="fa-li"><i class="fas fa-arrows-alt-v"></i></span><span id="p_grootte">(Grootte)</span>
                 </li>
                 <li><span class="fa-li"><i class="fas fa-weight"></i></span><span id="p_gewicht">(Gewicht)</span></li>
+                <li><span class="fa-li"><i class="fas fa-hand-holding-heart"></i></span><span id="p_voorkeur">(Voorkeur)</span></li>
                 <li><span class="fa-li"><i class="fas fa-sun"></i></span><span id="p_sterrenbeeld">(Sterrebeeld)</span></li>
             </ul>
         </div>
     </div>
 
-    
 
 </div>
 
@@ -106,17 +152,11 @@
 </body>
 
 <!-- script -->
-<script src="js/profile.js"></script>
+<script src="js/lucky.js"></script>
 <!-- Script Bootstrap (niet aankomen) -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- Script dat nakijkt of script geladen is -->
 <script type="js/loadchecker"></script>
 </html>
