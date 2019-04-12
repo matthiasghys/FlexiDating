@@ -38,6 +38,7 @@ window.onload = function () {
         document.getElementById('p_grootte').innerText = data.grootte;
         document.getElementById('p_gewicht').innerText = data.gewicht;
         document.getElementById('p_sterrenbeeld').innerText = sterrenbeeld(data.geboortedatum);
+        document.getElementById('amountLovecoin').innerText = data.lovecoins;
     }
 
     function sterrenbeeld(geboortedatum){
