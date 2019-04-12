@@ -48,7 +48,7 @@ document.querySelector('#form').addEventListener('submit', function (e) {
         })
         .then(function (data) {
             console.log(data);
-            location.replace('login.html')
+            location.replace('login.html?register=true')
         })
         .catch(function (error) {
             console.log(error);
