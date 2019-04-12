@@ -279,7 +279,13 @@ window.onload = function () {
                 .then((data)=>{
                     const button = document.getElementById('sendMessage')
                     if(button.innerText === "Use lovecoin"){
-                        data.lovecoins= data.lovecoins-1;
+                        console.log(data.lovecoins)
+                        const nieuwCoins = data.lovecoins-1;
+                        console.log(nieuwCoins)
+                        data.lovecoins= nieuwCoins
+                        console.log(data.lovecoins)
+
+
                         let url ="https://scrumserver.tenobe.org/scrum/api/profiel/update.php"
 
                         let data2 = JSON.stringify(data);
@@ -298,7 +304,7 @@ window.onload = function () {
 
 
                             })
-                        location.replace("berichten.html?id="+getQueryVariable('id') + "&new=" + true)
+                        //location.replace("berichten.html?id="+getQueryVariable('id') + "&new=" + true)
                     }
                     else{
                         location.replace('settings.html#showcoins')
