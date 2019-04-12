@@ -303,9 +303,9 @@ window.onload = function () {
                             })
                             .then((data)=>{
                                 console.log(data)
-
+                                location.replace("berichten.html?id="+getQueryVariable('id') + "&new=" + true)
                             })
-                        location.replace("berichten.html?id="+getQueryVariable('id') + "&new=" + true)
+
                     }
                     else{
                         location.replace('settings.html#showcoins')
