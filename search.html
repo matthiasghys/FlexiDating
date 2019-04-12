@@ -45,7 +45,7 @@
     
         <div class="container">
 
-           <div class="row">
+           <div class="row justify-content-start">
                 <div class="col-2">
                     <select id="changeSearch" class="form-control">
                         <option value="voornaam">Voornaam</option>
@@ -54,14 +54,15 @@
                     </select>
                 </div>
                 <div class="col-2">
-                    <input type="text" class="form-control" id="searchBar">
+                    <input type="text" class="form-control" id="searchBar" placeholder="Vul hier je gegeven in">
                 </div>
+                
             </div>
-        
+            <br>
 
-            <div class="row">
-                <div class="col-4">
-                    <h4>Search filter</h4>
+            <div class="row justify-content-between">
+                <div class="col-3" id="gridFilter">
+                    <br><h4>Search filter</h4><hr>
                     <div class="line">
                         <div class="col1">
                             <p>Gender</p>
@@ -152,12 +153,12 @@
 
                         </div>
                     </div>
-                    <button id="applyFilter" type="button" class="btn btn-primary">Filter</button>
+                    <button id="applyFilter" type="button" class="btn btn-primary"><i class="fas fa-filter"></i> Filter</button>
                 </div>
 
 
                 <div id="profielen" class="col-8">
-                    <h4>Search Results</h4>
+                    <br><h4>Search Results</h4><hr>
                     <div id="containerprofielen" class="col10">
                         <p>Results</p>
                     </div>
