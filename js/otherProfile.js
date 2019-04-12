@@ -91,7 +91,7 @@ window.onload = function () {
         .then((data)=>{
             console.log(data.lovecoins)
 
-            if (data.lovecoins < 0) {
+            if (data.lovecoins <= 0) {
                 buttonChange();
             }else{
                 const button = document.getElementById('sendMessage')
