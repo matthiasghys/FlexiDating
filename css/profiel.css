@@ -37,18 +37,7 @@ header {
     text-align: center;
 }
 
-#p_favoriet {
-    background-color: rgb(24, 200, 226);
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 8px;
-    border: 2px solid #EEE;
-    font-size: 18px;
-    font-weight: bold;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    float: right;
-    margin-top: 3px;
-}
+
 
 #p_horoscoop {
     float: left;
@@ -122,4 +111,30 @@ header {
 
 .card p{
     font-size: 0.8em;
+}
+
+.actionButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+#infoHead {
+    margin-bottom: 10px;
+}
+
+#kaart1 {
+    margin-top: 15px;
+}
+
+#kaart2 {
+    margin-top: 15px;
+}
+
+#ownAction {
+    font-size: 32px;
+    margin-top: 65px;
+    margin-left: 100px;
 }
