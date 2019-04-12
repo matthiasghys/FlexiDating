@@ -1,5 +1,3 @@
-
-
 var url= "https://scrumserver.tenobe.org/scrum/api/profiel/read.php"
 var request = new Request(url,{
     headers: new Headers({
