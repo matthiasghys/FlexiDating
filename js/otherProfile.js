@@ -49,6 +49,10 @@ function toegevoegd(){
 }
 window.onload = function () {
 
+    if(getQueryVariable('id')=== sessionStorage.getItem('id')){
+        location.replace('profiel.html')
+    }
+
     let url5= "https://scrumserver.tenobe.org/scrum/api/bericht/read.php?profielId="+sessionStorage.getItem('id')
     let request5 = new Request(url5,{
         method:"GET",
