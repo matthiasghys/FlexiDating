@@ -118,7 +118,7 @@ window.onload = function () {
                     if (data.message != "Geen profielen gevonden.") {
                         resultdata = data;
                         invullenProfiel(resultdata);
-                        if (resultdata.length <= 10) {
+                        if (resultdata.length <= MAX_ROWS) {
                             document.getElementById("next").removeEventListener("click", ophalendatanext);
                             document.getElementById("previous").removeEventListener("click", ophalendataprevious);
                         } else {
