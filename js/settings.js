@@ -211,6 +211,11 @@ window.onload = function () {
 
 
     function invullenData(data) {
+        let passwordHidden = "";
+        for (let x = 0; x < data.wachtwoord.length; x++) {
+            passwordHidden += '*'; 
+        }
+
         document.getElementById('showvoornaam').innerText = data.voornaam;
         document.getElementById('showfamilienaam').innerText = data.familienaam;
         document.getElementById('shownickname').innerText = data.nickname;
@@ -223,7 +228,7 @@ window.onload = function () {
         document.getElementById('showoogkleur').innerText = data.oogkleur;
         document.getElementById('showgrootte').innerText = data.grootte;
         document.getElementById('showgewicht').innerText = data.gewicht;
-        document.getElementById('showwachtwoord').innerText = data.wachtwoord;
+        document.getElementById('showwachtwoord').innerText = passwordHidden;
         document.getElementById('showcoins').innerText = data.lovecoins;
     }
 
