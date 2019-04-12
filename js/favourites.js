@@ -1,6 +1,8 @@
 let buttons = {};
 window.onload = function(){
 
+
+
     let url = "https://scrumserver.tenobe.org/scrum/api/favoriet/read.php?profielId=" + sessionStorage.getItem("id") ;
 
     const request = new Request(url, {
@@ -15,8 +17,17 @@ window.onload = function(){
             return resp.json();
         })
         .then(function (data) {
+
             console.log(data);
-            createCards(data)
+            createCards(data);
+            // invoegen opmaak
+            var checkCard = document.getElementsByTagName("img").length;
+            console.log("aantalcard: " + checkCard);
+
+            if (checkCard != 0)
+            {
+                document.getElementById("emptyString").style.display = "none";
+            }
 
         })
         .catch(function (error) {
@@ -26,6 +37,7 @@ window.onload = function(){
 
     function createCards(data){
         data.forEach((data)=>{
+
             if (data.statusCode === "1" || data.statusCode ==="2"){
                 
                 const card = document.createElement('div');
@@ -96,6 +108,7 @@ window.onload = function(){
         console.log(buttons);
         buttons.forEach((button)=>{
             button.addEventListener('click', ()=>{
+                
                 let url = "https://scrumserver.tenobe.org/scrum/api/favoriet/delete.php";
                 let data = {
                     "id": button.id
@@ -113,6 +126,7 @@ window.onload = function(){
                         return resp.json()
                     })
                     .then((data)=>{
+
                         location.reload();
                     })
             })
