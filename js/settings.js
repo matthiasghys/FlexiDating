@@ -1,8 +1,8 @@
 var picURL = "";
 window.onload = function () {
     var profiel = {};
-    
-    let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id=' + sessionStorage.getItem('id') ;
+
+    let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id=' + sessionStorage.getItem('id');
 
     const request = new Request(url, {
         method: 'GET',
@@ -24,25 +24,25 @@ window.onload = function () {
 
             /**/
             // event op btn Uploaden, roept upload.php op met POST
-            document.getElementById('uploadBtn').addEventListener('click', function (e) { 
+            document.getElementById('uploadBtn').addEventListener('click', function (e) {
 
                 // font awesome toevoegen:
 
 
                 document.getElementById("uploadBtn").disabled = true;
 
-                document.getElementById("uploadBtn").innerHTML = '<div class="fa-spin"><i class="fas fa-spinner fa-spin"></i> </div>Busy. . . ' 
+                document.getElementById("uploadBtn").innerHTML = '<div class="fa-spin"><i class="fas fa-spinner fa-spin"></i> </div>Busy. . . '
 
-                let naam =  document.getElementById('fotoString').value; 
-                let afbeelding =  document.getElementById('base64textarea').value; 
+                let naam = document.getElementById('fotoString').value;
+                let afbeelding = document.getElementById('base64textarea').value;
 
                 // 
-                let url='https://scrumserver.tenobe.org/scrum/api/image/upload.php';
+                let url = 'https://scrumserver.tenobe.org/scrum/api/image/upload.php';
 
 
                 let data = {
-                    naam:naam,
-                    afbeelding:afbeelding
+                    naam: naam,
+                    afbeelding: afbeelding
                 }
 
                 var request = new Request(url, {
@@ -51,56 +51,55 @@ window.onload = function () {
                     headers: new Headers({
                         'Content-Type': 'application/json'
                     })
-                    
+
                 });
 
                 fetch(request)
-                    .then( function (resp)  { return resp.json(); })
-                    .then( function (data)  
-                        { 
-                            
-                            var profilepicURL = data.fileURL;
-                            console.log(data);  
-                            document.getElementById("dateId").innerHTML = data.fileName + "\n" + data.fileURL;
-                            document.getElementById("displayFoto").src = data.fileURL;
-                            
-                            console.log("voor update:" + profiel.foto);
-                                                       
-                             /* Begin function() + update.php */              
+                    .then(function (resp) { return resp.json(); })
+                    .then(function (data) {
 
-                            let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/update.php';
+                        var profilepicURL = data.fileURL;
+                        console.log(data);
+                        document.getElementById("dateId").innerHTML = data.fileName + "\n" + data.fileURL;
+                        document.getElementById("displayFoto").src = data.fileURL;
 
-                            profiel.foto = profilepicURL;
+                        console.log("voor update:" + profiel.foto);
 
-                            var request = new Request(url, {
-                                method: 'PUT',                  //request methode
-                                body: JSON.stringify(profiel),     //body waar de data aan meegegeven wordt
-                                headers: new Headers({          //onze API verwacht application/json
-                                    'Content-Type': 'application/json'
-                                })
-                            });
+                        /* Begin function() + update.php */
 
-                            fetch(request)
-                                .then(function (response){return response.json();})
-                                .then(function (profiel){
-                                    console.log(profiel);                                
-                                    location.replace('settings.html');
-                                })
-                                .catch(function (error){console.log(error);});
+                        let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/update.php';
+
+                        profiel.foto = profilepicURL;
+
+                        var request = new Request(url, {
+                            method: 'PUT',                  //request methode
+                            body: JSON.stringify(profiel),     //body waar de data aan meegegeven wordt
+                            headers: new Headers({          //onze API verwacht application/json
+                                'Content-Type': 'application/json'
+                            })
+                        });
+
+                        fetch(request)
+                            .then(function (response) { return response.json(); })
+                            .then(function (profiel) {
+                                console.log(profiel);
+                                location.replace('settings.html');
+                            })
+                            .catch(function (error) { console.log(error); });
 
 
-                
-                            console.log("na update:" + profiel.foto);
-                        })               
+
+                        console.log("na update:" + profiel.foto);
+                    })
                     .catch(function (error) { console.log(error); });
 
-               
+
 
 
             });
 
             // script image name & base64 picker
-                var handleFileSelect = function(evt) {
+            var handleFileSelect = function (evt) {
                 var files = evt.target.files;
                 var file = files[0];
 
@@ -108,17 +107,17 @@ window.onload = function () {
                     var reader = new FileReader();
                     document.getElementById("uploadBtn").disabled = true;
                     document.getElementById("uploadBtn").innerHTML = "Busy. . ."
-                    reader.onload = function(readerEvt) {
+                    reader.onload = function (readerEvt) {
 
                         var binaryString = readerEvt.target.result;
-                        
-                        
-                        document.getElementById("base64textarea").value = "data:image/png;base64," +  btoa(binaryString);
+
+
+                        document.getElementById("base64textarea").value = "data:image/png;base64," + btoa(binaryString);
                         document.getElementById("uploadBtn").innerHTML = '<i class="fas fa-file-upload"></i> ' + "Upload"
-                        document.getElementById("uploadBtn").disabled = false;           
+                        document.getElementById("uploadBtn").disabled = false;
                     };
 
-                    
+
                     reader.readAsBinaryString(file);
                     document.getElementById("fotoString").innerHTML = document.getElementById("filePicker").value.split('\\').pop();
 
@@ -127,7 +126,7 @@ window.onload = function () {
 
             if (window.File && window.FileReader && window.FileList && window.Blob) {
                 document.getElementById('filePicker').addEventListener('change', handleFileSelect, false);
-                             
+
 
             }
 
@@ -179,7 +178,7 @@ window.onload = function () {
                                             return resp.json();
                                         })
                                         .then(function (data) {
-                                            
+
                                             location.replace('settings.html')
                                         })
                                         .catch(function (error) {
@@ -195,8 +194,8 @@ window.onload = function () {
 
                     });
                     const buttonCancel = document.querySelectorAll('button.cancel')
-                    buttonCancel.forEach((button) =>{
-                        button.addEventListener('click', ()=>{
+                    buttonCancel.forEach((button) => {
+                        button.addEventListener('click', () => {
                             location.replace('settings.html')
                         })
                     })
@@ -213,7 +212,7 @@ window.onload = function () {
     function invullenData(data) {
         let passwordHidden = "";
         for (let x = 0; x < data.wachtwoord.length; x++) {
-            passwordHidden += '*'; 
+            passwordHidden += '*';
         }
 
         document.getElementById('showvoornaam').innerText = data.voornaam;
@@ -232,8 +231,8 @@ window.onload = function () {
         document.getElementById('showcoins').innerText = data.lovecoins;
     }
 
-    document.querySelector('#deleteAccount').addEventListener('click', ()=>{
-        if (window.confirm("Are you sure you want to delete your account? all data will be lost, including your precious favourites.")){
+    document.querySelector('#deleteAccount').addEventListener('click', () => {
+        if (window.confirm("Are you sure you want to delete your account? all data will be lost, including your precious favourites.")) {
             let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/delete.php';
 
             let data = {
@@ -254,7 +253,7 @@ window.onload = function () {
                 })
                 .then(function (data) {
 
-                        location.replace('login.html')
+                    location.replace('login.html')
 
                 })
                 .catch(function (error) {
@@ -263,6 +262,87 @@ window.onload = function () {
         };
 
     })
-
-
+    let purchaseDiv = document.getElementById("purchase")
+    purchaseDiv.style.display = "none";
+    
+    document.getElementById("coins").addEventListener("click", function () {
+        
+        if (purchaseDiv.style.display === "none") {
+            purchaseDiv.style.display = "block"
+        }
+        else
+        {
+            purchaseDiv.style.display = "none"
+        }
+    });
 }
+
+
+
+document.getElementById("love1").addEventListener("click", function () {
+
+    if (confirm("Would you like to purchase 1 lovecoin for €0.79?")) {
+        updateLovecoins(1)
+    }
+});
+document.getElementById("love10").addEventListener("click", function () {
+    if (confirm("Would you like to purchase 10 lovecoins for €5.99?")) {
+        updateLovecoins(10)
+    }
+});
+document.getElementById("love20").addEventListener("click", function () {
+    if (confirm("Would you like to purchase 20 lovecoins for €9.99?")) {
+        updateLovecoins(20)
+    }
+});
+document.getElementById("love50").addEventListener("click", function () {
+    if (confirm("Would you like to purchase 50 lovecoins for €19.99?")) {
+        updateLovecoins(50)
+    }
+});
+document.getElementById("love100").addEventListener("click", function () {
+    if (confirm("Would you like to purchase 100 lovecoins for €34.99?")) {
+        updateLovecoins(100)
+    }
+});
+
+
+
+function updateLovecoins(lovecoins){
+    let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/read_one.php?id=' + sessionStorage.getItem('id');
+
+    let request = new Request(url,{
+        method: "GET",
+        headers:new Headers({
+            "Content-Type": "application/json"
+        })
+    })
+    fetch(request)
+    .then((resp)=>{
+        return resp.json();
+    })
+    .then((data)=>{
+        console.log(data)
+        data.lovecoins = parseInt(data.lovecoins) + lovecoins;
+
+        let url = 'https://scrumserver.tenobe.org/scrum/api/profiel/update.php'
+        let data2 = data;
+        let request = new Request(url,{
+            method:"PUT",
+            body: JSON.stringify(data2),
+            headers: new Headers({
+                "Content-Type": "application/json"
+            })
+        })
+        fetch(request)
+        .then((resp)=>{
+            return resp.json();
+        })
+        .then((data2)=>{
+            console.log(data2)
+            location.replace('settings.html');
+        })
+    })
+}
+
+

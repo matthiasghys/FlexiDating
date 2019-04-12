@@ -9,6 +9,7 @@ main{
 button {
     width: 98px;
     margin-right: 5px;
+    margin-top: 2px;
 }
 
 /* ----- Lines ----- */
@@ -159,4 +160,41 @@ button {
 
 #cardHead {
     background-color: #EEE;
+}
+
+
+/* PURCHASE */
+
+#purchase{
+    min-height: 40px;
+    width: 40%;
+    background-color: #eeeeee;
+    text-align: center;
+    border: solid 3px #DDD;
+    border-radius: 10px;
+}
+
+#purchase > h6{
+    padding-top: 20px;
+}
+
+#purchase li{
+    padding: 5px;
+    list-style: none;
+    margin-right: 40px;
+}
+
+#purchase li:hover{
+    background: #DDD;
+    cursor: pointer;
+}
+
+#coins {
+    width: 98px;
+    margin-right: 5px;
+    margin-top: 2px;
+}
+
+#coins:hover{
+    cursor: pointer;
 }
